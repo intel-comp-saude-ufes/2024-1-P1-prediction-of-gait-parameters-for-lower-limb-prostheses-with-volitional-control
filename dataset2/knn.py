@@ -24,13 +24,25 @@ def plot_real_vs_predicted(y_true, y_pred):
 
 
 
-# Leia os dados do arquivo CSV
-data_emg = pd.read_csv('data/train/emg_filtered.csv')
-data_torques = pd.read_csv('data/train/torques.csv')
-data_grf = pd.read_csv('data/train/grf.csv')
-X = pd.concat([data_emg, data_torques, data_grf], axis=1)
+# Load the traning data
+data_emg_T2 = pd.read_csv('data/train/P1/V1/T2/emg_filtered.csv')
+data_emg_T4 = pd.read_csv('data/train/P1/V1/T4/emg_filtered.csv')
+data_emg = pd.concat([data_emg_T2, data_emg_T4], axis=0) # Concatenate vertically
 
-data_angles = pd.read_csv('data/train/angles.csv')
+data_torques_T2 = pd.read_csv('data/train/P1/V1/T2/torques.csv')
+data_torques_T4 = pd.read_csv('data/train/P1/V1/T4/torques.csv')
+data_torques = pd.concat([data_torques_T2, data_torques_T4], axis=0)
+
+data_grf_T2 = pd.read_csv('data/train/P1/V1/T2/grf.csv')
+data_grf_T4 = pd.read_csv('data/train/P1/V1/T4/grf.csv')
+data_grf = pd.concat([data_grf_T2, data_grf_T4], axis=0)
+
+X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate horizontally
+
+data_angles_T2 = pd.read_csv('data/train/P1/V1/T2/angles.csv')
+data_angles_T4 = pd.read_csv('data/train/P1/V1/T4/angles.csv')
+data_angles = pd.concat([data_angles_T2, data_angles_T4], axis=0)
+
 y = data_angles['St1_Knee_X']
 
 # Inicialize o modelo KNN para regressão
@@ -38,14 +50,13 @@ knn_model = KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='aut
 knn_model.fit(X, y)
 
 
-
 # Leia os dados do arquivo CSV
-data_emg_test = pd.read_csv('data/test/emg_filtered.csv')
-data_torques_test = pd.read_csv('data/test/torques.csv')
-data_grf_test = pd.read_csv('data/test/grf.csv')
+data_emg_test = pd.read_csv('data/test/P1/V1/T3/emg_filtered.csv')
+data_torques_test = pd.read_csv('data/test/P1/V1/T3/torques.csv')
+data_grf_test = pd.read_csv('data/test/P1/V1/T3/grf.csv')
 X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1)
 
-data_angles_test = pd.read_csv('data/test/angles.csv')
+data_angles_test = pd.read_csv('data/test/P1/V1/T3/angles.csv')
 y = data_angles_test['St1_Knee_X']
 
 y_pred = knn_model.predict(X_test)
