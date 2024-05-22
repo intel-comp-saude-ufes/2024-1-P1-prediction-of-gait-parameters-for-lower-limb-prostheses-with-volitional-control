@@ -1,5 +1,7 @@
 # Prediction of Gait Parameters For Lower Limb Prostheses with Volitional Control
 
+![Gif](media/nothing-to-see-here.gif)
+
 ## Overview
 This repository contains code for analyzing Electromyography (EMG) signals and other motion sensors to predict gait parameters to apply to the control of lower limb prostheses. The project includes several processing and machine learning techniques to filter and extract meaningful features from the signals, and then use these features to predict gait parameters.
 
@@ -50,7 +52,7 @@ The main program trains a X, Y and Z models to predict X, Y and Z gait parameter
 - R2 Score
 
 The results of the project are summarized in the following figure:
-![Results](images/under-develpoment.png)
+![Results](media/under-develpoment.png)
 
 > A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
