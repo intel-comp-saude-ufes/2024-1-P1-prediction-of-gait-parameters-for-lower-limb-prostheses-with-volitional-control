@@ -1,7 +1,7 @@
 # Prediction of Gait Parameters For Lower Limb Prostheses with Volitional Control
 
 ## Overview
-This repository contains code for analyzing Electromyography (EMG) signals to predict the knee joint angle in lower limb robotic prostheses. The project includes several processing and machine learning techniques to filter and extract meaningful features from EMG signals, and then use these features to predict knee joint angles.
+This repository contains code for analyzing Electromyography (EMG) signals and other motion sensors to predict gait parameters to apply to the control of lower limb prostheses. The project includes several processing and machine learning techniques to filter and extract meaningful features from the signals, and then use these features to predict gait parameters.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -11,7 +11,7 @@ This repository contains code for analyzing Electromyography (EMG) signals to pr
   - [Additional Scripts](#additional-scripts)
 - [Results](#results)
 - [Contributing](#contributing)
-- [License](#license)
+- [Thanks](#thanks)
 
 ## Installation
 1. Clone this repository:
@@ -25,17 +25,44 @@ This repository contains code for analyzing Electromyography (EMG) signals to pr
     ```
 
 ## Data Description
-The data used in this project consists of EMG signals and knee joint angles. The dataset includes the following files:
-- `data/train/emg_filtered.csv`: Filtered EMG signals for training.
-- `data/train/torques.csv`: Torque data for training.
-- `data/train/grf.csv`: Ground reaction force data for training.
-- `data/train/angles.csv`: Knee joint angles for training.
-- `data/test/emg_filtered.csv`: Filtered EMG signals for testing.
-- `data/test/torques.csv`: Torque data for testing.
-- `data/test/grf.csv`: Ground reaction force data for testing.
-- `data/test/angles.csv`: Knee joint angles for testing.
-- `data/1Nmar.csv`: Raw EMG and knee joint angle data.
+The data used in this project consists of X, Y and Z. The dataset includes the following files:
+- `data/example.csv`: example signal collected during X seconds, by Yhz.
 
 ## Usage
 ### Main Program
-The main program trains a K-Nearest Neighbors (KNN) model to predict knee joint angles based on EMG, torque, and ground reaction force data. 
+The main program trains a X,Y and Z models to predict X, Y and Z gait parameters based on EMG, X, Y and Z sensors data. To run the main program, use the following command:
+```sh 
+python main.py
+```
+
+### Additional Scripts
+The `scripts/` directory contains additional scripts to preprocess the data, train the models, and evaluate the results. To run a script, use the following command:
+```sh
+python scripts/script_name.py
+```
+
+## Results
+The main program trains a X, Y and Z models to predict X, Y and Z gait parameters based on EMG, X, Y and Z sensors data. The evaluation of the models is performed using a X-fold cross-validation and using the following metrics:
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Percentage Error (MAPE)
+- R2 Score
+
+The results of the project are summarized in the following figure:
+![Results](images/under-develpoment.png)
+
+> A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Thanks
+Special thanks to the [Andre Georghton Cardoso Pacheco](https://github.com/paaatcha) for giving the opportunity to make this project happen.
+
