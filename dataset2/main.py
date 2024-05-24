@@ -21,7 +21,7 @@ from sklearn.tree import DecisionTreeRegressor
 ############################################## DEFINING FUNCTIONS ######################################################
 ########################################################################################################################
 
-def load_train_data(train_folder):
+def load_data(train_folder):
     '''
     Function to load train/test data from a folder
 
@@ -102,51 +102,57 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.show()
 
 
-# Leia os dados de treino de todas as subpastas
-train_folder = 'data/train'
-data_emg, data_torques, data_grf, data_angles = load_train_data(train_folder)
-X = pd.concat([data_emg, data_torques, data_grf], axis=1)
-y = data_angles['St1_Knee_X']
 
-# Leia os dados de teste de todas as subpastas
-test_folder = 'data/test'
-data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_train_data(test_folder)
-X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1)
-y_test = data_angles_test['St1_Knee_X']
+########################################################################################################################
+################################################## MAIN PROGRAM ########################################################
+########################################################################################################################
 
-# Definir os modelos
-models = {
-    'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
-    'Decision Tree': DecisionTreeRegressor(criterion='squared_error', splitter='best', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, ccp_alpha=0.0, monotonic_cst=None),
-    'SVM': SVR(kernel='rbf', degree=3, gamma='auto', coef0=0.0, tol=0.001, C=1.0, epsilon=0.1, shrinking=True, cache_size=200, verbose=False, max_iter=-1),
-}
+if __name__ == '__main__':
 
-predictions = {}
-metrics = {}
+    # Prepare the train data
+    train_folder = 'data/train'
+    data_emg, data_torques, data_grf, data_angles = load_data(train_folder)
+    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
+    y = data_angles['St1_Knee_X'] # Get the target data
 
-# Treinar e avaliar cada modelo
-for model_name, model in models.items():
-    print(f"Training and evaluating {model_name}")
-    model.fit(X, y)
-    y_pred = model.predict(X_test)
-    predictions[model_name] = y_pred
+    # Prepare the test data
+    test_folder = 'data/test'
+    data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
+    X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
+    y_test = data_angles_test['St1_Knee_X'] # Get the target data
 
+    # Defining the models
+    models = {
+        'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
+        'Decision Tree': DecisionTreeRegressor(criterion='squared_error', splitter='best', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, ccp_alpha=0.0, monotonic_cst=None),
+        'SVM': SVR(kernel='rbf', degree=3, gamma='auto', coef0=0.0, tol=0.001, C=1.0, epsilon=0.1, shrinking=True, cache_size=200, verbose=False, max_iter=-1),
+    }
 
-    # Calcular métricas de avaliação
-    mae = mean_absolute_error(y_test, y_pred)
-    mse = mean_squared_error(y_test, y_pred)
-    rmse = np.sqrt(mse)
-    mape = mean_absolute_percentage_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    metrics[model_name] = r2
+    # Dictionary to store the predictions and metrics to plot
+    predictions = {}
+    metrics = {}
 
-    # Imprimir as métricas
-    print(f"{model_name} - Mean Absolute Error: {mae:.2f}")
-    print(f"{model_name} - Mean Squared Error: {mse:.2f}")
-    print(f"{model_name} - Root Mean Squared Error: {rmse:.2f}")
-    print(f"{model_name} - Mean Absolute Percentage Error: {mape:.2%}")
-    print(f"{model_name} - R^2 Score: {r2:.2f}")
-    print("\n")
+    # Train and evaluate each model
+    for model_name, model in models.items():
+        print(f"Training and evaluating {model_name}")
+        model.fit(X, y)
+        y_pred = model.predict(X_test)
+        predictions[model_name] = y_pred
 
+        # Calculate assessment metrics
+        mae = mean_absolute_error(y_test, y_pred)
+        mse = mean_squared_error(y_test, y_pred)
+        rmse = np.sqrt(mse)
+        mape = mean_absolute_percentage_error(y_test, y_pred)
+        r2 = r2_score(y_test, y_pred)
+        metrics[model_name] = r2
 
-plot_comparisons(y_test, predictions, metrics)
+        # Print the metrics
+        print(f"{model_name} - Mean Absolute Error: {mae:.2f}")
+        print(f"{model_name} - Mean Squared Error: {mse:.2f}")
+        print(f"{model_name} - Root Mean Squared Error: {rmse:.2f}")
+        print(f"{model_name} - Mean Absolute Percentage Error: {mape:.2%}")
+        print(f"{model_name} - R^2 Score: {r2:.2f}")
+        print() # Blank line
+
+    plot_comparisons(y_test, predictions, metrics)
