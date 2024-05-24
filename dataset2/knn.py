@@ -1,3 +1,5 @@
+
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -23,27 +25,59 @@ def plot_real_vs_predicted(y_true, y_pred):
     plt.show()
 
 
+# Função para carregar dados de treino de todas as subpastas
+def load_train_data(train_folder):
+    count_emg = 0
+    count_torques = 0
+    count_grf = 0
+    count_angles = 0
 
-# Load the traning data
-data_emg_T2 = pd.read_csv('data/train/P1/V1/T2/emg_filtered.csv')
-data_emg_T4 = pd.read_csv('data/train/P1/V1/T4/emg_filtered.csv')
-data_emg = pd.concat([data_emg_T2, data_emg_T4], axis=0) # Concatenate vertically
+    for root, dirs, files in os.walk(train_folder):
+        for file in files:
+            if file.endswith('.csv'):
+                file_path = os.path.join(root, file)
+                print(f'Loading file: {file_path}')
+                if 'emg_filtered' in file_path:
+                    if count_emg == 0:
+                        data_emg = pd.read_csv(file_path)
+                    else:
+                        data_emg = pd.concat([data_emg, pd.read_csv(file_path)], axis=0)
+                    count_emg += 1
+                elif 'torques.' in file_path: # '.' to not include 'torques_norm.csv'
+                    if count_torques == 0:
+                        data_torques = pd.read_csv(file_path)
+                    else:
+                        data_torques = pd.concat([data_torques, pd.read_csv(file_path)], axis=0)
+                    count_torques += 1
+                elif 'grf' in file_path:
+                    if count_grf == 0:
+                        data_grf = pd.read_csv(file_path)
+                    else:
+                        data_grf = pd.concat([data_grf, pd.read_csv(file_path)], axis=0)
+                    count_grf += 1
+                elif 'angles' in file_path:
+                    if count_angles == 0:
+                        data_angles = pd.read_csv(file_path)
+                    else:
+                        data_angles = pd.concat([data_angles, pd.read_csv(file_path)], axis=0)
+                    count_angles += 1
+            
+    return data_emg, data_torques, data_grf, data_angles
 
-data_torques_T2 = pd.read_csv('data/train/P1/V1/T2/torques.csv')
-data_torques_T4 = pd.read_csv('data/train/P1/V1/T4/torques.csv')
-data_torques = pd.concat([data_torques_T2, data_torques_T4], axis=0)
+# Leia os dados de treino de todas as subpastas
+train_folder = 'data/train'
+data_emg, data_torques, data_grf, data_angles = load_train_data(train_folder)
 
-data_grf_T2 = pd.read_csv('data/train/P1/V1/T2/grf.csv')
-data_grf_T4 = pd.read_csv('data/train/P1/V1/T4/grf.csv')
-data_grf = pd.concat([data_grf_T2, data_grf_T4], axis=0)
+print(data_emg.shape)
+print(data_torques.shape)
+print(data_grf.shape)
+print(data_angles.shape)
 
-X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate horizontally
 
-data_angles_T2 = pd.read_csv('data/train/P1/V1/T2/angles.csv')
-data_angles_T4 = pd.read_csv('data/train/P1/V1/T4/angles.csv')
-data_angles = pd.concat([data_angles_T2, data_angles_T4], axis=0)
-
+# Concatenar todos os dados de treino em um único DataFrame
+X = pd.concat([data_emg, data_torques, data_grf], axis=1)
 y = data_angles['St1_Knee_X']
+
 
 # Inicialize o modelo KNN para regressão
 knn_model = KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None)
