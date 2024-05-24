@@ -52,7 +52,6 @@ def load_data(train_folder):
                         count_angles += 1
                     else:
                         data_angles = pd.concat([data_angles, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-                count_angles = 0
 
             elif dir == 'EMG filtered':
                 # Read the files inside this folder
@@ -62,7 +61,6 @@ def load_data(train_folder):
                         count_emg += 1
                     else:
                         data_emg = pd.concat([data_emg, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-                count_emg = 0
 
             elif dir == 'Torques':
                 # Read the files inside this folder
@@ -72,7 +70,6 @@ def load_data(train_folder):
                         count_torques += 1
                     else:
                         data_torques = pd.concat([data_torques, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-                count_torques = 0
 
             elif dir == 'GRF':
                 # Read the files inside this folder
@@ -82,7 +79,6 @@ def load_data(train_folder):
                         count_grf += 1
                     else:
                         data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-                count_grf = 0
             
     return data_emg, data_torques, data_grf, data_angles
 
