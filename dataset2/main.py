@@ -113,13 +113,13 @@ if __name__ == '__main__':
     # Prepare the train data
     train_folder = 'data/train'
     data_emg, data_torques, data_grf, data_angles = load_data(train_folder)
-    X = pd.concat([data_torques], axis=1) # Concatenate the input model data
+    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
     y = data_angles['St1_Knee_X'] # Get the target data
 
     # Prepare the test data
     test_folder = 'data/test'
     data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
-    X_test = pd.concat([data_torques], axis=1) # Concatenate the input model data
+    X_test = pd.concat([data_emg_test, data_torques, data_grf_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test['St1_Knee_X'] # Get the target data
 
     # Defining the models
