@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leia os dados do arquivo CSV
-data = pd.read_csv('data/grf.csv')
+data = pd.read_csv('data/test/P1/V1/T3/grf.csv')
 
 colunas = data.columns
 qtd_colunas = len(colunas)
