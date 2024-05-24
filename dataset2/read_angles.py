@@ -2,7 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leia os dados do arquivo CSV
-data = pd.read_csv('data/test/P1/V1/T3/angles.csv')
+data = pd.read_csv('T2.txt', delimiter='\t')
+
+print(data.head())
 
 colunas = ['St1_Knee_X', 'St1_Knee_Y', 'St1_Knee_Z', 'St2_Knee_X', 'St2_Knee_Y', 'St2_Knee_Z']
 qtd_colunas = len(colunas)
