@@ -6,7 +6,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt, iirnotch
-from sklearn.linear_model import LinearRegression, SGDRegressor
+from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor
+from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge, SGDRegressor
 from sklearn.model_selection import train_test_split, cross_val_predict, KFold
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsRegressor
@@ -90,7 +91,7 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.figure(figsize=(18, 10))
     
     for i, (model_name, y_pred) in enumerate(predictions.items(), 1):
-        plt.subplot(3, 1, i)
+        plt.subplot(5, 2, i)
         plt.plot(range(len(y_true)), y_true, label='Real', color='blue')
         plt.plot(range(len(y_pred)), y_pred, label=model_name, linestyle='dashed', color='red')
         plt.xlabel('Samples')
@@ -124,8 +125,22 @@ if __name__ == '__main__':
     # Defining the models
     models = {
         'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
+
         'Decision Tree': DecisionTreeRegressor(criterion='squared_error', splitter='best', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, ccp_alpha=0.0, monotonic_cst=None),
+
         'SVM': SVR(kernel='rbf', degree=3, gamma='auto', coef0=0.0, tol=0.001, C=1.0, epsilon=0.1, shrinking=True, cache_size=200, verbose=False, max_iter=-1),
+
+        'Random Forest': RandomForestRegressor(n_estimators=100, criterion='squared_error', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=1.0, max_leaf_nodes=None, min_impurity_decrease=0.0, bootstrap=True, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, ccp_alpha=0.0, max_samples=None, monotonic_cst=None),
+        
+        'Gradient Boosting': GradientBoostingRegressor(loss='squared_error', learning_rate=0.1, n_estimators=100, subsample=1.0, criterion='friedman_mse', min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_depth=3, min_impurity_decrease=0.0, init=None, random_state=None, max_features=None, alpha=0.9, verbose=0, max_leaf_nodes=None, warm_start=False, validation_fraction=0.1, n_iter_no_change=None, tol=0.0001, ccp_alpha=0.0),
+
+        'AdaBoost': AdaBoostRegressor(estimator=None, n_estimators=50, learning_rate=1.0, loss='linear', random_state=None),
+
+        'Ridge': Ridge(alpha=1.0, fit_intercept=True, copy_X=True, max_iter=None, tol=0.0001, solver='auto', positive=False, random_state=None),
+
+        'Lasso': Lasso(alpha=1.0, fit_intercept=True, precompute=False, copy_X=True, max_iter=1000, tol=0.0001, warm_start=False, positive=False, random_state=None, selection='cyclic'),
+
+        'ElasticNet': ElasticNet(alpha=1.0, l1_ratio=0.5, fit_intercept=True, precompute=False, max_iter=1000, copy_X=True, tol=0.0001, warm_start=False, positive=False, random_state=None, selection='cyclic'),
     }
 
     # Dictionary to store the predictions and metrics to plot
