@@ -45,34 +45,42 @@ def load_data(train_folder):
     count_angles = 0
 
     for root, dirs, files in os.walk(train_folder):
-        for file in files:
-            # Pass from each file in the folder
-            if file.endswith('.csv'):
-                file_path = os.path.join(root, file) # Get the hole file path
-                if 'emg_filtered' in file_path:
-                    if count_emg == 0: # If the data was not loaded yet
-                        data_emg = pd.read_csv(file_path)
-                    else:
-                        data_emg = pd.concat([data_emg, pd.read_csv(file_path)], axis=0)
-                    count_emg += 1
-                elif 'torques.' in file_path: # '.' to not include 'torques_norm.csv'
-                    if count_torques == 0:
-                        data_torques = pd.read_csv(file_path)
-                    else:
-                        data_torques = pd.concat([data_torques, pd.read_csv(file_path)], axis=0)
-                    count_torques += 1
-                elif 'grf' in file_path:
-                    if count_grf == 0:
-                        data_grf = pd.read_csv(file_path)
-                    else:
-                        data_grf = pd.concat([data_grf, pd.read_csv(file_path)], axis=0)
-                    count_grf += 1
-                elif 'angles' in file_path:
+        for dir in dirs:
+            if dir == 'Angles':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
                     if count_angles == 0:
-                        data_angles = pd.read_csv(file_path)
+                        data_angles = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_angles += 1
                     else:
-                        data_angles = pd.concat([data_angles, pd.read_csv(file_path)], axis=0)
-                    count_angles += 1
+                        data_angles = pd.concat([data_angles, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+
+            elif dir == 'EMG filtered':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
+                    if count_emg == 0:
+                        data_emg = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_emg += 1
+                    else:
+                        data_emg = pd.concat([data_emg, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+
+            elif dir == 'Torques':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
+                    if count_torques == 0:
+                        data_torques = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_torques += 1
+                    else:
+                        data_torques = pd.concat([data_torques, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+
+            elif dir == 'GRF':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
+                    if count_grf == 0:
+                        data_grf = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_grf += 1
+                    else:
+                        data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
             
     return data_emg, data_torques, data_grf, data_angles
 
