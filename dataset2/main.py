@@ -5,6 +5,11 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
+import scipy.interpolate as interp
+from statsmodels.nonparametric.smoothers_lowess import lowess
+from pykalman import KalmanFilter
+
 from scipy.signal import butter, filtfilt, iirnotch
 from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor, ExtraTreesRegressor
 from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge, SGDRegressor
@@ -113,7 +118,32 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.tight_layout()
     plt.show()
 
+#curve smoothing functions
+def moving_average(y_pred, window_size=5):
+    y_pred = np.ravel(y_pred)
+    pad_size = window_size // 2
+    y_padded = np.pad(y_pred, pad_size, mode='edge')
+    y_smooth = np.convolve(y_padded, np.ones(window_size)/window_size, mode='same')
+    return y_smooth[pad_size:-pad_size]
 
+def smooth_spline(y_pred, s=1):
+    y_pred = np.ravel(y_pred)
+    x = np.arange(len(y_pred))
+    spline = interp.UnivariateSpline(x, y_pred, k=1, s=s)
+    return spline(x)
+
+def loess_smoothing(y_pred, frac=0.2):
+    y_pred = np.ravel(y_pred)
+    x = np.arange(len(y_pred))
+    loess_result = lowess(y_pred, x, frac=frac)
+    y_smooth = np.interp(x, loess_result[:, 0], loess_result[:, 1])
+    return y_smooth
+
+def kalman_filter(y_pred):
+    y_pred = np.ravel(y_pred)
+    kf = KalmanFilter(initial_state_mean=0, n_dim_obs=1)
+    state_means, _ = kf.smooth(y_pred)
+    return state_means.flatten()
 
 ########################################################################################################################
 ################################################## MAIN PROGRAM ########################################################
@@ -137,7 +167,7 @@ if __name__ == '__main__':
     data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
                             St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
                             St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
-                            St+'_Ankle_X',   St+'_Ankle_Y',   St+'_Ankle_Z']
+                            St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
     
     # St1_GRF_X	    St1_GRF_Y	    St1_GRF_Z	    St2_GRF_X	    t2_GRF_Y	    St2_GRF_Z
     data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
@@ -148,33 +178,22 @@ if __name__ == '__main__':
     # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
     data_angles_columns = [St+'_Knee_X']
 
-    data_emg = data_emg.filter(regex='^St1')
-    data_torques = data_torques.filter(regex='^St1')
-    data_grf = data_grf.filter(regex='^St1')
-    data_angles = data_angles.filter(regex='^St1')
+    data_emg = data_emg[data_emg_columns]
+    data_torques = data_torques[data_torques_columns]
+    data_grf = data_grf[data_grf_columns]
+    data_angles = data_angles[data_angles_columns]
 
-    # data_emg = data_emg[data_emg_columns]
-    # data_torques = data_torques[data_torques_columns]
-    # data_grf = data_grf[data_grf_columns]
-    # data_angles = data_angles[data_angles_columns]
-
-    print(data_emg)
-    print()
-    print(data_torques)
-    print()
-    print(data_grf)
-    print()
-    print(data_angles)
-    print()
-
-    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
-    y = data_angles[data_angles_columns] # Get the target data
+    X = pd.concat([data_emg, data_torques, data_grf], axis=1)   # Concatenate the input model data
+    y = data_angles[data_angles_columns]                        # Get the target data
 
     # Prepare the test data
     test_folder = 'data/test'
     data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
-    X_test = pd.concat([data_emg_test[data_emg_columns], data_torques_test[data_torques_columns], data_grf_test[data_grf_columns]], axis=1) # Concatenate the input model data
-    y_test = data_angles_test[data_angles_columns] # Get the target data
+    X_test = pd.concat([data_emg_test[data_emg_columns],            # Concatenate the input model data
+                        data_torques_test[data_torques_columns],
+                        data_grf_test[data_grf_columns]],
+                        axis=1)
+    y_test = data_angles_test[data_angles_columns]                  # Get the target data
 
     # Defining the models
     models = {
@@ -208,15 +227,22 @@ if __name__ == '__main__':
     metrics = {}
 
     # Use lazy predict to get a holistc view about the result of a lot os models
-    lazy_model = LazyRegressor()
-    models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
-    print(models_lazy)
+    # lazy_model = LazyRegressor()
+    # models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
+    # print(models_lazy)
 
     # Train and evaluate each model
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
         model.fit(X, y)
         y_pred = model.predict(X_test)
+
+        # applyng smoth filter
+        # y_pred = moving_average(y_pred, window_size=50)
+        # y_pred = smooth_spline(y_pred)
+        y_pred = loess_smoothing(y_pred, frac=0.09)
+        # y_pred = kalman_filter(y_pred)
+
         predictions[model_name] = y_pred
 
         # Calculate assessment metrics
