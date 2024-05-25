@@ -158,24 +158,28 @@ if __name__ == '__main__':
     St = 'St1'
 
     # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
-    data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+    # data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+    data_emg_columns = [St+'_VL', St+'_BF']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z	    ...
     # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
     # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
-    data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
-                            St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
-                            St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
-                            St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
+    # data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
+    #                         St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
+    #                         St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
+    #                         St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
+    data_torques_columns = [St+'_Knee_X']
     
     # St1_GRF_X	    St1_GRF_Y	    St1_GRF_Z	    St2_GRF_X	    t2_GRF_Y	    St2_GRF_Z
-    data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
+    # data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
+    data_grf_columns = [St+'_GRF_X']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z       ...   
     # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
     # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
+    # data_angles_columns = [St+'_Knee_X']
     data_angles_columns = [St+'_Knee_X']
 
     data_emg = data_emg[data_emg_columns]
@@ -238,7 +242,7 @@ if __name__ == '__main__':
         y_pred = model.predict(X_test)
 
         # applyng smoth filter
-        # y_pred = moving_average(y_pred, window_size=50)
+        # y_pred = moving_average(y_pred, window_size=75)
         # y_pred = smooth_spline(y_pred)
         y_pred = loess_smoothing(y_pred, frac=0.09)
         # y_pred = kalman_filter(y_pred)
