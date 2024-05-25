@@ -16,6 +16,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
+from xgboost import XGBRegressor
 
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
@@ -24,12 +25,12 @@ from lazypredict.Supervised import LazyRegressor
 ############################################## DEFINING FUNCTIONS ######################################################
 ########################################################################################################################
 
-def load_data(train_folder):
+def load_data(folder_path):
     '''
     Function to load train/test data from a folder
 
     INPUT:
-        train_folder (str): Path to the folder containing the train/test data
+        folder_path (str): Path to the folder containing the train/test data
 
     OUTPUT:
         data_emg (pd.DataFrame): EMG data
@@ -44,7 +45,7 @@ def load_data(train_folder):
     count_grf = 0
     count_angles = 0
 
-    for root, dirs, files in os.walk(train_folder):
+    for root, dirs, files in os.walk(folder_path):
         for dir in dirs:
             if dir == 'Angles':
                 # Read the files inside this folder
@@ -123,18 +124,57 @@ if __name__ == '__main__':
     # Prepare the train data
     train_folder = 'data/train'
     data_emg, data_torques, data_grf, data_angles = load_data(train_folder)
+
+    St = 'St1'
+
+    # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
+    data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+
+    # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
+    # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z	    ...
+    # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
+    # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
+    data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
+                            St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
+                            St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
+                            St+'_Ankle_X',   St+'_Ankle_Y',   St+'_Ankle_Z']
+    
+    # St1_GRF_X	    St1_GRF_Y	    St1_GRF_Z	    St2_GRF_X	    t2_GRF_Y	    St2_GRF_Z
+    data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
+
+    # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
+    # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z       ...   
+    # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
+    # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
+    data_angles_columns = [St+'_Knee_X']
+
+    data_emg = data_emg.filter(regex='^St1')
+    data_torques = data_torques.filter(regex='^St1')
+    data_grf = data_grf.filter(regex='^St1')
+    data_angles = data_angles.filter(regex='^St1')
+
+    # data_emg = data_emg[data_emg_columns]
+    # data_torques = data_torques[data_torques_columns]
+    # data_grf = data_grf[data_grf_columns]
+    # data_angles = data_angles[data_angles_columns]
+
+    print(data_emg)
+    print()
+    print(data_torques)
+    print()
+    print(data_grf)
+    print()
+    print(data_angles)
+    print()
+
     X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
-    y = data_angles['St1_Knee_X'] # Get the target data
+    y = data_angles[data_angles_columns] # Get the target data
 
     # Prepare the test data
     test_folder = 'data/test'
     data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
-    X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
-    y_test = data_angles_test['St1_Knee_X'] # Get the target data
-
-    # Filter the columns that start with "St1"
-    X = X.filter(regex='^St1')
-    X_test = X_test.filter(regex='^St1')
+    X_test = pd.concat([data_emg_test[data_emg_columns], data_torques_test[data_torques_columns], data_grf_test[data_grf_columns]], axis=1) # Concatenate the input model data
+    y_test = data_angles_test[data_angles_columns] # Get the target data
 
     # Defining the models
     models = {
@@ -159,6 +199,8 @@ if __name__ == '__main__':
         'Extra Trees Regressor' : ExtraTreesRegressor(n_estimators=100, criterion='squared_error', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=1.0, max_leaf_nodes=None, min_impurity_decrease=0.0, bootstrap=False, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, ccp_alpha=0.0, max_samples=None, monotonic_cst=None),
 
         'MLP Regressor' : MLPRegressor(hidden_layer_sizes=(100,), activation='relu', solver='adam', alpha=0.0001, batch_size='auto', learning_rate='constant', learning_rate_init=0.001, power_t=0.5, max_iter=200, shuffle=True, random_state=None, tol=0.0001, verbose=False, warm_start=False, momentum=0.9, nesterovs_momentum=True, early_stopping=False, validation_fraction=0.1, beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=10, max_fun=15000),
+
+        'XGBRegressor' : XGBRegressor()
     }
 
     # Dictionary to store the predictions and metrics to plot after
@@ -166,9 +208,9 @@ if __name__ == '__main__':
     metrics = {}
 
     # Use lazy predict to get a holistc view about the result of a lot os models
-    # lazy_model = LazyRegressor()
-    # models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
-    # print(models_lazy)
+    lazy_model = LazyRegressor()
+    models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
+    print(models_lazy)
 
     # Train and evaluate each model
     for model_name, model in models.items():
