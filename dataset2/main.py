@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt, iirnotch
-from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor
+from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor, ExtraTreesRegressor
 from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge, SGDRegressor
 from sklearn.model_selection import train_test_split, cross_val_predict, KFold
 from sklearn.naive_bayes import GaussianNB
@@ -15,8 +15,10 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, mean_absolu
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.neural_network import MLPRegressor
 
-
+import seaborn as sns
+from lazypredict.Supervised import LazyRegressor
 
 ########################################################################################################################
 ############################################## DEFINING FUNCTIONS ######################################################
@@ -91,11 +93,11 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.figure(figsize=(18, 10))
     
     for i, (model_name, y_pred) in enumerate(predictions.items(), 1):
-        plt.subplot(5, 2, i)
+        plt.subplot(6, 2, i)
         plt.plot(range(len(y_true)), y_true, label='Real', color='blue')
         plt.plot(range(len(y_pred)), y_pred, label=model_name, linestyle='dashed', color='red')
         plt.xlabel('Samples')
-        plt.ylabel('Knee Angulation (Degrees)')
+        plt.ylabel('Knee Ang (Deg)')
         plt.legend()
         plt.title(f'{model_name} - R^2 Score: {metrics[model_name]:.2f}')
     
@@ -122,6 +124,10 @@ if __name__ == '__main__':
     X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test['St1_Knee_X'] # Get the target data
 
+    # Filter the columns that start with "St1"
+    # X = X.filter(regex='^St1')
+    # X_test = X_test.filter(regex='^St1')
+
     # Defining the models
     models = {
         'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
@@ -141,11 +147,20 @@ if __name__ == '__main__':
         'Lasso': Lasso(alpha=1.0, fit_intercept=True, precompute=False, copy_X=True, max_iter=1000, tol=0.0001, warm_start=False, positive=False, random_state=None, selection='cyclic'),
 
         'ElasticNet': ElasticNet(alpha=1.0, l1_ratio=0.5, fit_intercept=True, precompute=False, max_iter=1000, copy_X=True, tol=0.0001, warm_start=False, positive=False, random_state=None, selection='cyclic'),
+        
+        'Extra Trees Regressor' : ExtraTreesRegressor(n_estimators=100, criterion='squared_error', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=1.0, max_leaf_nodes=None, min_impurity_decrease=0.0, bootstrap=False, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, ccp_alpha=0.0, max_samples=None, monotonic_cst=None),
+
+        'MLP Regressor' : MLPRegressor(hidden_layer_sizes=(100,), activation='relu', solver='adam', alpha=0.0001, batch_size='auto', learning_rate='constant', learning_rate_init=0.001, power_t=0.5, max_iter=200, shuffle=True, random_state=None, tol=0.0001, verbose=False, warm_start=False, momentum=0.9, nesterovs_momentum=True, early_stopping=False, validation_fraction=0.1, beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=10, max_fun=15000),
     }
 
     # Dictionary to store the predictions and metrics to plot
     predictions = {}
     metrics = {}
+
+    # # Use lazy predict to get a holistc view about the result of a lot os models
+    # lazy_model = LazyRegressor()
+    # models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
+    # print(models_lazy)
 
     # Train and evaluate each model
     for model_name, model in models.items():
