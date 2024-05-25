@@ -125,8 +125,8 @@ if __name__ == '__main__':
     y_test = data_angles_test['St1_Knee_X'] # Get the target data
 
     # Filter the columns that start with "St1"
-    # X = X.filter(regex='^St1')
-    # X_test = X_test.filter(regex='^St1')
+    X = X.filter(regex='^St1')
+    X_test = X_test.filter(regex='^St1')
 
     # Defining the models
     models = {
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     predictions = {}
     metrics = {}
 
-    # # Use lazy predict to get a holistc view about the result of a lot os models
+    # Use lazy predict to get a holistc view about the result of a lot os models
     # lazy_model = LazyRegressor()
     # models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
     # print(models_lazy)
