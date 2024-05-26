@@ -279,12 +279,12 @@ if __name__ == '__main__':
 
     plot_comparisons(y_test, predictions, metrics)
 
+    # Finding the best model
+    best_model = max(metrics, key=metrics.get)
+
     # Prepare the data to create the animation
     emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
-
-    # Finding the best model
-    best_model = max(metrics, key=metrics.get)
 
     # Run a animation with the best model    
     create_animation(emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
