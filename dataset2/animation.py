@@ -1,3 +1,5 @@
+# TODO: Put comments in English
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -13,6 +15,7 @@ def update(frame, emg_data, y_true, y_pred, lines):
     # Retornar a lista de objetos atualizados
     return lines['true_leg'], lines['pred_leg'], lines['emg']
 
+# FIXME: Make leg stop to increase when knee angle is increasing
 # Função para atualizar os segmentos da perna
 def update_leg(line, knee_angle):
     hip = np.array([0, 0])

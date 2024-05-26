@@ -250,9 +250,6 @@ if __name__ == '__main__':
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
 
-        if model_name != 'XGBRegressor':
-            continue
-
         model.fit(X, y)
         y_pred = model.predict(X_test)
 
@@ -273,14 +270,14 @@ if __name__ == '__main__':
         metrics[model_name] = r2
 
         # Print the metrics
-        # print(f"{model_name} - Mean Absolute Error: {mae:.2f}")
-        # print(f"{model_name} - Mean Squared Error: {mse:.2f}")
-        # print(f"{model_name} - Root Mean Squared Error: {rmse:.2f}")
-        # print(f"{model_name} - Mean Absolute Percentage Error: {mape:.2%}")
-        # print(f"{model_name} - R^2 Score: {r2:.2f}")
-        # print() # Blank line
+        print(f"{model_name} - Mean Absolute Error: {mae:.2f}")
+        print(f"{model_name} - Mean Squared Error: {mse:.2f}")
+        print(f"{model_name} - Root Mean Squared Error: {rmse:.2f}")
+        print(f"{model_name} - Mean Absolute Percentage Error: {mape:.2%}")
+        print(f"{model_name} - R^2 Score: {r2:.2f}")
+        print() # Blank line
 
-    # plot_comparisons(y_test, predictions, metrics)
+    plot_comparisons(y_test, predictions, metrics)
 
     # Prepare the data to create the animation
     emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
