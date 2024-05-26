@@ -252,7 +252,7 @@ if __name__ == '__main__':
 
         if model_name != 'XGBRegressor':
             continue
-        
+
         model.fit(X, y)
         y_pred = model.predict(X_test)
 
@@ -282,31 +282,8 @@ if __name__ == '__main__':
 
     # plot_comparisons(y_test, predictions, metrics)
 
-    # print("data_emg_test['St1_BF']:")
-    # print(data_emg_test['St1_BF'])
-    # print(data_emg_test['St1_BF'].shape)
-    # print(type(data_emg_test['St1_BF']))
-
+    # Prepare the data to create the animation
     emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
-    print("\nemg_anim:")
-    print(emg_anim)
-    print(emg_anim.shape)
-    print(type(emg_anim))
-
-    # print("\ny_test:")
-    # print(y_test)
-    # print(y_test.shape)
-    # print(type(y_test))
-
     y_test_anim = y_test.to_numpy().ravel()
-    print("\ny_test.to_numpy():")
-    print(y_test_anim)
-    print(y_test_anim.shape)
-    print(type(y_test_anim))
-
-    print("\npredictions['XGBRegressor']:")
-    print(predictions['XGBRegressor'])
-    print(predictions['XGBRegressor'].shape)
-    print(type(predictions['XGBRegressor']))
 
     create_animation(emg_anim, y_test.to_numpy().flatten(), predictions['XGBRegressor'].flatten())
