@@ -29,8 +29,13 @@ This repository contains code for analyzing Electromyography (EMG) signals and o
     ```
 
 ## Data Description
+<p align="center">
+  <img src="media/data-dir.png" />
+</p>
+
 The data used in this project consists of X, Y and Z. The dataset includes the following files:
 - `data/example.csv`: example signal collected during X seconds, by Yhz.
+- `data/...`: ...
 
 ## Usage
 ### Main Program
@@ -54,7 +59,9 @@ The main program trains a X, Y and Z models to predict X, Y and Z gait parameter
 - R2 Score
 
 The results of the project are summarized in the following figure:
-![Results](media/under-develpoment.png)
+<p align="center">
+  <img src="media/under-development.png" />
+</p>
 
 > A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
@@ -69,4 +76,3 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Thanks
 Special thanks to the [Andre Georghton Cardoso Pacheco](https://github.com/paaatcha) for giving the opportunity to make this project happen.
-
