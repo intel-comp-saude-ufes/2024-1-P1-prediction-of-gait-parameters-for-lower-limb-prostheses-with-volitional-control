@@ -286,4 +286,8 @@ if __name__ == '__main__':
     emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
 
-    create_animation(emg_anim, y_test.to_numpy().flatten(), predictions['XGBRegressor'].flatten())
+    # Finding the best model
+    best_model = max(metrics, key=metrics.get)
+
+    # Run a animation with the best model    
+    create_animation(emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
