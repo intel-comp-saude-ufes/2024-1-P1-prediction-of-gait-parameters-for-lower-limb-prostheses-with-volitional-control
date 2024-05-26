@@ -10,7 +10,6 @@ def update(frame, emg_data, y_true, y_pred, lines):
     update_leg(lines['pred_leg'], y_pred[frame])
     # Atualizar os sinais EMG
     lines['emg'].set_data(np.arange(frame + 1), emg_data[:frame + 1])
-
     # Retornar a lista de objetos atualizados
     return lines['true_leg'], lines['pred_leg'], lines['emg']
 
@@ -19,7 +18,8 @@ def update_leg(line, knee_angle):
     hip = np.array([0, 0])
     knee = hip + np.array([0, -1])  # Joelho sempre 1 unidade abaixo do quadril
     ankle = knee + np.array([np.sin(np.deg2rad(-knee_angle)), -np.cos(np.deg2rad(-knee_angle))])
-    foot = ankle + np.array([0.05, 0])  # O pé é representado como uma linha horizontal de 0.5 unidade
+
+    foot = ankle + np.array([0.05, 0])  # O pé é representado como uma linha horizontal de 0.05 unidade
 
     # Atualiza os dados da linha
     line.set_data([hip[0], knee[0], ankle[0], foot[0]], [hip[1], knee[1], ankle[1], foot[1]])
@@ -51,7 +51,7 @@ def create_animation(emg_data, y_true, y_pred):
     lines = {'true_leg': true_leg, 'pred_leg': pred_leg, 'emg': emg_line}
 
     # Criar a animação
-    ani = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, y_true, y_pred, lines), interval=5)
+    anim = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, y_true, y_pred, lines), interval=5)
 
     # Mostrar a animação
     plt.show()
