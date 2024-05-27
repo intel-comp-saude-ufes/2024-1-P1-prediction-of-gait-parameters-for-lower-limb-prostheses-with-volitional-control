@@ -213,12 +213,14 @@ if __name__ == '__main__':
 
     data_emg_envelope = data_emg_envelope[data_emg_columns]
     data_emg_filtered = data_emg_filtered[data_emg_columns]
-    data_torques = data_torques[data_torques_columns]
     data_grf = data_grf[data_grf_columns]
     data_angles = data_angles[data_angles_columns]
+    data_torques = data_torques[data_torques_columns]
+    data_torques_norm = data_torques_norm[data_torques_columns]
+
 
     X = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
-    y = data_angles[data_angles_columns] # Get the target data
+    y = data_angles # Get the target data
 
 
     # Prepare the test data
@@ -227,12 +229,13 @@ if __name__ == '__main__':
 
     data_emg_envelope_test = data_emg_envelope_test[data_emg_columns]
     data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
-    data_torques_test = data_torques_test[data_torques_columns]
     data_grf_test = data_grf_test[data_grf_columns]
     data_angles_test = data_angles_test[data_angles_columns]
+    data_torques_test = data_torques_test[data_torques_columns]
+    data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
     X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
-    y_test = data_angles_test[data_angles_columns] # Get the target data
+    y_test = data_angles_test # Get the target data
 
     # Defining the models
     models = {
