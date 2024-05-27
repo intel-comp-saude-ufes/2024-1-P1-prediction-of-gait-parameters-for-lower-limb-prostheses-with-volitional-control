@@ -42,17 +42,21 @@ def load_data(folder_path):
         folder_path (str): Path to the folder containing the train/test data
 
     OUTPUT:
-        data_emg (pd.DataFrame): EMG data
-        data_torques (pd.DataFrame): Torques data
-        data_grf (pd.DataFrame): GRF data
         data_angles (pd.DataFrame): Angles data
+        data_emg_envelope (pd.DataFrame): EMG envelope data
+        data_emg_filtered (pd.DataFrame): EMG filtered data
+        data_grf (pd.DataFrame): GRF data
+        data_torques (pd.DataFrame): Torques data
+        data_torques_norm (pd.DataFrame): Normalized torques data
     '''
 
     # Counters to check if the data was already loaded at least once or nots
-    count_emg_filtered = 0
-    count_torques = 0
-    count_grf = 0
     count_angles = 0
+    count_emg_envelope = 0
+    count_emg_filtered = 0
+    count_grf = 0
+    count_torques = 0
+    count_torques_norm = 0
 
     for root, dirs, files in os.walk(folder_path):
         for dir in dirs:
@@ -65,6 +69,15 @@ def load_data(folder_path):
                     else:
                         data_angles = pd.concat([data_angles, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
+            elif dir == 'EMG envelope':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
+                    if count_emg_envelope == 0:
+                        data_emg_envelope = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_emg_envelope += 1
+                    else:
+                        data_emg_envelope = pd.concat([data_emg_envelope, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+
             elif dir == 'EMG filtered':
                 # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
@@ -73,6 +86,15 @@ def load_data(folder_path):
                         count_emg_filtered += 1
                     else:
                         data_emg_filtered = pd.concat([data_emg_filtered, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+
+            elif dir == 'GRF':
+                # Read the files inside this folder
+                for file in os.listdir(os.path.join(root, dir)):
+                    if count_grf == 0:
+                        data_grf = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_grf += 1
+                    else:
+                        data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'Torques':
                 # Read the files inside this folder
@@ -83,16 +105,16 @@ def load_data(folder_path):
                     else:
                         data_torques = pd.concat([data_torques, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
-            elif dir == 'GRF':
+            elif dir == 'Torques_Norm':
                 # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
-                    if count_grf == 0:
-                        data_grf = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_grf += 1
+                    if count_torques_norm == 0:
+                        data_torques_norm = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_torques_norm += 1
                     else:
-                        data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+                        data_torques_norm = pd.concat([data_torques_norm, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
             
-    return data_emg_filtered, data_torques, data_grf, data_angles
+    return data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm
 
 
 def plot_comparisons(y_true, predictions, metrics):
@@ -160,7 +182,7 @@ if __name__ == '__main__':
 
     # Prepare the train data
     train_folder = 'data/train'
-    data_emg_filtered, data_torques, data_grf, data_angles = load_data(train_folder)
+    data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder)
 
     St = 'St1'
 
@@ -200,7 +222,7 @@ if __name__ == '__main__':
 
     # Prepare the test data
     test_folder = 'data/test'
-    data_emg_filtered_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
+    data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder)
 
     data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
     data_torques_test = data_torques_test[data_torques_columns]
