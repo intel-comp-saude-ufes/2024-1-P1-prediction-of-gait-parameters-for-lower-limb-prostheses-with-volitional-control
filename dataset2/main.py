@@ -317,9 +317,6 @@ if __name__ == '__main__':
     # Finding the best model
     best_model = max(metrics, key=metrics.get)
 
-    # Get the best model name
-    print(f"The best model is {best_model}")
-
     # Prepare the data to create the animation
     emg_anim = data_emg_envelope_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
