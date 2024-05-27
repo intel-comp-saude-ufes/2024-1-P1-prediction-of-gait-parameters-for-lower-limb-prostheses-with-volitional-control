@@ -28,7 +28,7 @@ def update_leg(line, knee_angle):
     line.set_data([hip[0], knee[0], ankle[0], foot[0]], [hip[1], knee[1], ankle[1], foot[1]])
 
 # Função principal para criar a animação
-def create_animation(emg_data, y_true, y_pred):
+def create_animation(best_model, emg_data, y_true, y_pred):
     # Verificar se os arrays têm o mesmo comprimento
     if len(y_true) != len(y_pred) or len(y_true) != len(emg_data):
         raise ValueError("Os arrays y_true, y_pred e emg_data devem ter o mesmo comprimento.")
@@ -56,6 +56,8 @@ def create_animation(emg_data, y_true, y_pred):
     # Criar a animação
     anim = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, y_true, y_pred, lines), interval=5)
 
+    # Adicionar título
+    plt.suptitle(f'Prediction of angle of knee joint with {best_model}')
     # Mostrar a animação
     plt.show()
 

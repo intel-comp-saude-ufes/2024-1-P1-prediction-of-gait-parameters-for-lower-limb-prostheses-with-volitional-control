@@ -291,7 +291,7 @@ if __name__ == '__main__':
         # applyng smoth filter
         # y_pred = moving_average(y_pred, window_size=75)
         # y_pred = smooth_spline(y_pred)
-        # y_pred = loess_smoothing(y_pred, frac=0.09)
+        y_pred = loess_smoothing(y_pred, frac=0.09)
         # y_pred = kalman_filter(y_pred)
 
         predictions[model_name] = y_pred
@@ -317,9 +317,12 @@ if __name__ == '__main__':
     # Finding the best model
     best_model = max(metrics, key=metrics.get)
 
+    # Get the best model name
+    print(f"The best model is {best_model}")
+
     # Prepare the data to create the animation
     emg_anim = data_emg_envelope_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
 
     # Run a animation with the best model    
-    create_animation(emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
+    create_animation(best_model, emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
