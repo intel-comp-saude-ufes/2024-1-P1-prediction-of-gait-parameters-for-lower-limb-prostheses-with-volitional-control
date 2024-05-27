@@ -187,8 +187,8 @@ def kalman_filter(y_pred):
 if __name__ == '__main__':
 
     # Prepare the train data
-    train_folder = 'data/P3'
-    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt']
+    train_folder = 'data/P5'
+    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
     data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
 
     St = 'St1'
@@ -226,13 +226,13 @@ if __name__ == '__main__':
     data_torques_norm = data_torques_norm[data_torques_columns]
 
 
-    X = pd.concat([data_emg_envelope, data_torques], axis=1) # Concatenate the input model data
+    X = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
     y = data_angles # Get the target data
 
 
     # Prepare the test data
-    test_folder = 'data/P3'
-    test_files = ['T9.txt']
+    test_folder = 'data/P5'
+    test_files = ['T10.txt']
     data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
     data_angles_test = data_angles_test[data_angles_columns]
@@ -242,7 +242,7 @@ if __name__ == '__main__':
     data_torques_test = data_torques_test[data_torques_columns]
     data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
-    X_test = pd.concat([data_emg_envelope_test, data_torques_test], axis=1) # Concatenate the input model data
+    X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test # Get the target data
 
     # Defining the models
@@ -291,7 +291,7 @@ if __name__ == '__main__':
         # applyng smoth filter
         # y_pred = moving_average(y_pred, window_size=75)
         # y_pred = smooth_spline(y_pred)
-        y_pred = loess_smoothing(y_pred, frac=0.09)
+        # y_pred = loess_smoothing(y_pred, frac=0.09)
         # y_pred = kalman_filter(y_pred)
 
         predictions[model_name] = y_pred
