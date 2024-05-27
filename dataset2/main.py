@@ -49,7 +49,7 @@ def load_data(folder_path):
     '''
 
     # Counters to check if the data was already loaded at least once or nots
-    count_emg = 0
+    count_emg_filtered = 0
     count_torques = 0
     count_grf = 0
     count_angles = 0
@@ -68,11 +68,11 @@ def load_data(folder_path):
             elif dir == 'EMG filtered':
                 # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
-                    if count_emg == 0:
-                        data_emg = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_emg += 1
+                    if count_emg_filtered == 0:
+                        data_emg_filtered = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
+                        count_emg_filtered += 1
                     else:
-                        data_emg = pd.concat([data_emg, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
+                        data_emg_filtered = pd.concat([data_emg_filtered, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'Torques':
                 # Read the files inside this folder
@@ -92,7 +92,7 @@ def load_data(folder_path):
                     else:
                         data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
             
-    return data_emg, data_torques, data_grf, data_angles
+    return data_emg_filtered, data_torques, data_grf, data_angles
 
 
 def plot_comparisons(y_true, predictions, metrics):
@@ -160,7 +160,7 @@ if __name__ == '__main__':
 
     # Prepare the train data
     train_folder = 'data/train'
-    data_emg, data_torques, data_grf, data_angles = load_data(train_folder)
+    data_emg_filtered, data_torques, data_grf, data_angles = load_data(train_folder)
 
     St = 'St1'
 
@@ -189,25 +189,25 @@ if __name__ == '__main__':
     # data_angles_columns = [St+'_Knee_X']
     data_angles_columns = [St+'_Knee_X']
 
-    data_emg = data_emg[data_emg_columns]
+    data_emg_filtered = data_emg_filtered[data_emg_columns]
     data_torques = data_torques[data_torques_columns]
     data_grf = data_grf[data_grf_columns]
     data_angles = data_angles[data_angles_columns]
 
-    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
+    X = pd.concat([data_emg_filtered, data_torques, data_grf], axis=1) # Concatenate the input model data
     y = data_angles[data_angles_columns] # Get the target data
 
 
     # Prepare the test data
     test_folder = 'data/test'
-    data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
+    data_emg_filtered_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
 
-    data_emg_test = data_emg_test[data_emg_columns]
+    data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
     data_torques_test = data_torques_test[data_torques_columns]
     data_grf_test = data_grf_test[data_grf_columns]
     data_angles_test = data_angles_test[data_angles_columns]
 
-    X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
+    X_test = pd.concat([data_emg_filtered_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test[data_angles_columns] # Get the target data
 
     # Defining the models
@@ -283,7 +283,7 @@ if __name__ == '__main__':
     best_model = max(metrics, key=metrics.get)
 
     # Prepare the data to create the animation
-    emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
+    emg_anim = data_emg_filtered_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
 
     # Run a animation with the best model    
