@@ -81,7 +81,7 @@ def load_data(folder_path, train_files):
 
 # Função para treinar e validar o modelo
 def train_and_validate(train_files, val_file):
-    train_folder = 'data/train'
+    train_folder = 'data/P3'
     data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
 
     St = 'St1'
@@ -105,7 +105,7 @@ def train_and_validate(train_files, val_file):
     model.fit(X_train, y_train)
 
 
-    val_folder = 'data/train'
+    val_folder = 'data/P3'
     data_angles_val, data_emg_envelope_val, data_emg_filtered_val, data_grf_val, data_torques_val, data_torques_norm_val = load_data(val_folder, val_file)
 
     data_emg_envelope_val = data_emg_envelope_val[data_emg_columns]
@@ -129,7 +129,7 @@ def train_and_validate(train_files, val_file):
 # Função para testar o modelo
 def test_model(model, test_file):
     # Prepare the test data
-    test_folder = 'data/test'
+    test_folder = 'data/P3'
     data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_file)
 
     St = 'St1'
@@ -156,7 +156,7 @@ def test_model(model, test_file):
 
 if __name__ == '__main__':
     # Lista dos arquivos de dados
-    data_files = ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt']
+    data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
 
     # Validar deixando um arquivo de fora
     for i in range(len(data_files)):
@@ -166,5 +166,5 @@ if __name__ == '__main__':
         model = train_and_validate(train_files, val_file)
 
     # Testar com o arquivo T10.txt
-    print('\nTesting with T7.txt')
+    print('\nTesting with T10.txt')
     test_model(model, 'T10.txt')
