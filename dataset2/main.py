@@ -8,14 +8,10 @@ import matplotlib.pyplot as plt
 
 from output_filters import moving_average, smooth_spline, loess_smoothing, kalman_filter
 
-from scipy.signal import butter, filtfilt, iirnotch
 from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor, ExtraTreesRegressor
-from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge, SGDRegressor
-from sklearn.model_selection import train_test_split, cross_val_predict, KFold
-from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import ElasticNet, Lasso, Ridge
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, mean_absolute_percentage_error, r2_score
-from sklearn.preprocessing import PolynomialFeatures
 from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
