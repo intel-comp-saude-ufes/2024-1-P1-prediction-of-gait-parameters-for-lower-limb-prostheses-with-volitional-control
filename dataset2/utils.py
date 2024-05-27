@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+
 def load_data(folder_path, files_to_load):
     '''
     Function to load train/test data from a folder
@@ -30,15 +31,14 @@ def load_data(folder_path, files_to_load):
             if dir == 'Angles':
                 # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
-                    if file in files_to_load:
-                        if count_angles == 0:
+                    if file in files_to_load: # Check if the file is in the list of files to load
+                        if count_angles == 0: # If the data was not loaded yet
                             data_angles = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
                             count_angles += 1
                         else:
                             data_angles = pd.concat([data_angles, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'EMG envelope':
-                # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
                     if file in files_to_load:
                         if count_emg_envelope == 0:
@@ -48,7 +48,6 @@ def load_data(folder_path, files_to_load):
                             data_emg_envelope = pd.concat([data_emg_envelope, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'EMG filtered':
-                # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
                     if file in files_to_load:
                         if count_emg_filtered == 0:
@@ -58,7 +57,6 @@ def load_data(folder_path, files_to_load):
                             data_emg_filtered = pd.concat([data_emg_filtered, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'GRF':
-                # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
                     if file in files_to_load:
                         if count_grf == 0:
@@ -68,7 +66,6 @@ def load_data(folder_path, files_to_load):
                             data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'Torques':
-                # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
                     if file in files_to_load:
                         if count_torques == 0:
@@ -78,7 +75,6 @@ def load_data(folder_path, files_to_load):
                             data_torques = pd.concat([data_torques, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
 
             elif dir == 'Torques_Norm':
-                # Read the files inside this folder
                 for file in os.listdir(os.path.join(root, dir)):
                     if file in files_to_load:
                         if count_torques_norm == 0:

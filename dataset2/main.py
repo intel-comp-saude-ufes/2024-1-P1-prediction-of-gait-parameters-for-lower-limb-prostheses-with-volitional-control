@@ -1,7 +1,3 @@
-########################################################################################################################
-############################################## IMPORTS #################################################################
-########################################################################################################################
-import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,10 +20,6 @@ import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
 
 
-
-########################################################################################################################
-################################################## MAIN PROGRAM ########################################################
-########################################################################################################################
 if __name__ == '__main__':
     # Prepare the train data
     train_folder = 'data/P5'
@@ -61,6 +53,7 @@ if __name__ == '__main__':
     # data_angles_columns = [St+'_Knee_X']
     data_angles_columns = [St+'_Knee_X']
 
+    # Select the columns to use
     data_angles = data_angles[data_angles_columns]
     data_emg_envelope = data_emg_envelope[data_emg_columns]
     data_emg_filtered = data_emg_filtered[data_emg_columns]
@@ -68,9 +61,9 @@ if __name__ == '__main__':
     data_torques = data_torques[data_torques_columns]
     data_torques_norm = data_torques_norm[data_torques_columns]
 
-
-    X = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
-    y = data_angles # Get the target data
+    # Prepare the input and target to train the models
+    X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
+    y_train = data_angles # Get the target data
 
 
     # Prepare the test data
@@ -78,6 +71,7 @@ if __name__ == '__main__':
     test_files = ['T10.txt']
     data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
+    # Select the columns to use
     data_angles_test = data_angles_test[data_angles_columns]
     data_emg_envelope_test = data_emg_envelope_test[data_emg_columns]
     data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
@@ -85,6 +79,7 @@ if __name__ == '__main__':
     data_torques_test = data_torques_test[data_torques_columns]
     data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
+    # Prepare the input and target to test the models
     X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test # Get the target data
 
@@ -128,7 +123,7 @@ if __name__ == '__main__':
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
 
-        model.fit(X, y)
+        model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
 
         # applyng smoth filter

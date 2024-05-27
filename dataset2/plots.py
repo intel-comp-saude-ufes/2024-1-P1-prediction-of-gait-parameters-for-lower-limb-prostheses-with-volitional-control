@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def plot_comparisons(y_true, predictions, metrics):
     '''
     Function to plot the comparison between the real values and the predicted values
