@@ -211,10 +211,10 @@ if __name__ == '__main__':
     # data_angles_columns = [St+'_Knee_X']
     data_angles_columns = [St+'_Knee_X']
 
+    data_angles = data_angles[data_angles_columns]
     data_emg_envelope = data_emg_envelope[data_emg_columns]
     data_emg_filtered = data_emg_filtered[data_emg_columns]
     data_grf = data_grf[data_grf_columns]
-    data_angles = data_angles[data_angles_columns]
     data_torques = data_torques[data_torques_columns]
     data_torques_norm = data_torques_norm[data_torques_columns]
 
@@ -227,10 +227,10 @@ if __name__ == '__main__':
     test_folder = 'data/test'
     data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder)
 
+    data_angles_test = data_angles_test[data_angles_columns]
     data_emg_envelope_test = data_emg_envelope_test[data_emg_columns]
     data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
     data_grf_test = data_grf_test[data_grf_columns]
-    data_angles_test = data_angles_test[data_angles_columns]
     data_torques_test = data_torques_test[data_torques_columns]
     data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
