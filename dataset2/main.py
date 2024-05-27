@@ -26,6 +26,10 @@ from xgboost import XGBRegressor
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
 
+from animation import create_animation
+
+
+
 ########################################################################################################################
 ############################################## DEFINING FUNCTIONS ######################################################
 ########################################################################################################################
@@ -118,7 +122,8 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.tight_layout()
     plt.show()
 
-#curve smoothing functions
+
+# Curve smoothing functions
 def moving_average(y_pred, window_size=5):
     y_pred = np.ravel(y_pred)
     pad_size = window_size // 2
@@ -144,6 +149,8 @@ def kalman_filter(y_pred):
     kf = KalmanFilter(initial_state_mean=0, n_dim_obs=1)
     state_means, _ = kf.smooth(y_pred)
     return state_means.flatten()
+
+
 
 ########################################################################################################################
 ################################################## MAIN PROGRAM ########################################################
@@ -187,17 +194,21 @@ if __name__ == '__main__':
     data_grf = data_grf[data_grf_columns]
     data_angles = data_angles[data_angles_columns]
 
-    X = pd.concat([data_emg, data_torques, data_grf], axis=1)   # Concatenate the input model data
-    y = data_angles[data_angles_columns]                        # Get the target data
+    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
+    y = data_angles[data_angles_columns] # Get the target data
+
 
     # Prepare the test data
     test_folder = 'data/test'
     data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
-    X_test = pd.concat([data_emg_test[data_emg_columns],            # Concatenate the input model data
-                        data_torques_test[data_torques_columns],
-                        data_grf_test[data_grf_columns]],
-                        axis=1)
-    y_test = data_angles_test[data_angles_columns]                  # Get the target data
+
+    data_emg_test = data_emg_test[data_emg_columns]
+    data_torques_test = data_torques_test[data_torques_columns]
+    data_grf_test = data_grf_test[data_grf_columns]
+    data_angles_test = data_angles_test[data_angles_columns]
+
+    X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
+    y_test = data_angles_test[data_angles_columns] # Get the target data
 
     # Defining the models
     models = {
@@ -238,6 +249,7 @@ if __name__ == '__main__':
     # Train and evaluate each model
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
+
         model.fit(X, y)
         y_pred = model.predict(X_test)
 
@@ -266,3 +278,13 @@ if __name__ == '__main__':
         print() # Blank line
 
     plot_comparisons(y_test, predictions, metrics)
+
+    # Finding the best model
+    best_model = max(metrics, key=metrics.get)
+
+    # Prepare the data to create the animation
+    emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
+    y_test_anim = y_test.to_numpy().ravel()
+
+    # Run a animation with the best model    
+    create_animation(emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
