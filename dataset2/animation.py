@@ -1,65 +1,64 @@
-# TODO: Put comments in English
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-# Função para atualizar a animação a cada quadro
+
+# Function to update the animation every frame
 def update(frame, emg_data, y_true, y_pred, lines):
-    # Atualizar as linhas da perna verdadeira
-    update_leg(lines['true_leg'], y_true[frame])
-    # Atualizar as linhas da perna predita
-    update_leg(lines['pred_leg'], y_pred[frame])
-    # Atualizar os sinais EMG
-    lines['emg'].set_data(np.arange(frame + 1), emg_data[:frame + 1])
-    # Retornar a lista de objetos atualizados
-    return lines['true_leg'], lines['pred_leg'], lines['emg']
+    update_leg(lines['true_leg'], y_true[frame]) # Update true leg lines
+    update_leg(lines['pred_leg'], y_pred[frame]) # Update predicted leg lines
+    lines['emg'].set_data(np.arange(frame + 1), emg_data[:frame + 1]) # Update EMG data
+    return lines['true_leg'], lines['pred_leg'], lines['emg'] # Return the updated lines
 
-# FIXME: Make leg stop to increase when knee angle is increasing
-# Função para atualizar os segmentos da perna
+
+# Function to update leg segments
 def update_leg(line, knee_angle):
-    hip = np.array([0, 0])
-    knee = hip + np.array([0, -1])  # Joelho sempre 1 unidade abaixo do quadril
+    hip = np.array([0, 0]) # Hip is always at the origin
+    knee = hip + np.array([0, -1]) # Knee always 1 unit below the hip
     ankle = knee + np.array([np.sin(np.deg2rad(-knee_angle)), -np.cos(np.deg2rad(-knee_angle))])
+    # FIXME: Make leg stop to increase when knee angle is increasing
 
-    foot = ankle + np.array([0.05, 0])  # O pé é representado como uma linha horizontal de 0.05 unidade
+    # The foot is represented as a horizontal line of 0.05 units
+    foot = ankle + np.array([0.05, 0]) 
 
-    # Atualiza os dados da linha
+    # Update row data
     line.set_data([hip[0], knee[0], ankle[0], foot[0]], [hip[1], knee[1], ankle[1], foot[1]])
 
-# Função principal para criar a animação
-def create_animation(emg_data, y_true, y_pred):
-    # Verificar se os arrays têm o mesmo comprimento
+
+# Main function to create the animation
+def create_animation(best_model, emg_data, y_true, y_pred):
+    # Check if arrays have the same length
     if len(y_true) != len(y_pred) or len(y_true) != len(emg_data):
-        raise ValueError("Os arrays y_true, y_pred e emg_data devem ter o mesmo comprimento.")
+        raise ValueError("The y_true, y_pred and emg_data arrays must have the same length.")
 
-    frames = len(y_true)
+    frames = len(y_true) # The number of frames is the length of the y_true array (samples)
 
-    # Criar a figura e os eixos
+    # Create the figure and axes
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
 
-    # Configurar o gráfico das pernas
-    ax1.set_xlim(-1, 2)  # Ajuste dos limites do eixo x
-    ax1.set_ylim(-3, 1)  # Ajuste dos limites do eixo y
+    # Configure the leg chart
+    ax1.set_xlim(-1, 2)
+    ax1.set_ylim(-3, 1)
     true_leg, = ax1.plot([], [], 'b-', lw=2, label='Real')
     pred_leg, = ax1.plot([], [], 'r--', lw=2, label='Predito')
     ax1.legend()
 
-    # Configurar o gráfico de sinais EMG
+    # Configure the EMG signal graph
     ax2.set_xlim(0, frames)
-    ax2.set_ylim(-np.max(emg_data) * 1.1, np.max(emg_data) * 1.1)  # Adicionar margem superior para EMG
+    ax2.set_ylim(-1, np.max(emg_data) * 1.1) # Add top margin for EMG
     emg_line, = ax2.plot([], [], 'g-')
 
-    # Dicionário para passar as linhas para a função de atualização
+    # Dictionary to pass the lines to the update function
     lines = {'true_leg': true_leg, 'pred_leg': pred_leg, 'emg': emg_line}
 
-    # Criar a animação
+    # Create the animation
     anim = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, y_true, y_pred, lines), interval=5)
 
-    # Mostrar a animação
+    plt.suptitle(f'Prediction of angle of knee joint with {best_model}')
     plt.show()
 
-# Exemplo de como chamar a função com dados gerados
+
+# Example of how to call the function with random data
 if __name__ == "__main__":
     # Gerar dados de exemplo (substitua pelos seus dados reais)
     frames = 1001

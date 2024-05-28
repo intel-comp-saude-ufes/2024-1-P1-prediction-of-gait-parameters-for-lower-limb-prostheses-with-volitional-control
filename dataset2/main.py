@@ -1,23 +1,16 @@
-########################################################################################################################
-############################################## IMPORTS #################################################################
-########################################################################################################################
-import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import scipy.interpolate as interp
-from statsmodels.nonparametric.smoothers_lowess import lowess
-from pykalman import KalmanFilter
+from output_filters import moving_average, smooth_spline, loess_smoothing, kalman_filter
+from utils import load_data
+from plots import plot_comparisons
+from animation import create_animation
 
-from scipy.signal import butter, filtfilt, iirnotch
 from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor, ExtraTreesRegressor
-from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge, SGDRegressor
-from sklearn.model_selection import train_test_split, cross_val_predict, KFold
-from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import ElasticNet, Lasso, Ridge
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, mean_absolute_percentage_error, r2_score
-from sklearn.preprocessing import PolynomialFeatures
 from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
@@ -26,141 +19,12 @@ from xgboost import XGBRegressor
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
 
-from animation import create_animation
-
-
-
-########################################################################################################################
-############################################## DEFINING FUNCTIONS ######################################################
-########################################################################################################################
-
-def load_data(folder_path):
-    '''
-    Function to load train/test data from a folder
-
-    INPUT:
-        folder_path (str): Path to the folder containing the train/test data
-
-    OUTPUT:
-        data_emg (pd.DataFrame): EMG data
-        data_torques (pd.DataFrame): Torques data
-        data_grf (pd.DataFrame): GRF data
-        data_angles (pd.DataFrame): Angles data
-    '''
-
-    # Counters to check if the data was already loaded at least once or nots
-    count_emg = 0
-    count_torques = 0
-    count_grf = 0
-    count_angles = 0
-
-    for root, dirs, files in os.walk(folder_path):
-        for dir in dirs:
-            if dir == 'Angles':
-                # Read the files inside this folder
-                for file in os.listdir(os.path.join(root, dir)):
-                    if count_angles == 0:
-                        data_angles = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_angles += 1
-                    else:
-                        data_angles = pd.concat([data_angles, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-
-            elif dir == 'EMG filtered':
-                # Read the files inside this folder
-                for file in os.listdir(os.path.join(root, dir)):
-                    if count_emg == 0:
-                        data_emg = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_emg += 1
-                    else:
-                        data_emg = pd.concat([data_emg, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-
-            elif dir == 'Torques':
-                # Read the files inside this folder
-                for file in os.listdir(os.path.join(root, dir)):
-                    if count_torques == 0:
-                        data_torques = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_torques += 1
-                    else:
-                        data_torques = pd.concat([data_torques, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-
-            elif dir == 'GRF':
-                # Read the files inside this folder
-                for file in os.listdir(os.path.join(root, dir)):
-                    if count_grf == 0:
-                        data_grf = pd.read_csv(os.path.join(root, dir, file), delimiter='\t')
-                        count_grf += 1
-                    else:
-                        data_grf = pd.concat([data_grf, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
-            
-    return data_emg, data_torques, data_grf, data_angles
-
-
-def plot_comparisons(y_true, predictions, metrics):
-    '''
-    Function to plot the comparison between the real values and the predicted values
-
-    INPUT:
-        y_true (pd.Series): Real values
-        predictions (dict): Dictionary containing the predictions of each model
-        metrics (dict): Dictionary containing the R^2 score of each model
-
-    OUTPUT:
-        None
-    '''
-
-    plt.figure(figsize=(18, 10))
-    
-    for i, (model_name, y_pred) in enumerate(predictions.items(), 1):
-        plt.subplot(6, 2, i)
-        plt.plot(range(len(y_true)), y_true, label='Real', color='blue')
-        plt.plot(range(len(y_pred)), y_pred, label=model_name, linestyle='dashed', color='red')
-        plt.xlabel('Samples')
-        plt.ylabel('Knee Ang (Deg)')
-        plt.legend()
-        plt.title(f'{model_name} - R^2 Score: {metrics[model_name]:.2f}')
-    
-    plt.tight_layout()
-    plt.show()
-
-
-# Curve smoothing functions
-def moving_average(y_pred, window_size=5):
-    y_pred = np.ravel(y_pred)
-    pad_size = window_size // 2
-    y_padded = np.pad(y_pred, pad_size, mode='edge')
-    y_smooth = np.convolve(y_padded, np.ones(window_size)/window_size, mode='same')
-    return y_smooth[pad_size:-pad_size]
-
-def smooth_spline(y_pred, s=1):
-    y_pred = np.ravel(y_pred)
-    x = np.arange(len(y_pred))
-    spline = interp.UnivariateSpline(x, y_pred, k=1, s=s)
-    return spline(x)
-
-def loess_smoothing(y_pred, frac=0.2):
-    y_pred = np.ravel(y_pred)
-    x = np.arange(len(y_pred))
-    loess_result = lowess(y_pred, x, frac=frac)
-    y_smooth = np.interp(x, loess_result[:, 0], loess_result[:, 1])
-    return y_smooth
-
-def kalman_filter(y_pred):
-    y_pred = np.ravel(y_pred)
-    kf = KalmanFilter(initial_state_mean=0, n_dim_obs=1)
-    state_means, _ = kf.smooth(y_pred)
-    return state_means.flatten()
-
-
-
-########################################################################################################################
-################################################## MAIN PROGRAM ########################################################
-########################################################################################################################
 
 if __name__ == '__main__':
-
     # Prepare the train data
-    train_folder = 'data/train'
-    data_emg, data_torques, data_grf, data_angles = load_data(train_folder)
+    train_folder = 'data/P5'
+    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
+    data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
 
     St = 'St1'
 
@@ -189,26 +53,35 @@ if __name__ == '__main__':
     # data_angles_columns = [St+'_Knee_X']
     data_angles_columns = [St+'_Knee_X']
 
-    data_emg = data_emg[data_emg_columns]
-    data_torques = data_torques[data_torques_columns]
-    data_grf = data_grf[data_grf_columns]
+    # Select the columns to use
     data_angles = data_angles[data_angles_columns]
+    data_emg_envelope = data_emg_envelope[data_emg_columns]
+    data_emg_filtered = data_emg_filtered[data_emg_columns]
+    data_grf = data_grf[data_grf_columns]
+    data_torques = data_torques[data_torques_columns]
+    data_torques_norm = data_torques_norm[data_torques_columns]
 
-    X = pd.concat([data_emg, data_torques, data_grf], axis=1) # Concatenate the input model data
-    y = data_angles[data_angles_columns] # Get the target data
+    # Prepare the input and target to train the models
+    X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
+    y_train = data_angles # Get the target data
 
 
     # Prepare the test data
-    test_folder = 'data/test'
-    data_emg_test, data_torques_test, data_grf_test, data_angles_test = load_data(test_folder)
+    test_folder = 'data/P5'
+    test_files = ['T10.txt']
+    data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
-    data_emg_test = data_emg_test[data_emg_columns]
-    data_torques_test = data_torques_test[data_torques_columns]
-    data_grf_test = data_grf_test[data_grf_columns]
+    # Select the columns to use
     data_angles_test = data_angles_test[data_angles_columns]
+    data_emg_envelope_test = data_emg_envelope_test[data_emg_columns]
+    data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
+    data_grf_test = data_grf_test[data_grf_columns]
+    data_torques_test = data_torques_test[data_torques_columns]
+    data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
-    X_test = pd.concat([data_emg_test, data_torques_test, data_grf_test], axis=1) # Concatenate the input model data
-    y_test = data_angles_test[data_angles_columns] # Get the target data
+    # Prepare the input and target to test the models
+    X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
+    y_test = data_angles_test # Get the target data
 
     # Defining the models
     models = {
@@ -250,7 +123,7 @@ if __name__ == '__main__':
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
 
-        model.fit(X, y)
+        model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
 
         # applyng smoth filter
@@ -283,8 +156,8 @@ if __name__ == '__main__':
     best_model = max(metrics, key=metrics.get)
 
     # Prepare the data to create the animation
-    emg_anim = data_emg_test['St1_BF'].to_numpy().reshape(-1, 1)
+    emg_anim = data_emg_envelope_test['St1_BF'].to_numpy().reshape(-1, 1)
     y_test_anim = y_test.to_numpy().ravel()
 
     # Run a animation with the best model    
-    create_animation(emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
+    create_animation(best_model, emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
