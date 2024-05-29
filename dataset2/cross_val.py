@@ -39,10 +39,6 @@ def train_and_validate(data_path, train_files, val_file):
     X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
     y_train = data_angles # Get the target data
 
-    # Train the model
-    model = XGBRegressor()
-    model.fit(X_train, y_train)
-
     # Load the validation data
     data_angles_val, data_emg_envelope_val, data_emg_filtered_val, data_grf_val, data_torques_val, data_torques_norm_val = load_data(data_path, val_file)
 
@@ -58,18 +54,11 @@ def train_and_validate(data_path, train_files, val_file):
     X_val = pd.concat([data_emg_envelope_val], axis=1)
     y_val = data_angles_val
 
-    # Validate the model
-    y_val_pred = model.predict(X_val)
-    r2 = r2_score(y_val, y_val_pred)
-    print(f'Validation r2 for {val_file}: {r2}')
-
     # Use lazy predict to get a holistc view about the result of a lot os models
     lazy_model = LazyRegressor()
     models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
     print(models_lazy)
     
-    return model
-
 
 if __name__ == '__main__':
     # Define the data path and files
@@ -81,4 +70,4 @@ if __name__ == '__main__':
         train_files = [f for j, f in enumerate(data_files) if j != i]
         val_file = data_files[i]
         print(f'\nTraining with {train_files}, validating with {val_file}')
-        model = train_and_validate(data_path, train_files, val_file)
+        train_and_validate(data_path, train_files, val_file)
