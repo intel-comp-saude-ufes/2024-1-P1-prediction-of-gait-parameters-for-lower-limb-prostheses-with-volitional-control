@@ -16,6 +16,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
 from xgboost import XGBRegressor
 from sklearn.ensemble import VotingRegressor
+from sklearn.model_selection import GridSearchCV
 
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
@@ -112,11 +113,11 @@ if __name__ == '__main__':
         'XGBRegressor' : XGBRegressor()
     }
 
-    # Create the voting regressor based on the models
+    # Create the voting regressor based on some of the models
     voting_reg = VotingRegressor(estimators=[('KNN', models['KNN']), ('Decision Tree', models['Decision Tree']), ('SVM', models['SVM']), ('Ridge', models['Ridge']), ('Lasso', models['Lasso']), ('ElasticNet', models['ElasticNet']), ('MLP Regressor', models['MLP Regressor']), ('XGBRegressor', models['XGBRegressor'])])
 
     # Add the voting regressor to the models
-    models['Voting Regressor'] = voting_reg 
+    models['Voting Regressor'] = voting_reg
 
     # Dictionary to store the predictions and metrics to plot after
     predictions = {}
@@ -164,8 +165,7 @@ if __name__ == '__main__':
     best_model = max(metrics, key=metrics.get)
 
     # Prepare the data to create the animation
-    # Prepare all EMG signals
-    emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns}
+    emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns} # Prepare all EMG signals
     y_test_anim = y_test.to_numpy().ravel()
     y_test_anim = loess_smoothing(y_test_anim, frac=0.09)
 
