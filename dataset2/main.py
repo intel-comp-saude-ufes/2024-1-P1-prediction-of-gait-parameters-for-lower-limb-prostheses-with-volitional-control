@@ -23,7 +23,6 @@ from lazypredict.Supervised import LazyRegressor
 if __name__ == '__main__':
     # Prepare the train data
     train_folder = 'data/P5'
-    # train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
     train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
     data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
 
@@ -35,7 +34,7 @@ if __name__ == '__main__':
     St = 'St1'
 
     # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
-    data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+    data_emg_columns = [St+'_VL', St+'_BF']
     # data_emg_columns = [St+'_VL', St+'_BF']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
