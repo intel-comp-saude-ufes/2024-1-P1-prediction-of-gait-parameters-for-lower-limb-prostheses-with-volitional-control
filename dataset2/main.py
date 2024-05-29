@@ -15,6 +15,8 @@ from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
 from xgboost import XGBRegressor
+from sklearn.ensemble import VotingRegressor
+from sklearn.model_selection import GridSearchCV
 
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
@@ -23,19 +25,20 @@ from lazypredict.Supervised import LazyRegressor
 if __name__ == '__main__':
     # Prepare the train data
     train_folder = 'data/P5'
-    # train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
     train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
-    data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
+    metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
+    print(metadata)
+    print("\n")
 
     # Prepare the test data
     test_folder = 'data/P5'
     test_files = ['T10.txt']
-    data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
+    metadata_test, data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
     St = 'St1'
 
     # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
-    data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+    data_emg_columns = [St+'_VL', St+'_BF']
     # data_emg_columns = [St+'_VL', St+'_BF']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
@@ -110,6 +113,12 @@ if __name__ == '__main__':
         'XGBRegressor' : XGBRegressor()
     }
 
+    # Create the voting regressor based on some of the models
+    voting_reg = VotingRegressor(estimators=[('KNN', models['KNN']), ('Decision Tree', models['Decision Tree']), ('SVM', models['SVM']), ('Ridge', models['Ridge']), ('Lasso', models['Lasso']), ('ElasticNet', models['ElasticNet']), ('MLP Regressor', models['MLP Regressor']), ('XGBRegressor', models['XGBRegressor'])])
+
+    # Add the voting regressor to the models
+    models['Voting Regressor'] = voting_reg
+
     # Dictionary to store the predictions and metrics to plot after
     predictions = {}
     metrics = {}
@@ -156,8 +165,7 @@ if __name__ == '__main__':
     best_model = max(metrics, key=metrics.get)
 
     # Prepare the data to create the animation
-    # Prepare all EMG signals
-    emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns}
+    emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns} # Prepare all EMG signals
     y_test_anim = y_test.to_numpy().ravel()
     y_test_anim = loess_smoothing(y_test_anim, frac=0.09)
 

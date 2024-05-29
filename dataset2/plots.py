@@ -17,7 +17,7 @@ def plot_comparisons(y_true, predictions, metrics):
     plt.figure(figsize=(18, 10))
     
     for i, (model_name, y_pred) in enumerate(predictions.items(), 1):
-        plt.subplot(6, 2, i)
+        plt.subplot(6, 3, i)
         plt.plot(range(len(y_true)), y_true, label='Real', color='blue')
         plt.plot(range(len(y_pred)), y_pred, label=model_name, linestyle='dashed', color='red')
         plt.xlabel('Samples')
