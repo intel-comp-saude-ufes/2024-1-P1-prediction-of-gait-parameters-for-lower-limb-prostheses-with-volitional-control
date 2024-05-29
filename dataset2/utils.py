@@ -10,6 +10,7 @@ def load_data(folder_path, files_to_load):
         folder_path (str): Path to the folder containing the train/test data
 
     OUTPUT:
+
         data_angles (pd.DataFrame): Angles data
         data_emg_envelope (pd.DataFrame): EMG envelope data
         data_emg_filtered (pd.DataFrame): EMG filtered data
@@ -27,6 +28,8 @@ def load_data(folder_path, files_to_load):
     count_torques_norm = 0
 
     for root, dirs, files in os.walk(folder_path):
+        metadata = pd.read_csv(f'{folder_path}/Metadata.txt', delimiter='\t') 
+        
         for dir in dirs:
             if dir == 'Angles':
                 # Read the files inside this folder
@@ -83,4 +86,4 @@ def load_data(folder_path, files_to_load):
                         else:
                             data_torques_norm = pd.concat([data_torques_norm, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
             
-    return data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm
+    return metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm
