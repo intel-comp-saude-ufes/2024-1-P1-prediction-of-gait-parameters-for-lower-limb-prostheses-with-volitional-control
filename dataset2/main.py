@@ -15,6 +15,7 @@ from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neural_network import MLPRegressor
 from xgboost import XGBRegressor
+from sklearn.ensemble import VotingRegressor
 
 import seaborn as sns
 from lazypredict.Supervised import LazyRegressor
@@ -25,6 +26,8 @@ if __name__ == '__main__':
     train_folder = 'data/P5'
     train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
     metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
+    print(metadata)
+    print("\n")
 
     # Prepare the test data
     test_folder = 'data/P5'
@@ -108,6 +111,12 @@ if __name__ == '__main__':
 
         'XGBRegressor' : XGBRegressor()
     }
+
+    # Create the voting regressor based on the models
+    voting_reg = VotingRegressor(estimators=[('KNN', models['KNN']), ('Decision Tree', models['Decision Tree']), ('SVM', models['SVM']), ('Ridge', models['Ridge']), ('Lasso', models['Lasso']), ('ElasticNet', models['ElasticNet']), ('MLP Regressor', models['MLP Regressor']), ('XGBRegressor', models['XGBRegressor'])])
+
+    # Add the voting regressor to the models
+    models['Voting Regressor'] = voting_reg 
 
     # Dictionary to store the predictions and metrics to plot after
     predictions = {}
