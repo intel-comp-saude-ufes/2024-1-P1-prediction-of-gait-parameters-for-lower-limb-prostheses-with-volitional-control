@@ -22,29 +22,35 @@ from lazypredict.Supervised import LazyRegressor
 
 if __name__ == '__main__':
     # Prepare the train data
-    train_folder = 'data/P5'
-    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
+    train_folder = 'data/P1'
+    # train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
+    train_files = ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt']
     data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
+
+    # Prepare the test data
+    test_folder = 'data/P1'
+    test_files = ['T10.txt']
+    data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
     St = 'St1'
 
     # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
-    # data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
-    data_emg_columns = [St+'_VL', St+'_BF']
+    data_emg_columns = [St+'_VL', St+'_BF', St+'_TA', St+'_GAL']
+    # data_emg_columns = [St+'_VL', St+'_BF']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z	    ...
     # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
     # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
-    # data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
-    #                         St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
-    #                         St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
-    #                         St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
-    data_torques_columns = [St+'_Knee_X']
+    data_torques_columns = [St+'_Pelvis_X', St+'_Pelvis_Y', St+'_Pelvis_Z',
+                            St+'_Hip_X',    St+'_Hip_Y',    St+'_Hip_Z',
+                            St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
+                            St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
+    # data_torques_columns = [St+'_Knee_X']
     
     # St1_GRF_X	    St1_GRF_Y	    St1_GRF_Z	    St2_GRF_X	    t2_GRF_Y	    St2_GRF_Z
-    # data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
-    data_grf_columns = [St+'_GRF_X']
+    data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
+    # data_grf_columns = [St+'_GRF_X']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z       ...   
@@ -65,13 +71,7 @@ if __name__ == '__main__':
     X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
     y_train = data_angles # Get the target data
 
-
-    # Prepare the test data
-    test_folder = 'data/P5'
-    test_files = ['T10.txt']
-    data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
-
-    # Select the columns to use
+    # Select the columns to use to test
     data_angles_test = data_angles_test[data_angles_columns]
     data_emg_envelope_test = data_emg_envelope_test[data_emg_columns]
     data_emg_filtered_test = data_emg_filtered_test[data_emg_columns]
@@ -156,8 +156,10 @@ if __name__ == '__main__':
     best_model = max(metrics, key=metrics.get)
 
     # Prepare the data to create the animation
-    emg_anim = data_emg_envelope_test['St1_BF'].to_numpy().reshape(-1, 1)
+    # Prepare all EMG signals
+    emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns}
     y_test_anim = y_test.to_numpy().ravel()
+    y_test_anim = loess_smoothing(y_test_anim, frac=0.09)
 
-    # Run a animation with the best model    
-    create_animation(best_model, emg_anim, y_test.to_numpy().flatten(), predictions[best_model].flatten())
+    # Run the animation with the best model    
+    create_animation(best_model, emg_anim, y_test_anim, predictions[best_model].flatten())

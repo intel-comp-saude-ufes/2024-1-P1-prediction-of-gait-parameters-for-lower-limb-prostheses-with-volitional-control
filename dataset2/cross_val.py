@@ -2,6 +2,7 @@ import pandas as pd
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
 from utils import load_data
+from lazypredict.Supervised import LazyRegressor
     
 
 def train_and_validate(data_path, train_files, val_file):
@@ -61,6 +62,11 @@ def train_and_validate(data_path, train_files, val_file):
     y_val_pred = model.predict(X_val)
     r2 = r2_score(y_val, y_val_pred)
     print(f'Validation r2 for {val_file}: {r2}')
+
+    # Use lazy predict to get a holistc view about the result of a lot os models
+    lazy_model = LazyRegressor()
+    models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
+    print(models_lazy)
     
     return model
 
