@@ -10,7 +10,7 @@ def load_data(folder_path, files_to_load):
         folder_path (str): Path to the folder containing the train/test data
 
     OUTPUT:
-
+        metadata (pd.DataFrame): Pacient info data
         data_angles (pd.DataFrame): Angles data
         data_emg_envelope (pd.DataFrame): EMG envelope data
         data_emg_filtered (pd.DataFrame): EMG filtered data
