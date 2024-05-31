@@ -1,3 +1,4 @@
+from itertools import combinations
 import pandas as pd
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
@@ -19,7 +20,7 @@ def train_and_validate(data_path, train_files, val_file):
     '''
 
     # Load the data
-    data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(data_path, train_files)
+    metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(data_path, train_files)
 
     St = 'St1'
     data_angles_columns = [St+'_Knee_X']
@@ -40,7 +41,7 @@ def train_and_validate(data_path, train_files, val_file):
     y_train = data_angles # Get the target data
 
     # Load the validation data
-    data_angles_val, data_emg_envelope_val, data_emg_filtered_val, data_grf_val, data_torques_val, data_torques_norm_val = load_data(data_path, val_file)
+    metadata_val, data_angles_val, data_emg_envelope_val, data_emg_filtered_val, data_grf_val, data_torques_val, data_torques_norm_val = load_data(data_path, val_file)
 
     # Select the columns to use
     data_angles_val = data_angles_val[data_angles_columns]
@@ -55,9 +56,9 @@ def train_and_validate(data_path, train_files, val_file):
     y_val = data_angles_val
 
     # Use lazy predict to get a holistc view about the result of a lot os models
-    lazy_model = LazyRegressor()
-    models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
-    print(models_lazy)
+    # lazy_model = LazyRegressor()
+    # models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
+    # print(models_lazy)
     
 
 if __name__ == '__main__':
@@ -65,9 +66,11 @@ if __name__ == '__main__':
     data_path = 'data/P5'
     data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
 
-    # Validate by leaving a file out
-    for i in range(len(data_files)):
-        train_files = [f for j, f in enumerate(data_files) if j != i]
-        val_file = data_files[i]
-        print(f'\nTraining with {train_files}, validating with {val_file}')
-        train_and_validate(data_path, train_files, val_file)
+    n = 1 # Number of files used for validation
+
+    # Train the model lefting n files for validation
+    comb = combinations(data_files, n)
+    for val_files in comb:
+        train_files = [f for f in data_files if f not in val_files]
+        print(f'\nTraining with {train_files}, validating with {val_files}')
+        model = train_and_validate(data_path, train_files, val_files)
