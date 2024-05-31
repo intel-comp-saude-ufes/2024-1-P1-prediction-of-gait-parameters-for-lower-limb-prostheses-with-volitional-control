@@ -6,17 +6,17 @@ from utils import load_data
 from lazypredict.Supervised import LazyRegressor
     
 
-def train_and_validate(data_path, train_files, val_file):
+def train_and_validate_files(data_path, train_files, val_file):
     '''
-    Function to train a model and validate it with a validation file
+    Function to train a model and validate it with validation files
 
     INPUT:
         data_path (str): Path to the data folder
-        train_files (list): List of files to use for training
-        val_file (str): File to use for validation
+        train_files (list): Files to use for training
+        val_file (str): Files to use for validation
 
     OUTPUT:
-        model (XGBRegressor): Trained model
+        best_model (Model): Best model to use
     '''
 
     # Load the data
@@ -56,9 +56,13 @@ def train_and_validate(data_path, train_files, val_file):
     y_val = data_angles_val
 
     # Use lazy predict to get a holistc view about the result of a lot os models
-    # lazy_model = LazyRegressor()
-    # models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
-    # print(models_lazy)
+    lazy_model = LazyRegressor()
+    models_lazy, predictions_lazy = lazy_model.fit(X_train, X_val, y_train, y_val)
+    print(models_lazy)
+
+    # Find the best model
+    best_model = models_lazy['R2'].idxmax()
+    return best_model
     
 
 if __name__ == '__main__':
@@ -73,4 +77,4 @@ if __name__ == '__main__':
     for val_files in comb:
         train_files = [f for f in data_files if f not in val_files]
         print(f'\nTraining with {train_files}, validating with {val_files}')
-        model = train_and_validate(data_path, train_files, val_files)
+        model = train_and_validate_files(data_path, train_files, val_files)
