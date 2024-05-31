@@ -24,22 +24,22 @@ from lazypredict.Supervised import LazyRegressor
 
 if __name__ == '__main__':
     # Prepare the train data
-    train_folder = 'data/P5'
-    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
+    train_folder = 'data/P1'
+    train_files = ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt']
     metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
     print(metadata)
     print("\n")
 
     # Prepare the test data
-    test_folder = 'data/P5'
+    test_folder = 'data/P1'
     test_files = ['T10.txt']
     metadata_test, data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
     St = 'St1'
 
     # St1_VL	St2_VL	St1_BF	St2_BF	St1_TA	St2_TA	St1_GAL	St2_GAL
+    # data_emg_columns = [St+'_VL', St+'_BF', , St+'_TA', , St+'_GAL']
     data_emg_columns = [St+'_VL', St+'_BF']
-    # data_emg_columns = [St+'_VL', St+'_BF']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z	    ...
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     }
 
     # Create the voting regressor based on some of the models
-    voting_reg = VotingRegressor(estimators=[('KNN', models['KNN']), ('Decision Tree', models['Decision Tree']), ('SVM', models['SVM']), ('Ridge', models['Ridge']), ('Lasso', models['Lasso']), ('ElasticNet', models['ElasticNet']), ('MLP Regressor', models['MLP Regressor']), ('XGBRegressor', models['XGBRegressor'])])
+    voting_reg = VotingRegressor(estimators=[ ('Random Forest', models['Random Forest']), ('MLP Regressor', models['MLP Regressor']), ('XGBRegressor', models['XGBRegressor'])])
 
     # Add the voting regressor to the models
     models['Voting Regressor'] = voting_reg
@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
     # Use lazy predict to get a holistc view about the result of a lot os models
     # lazy_model = LazyRegressor()
-    # models_lazy, predictions_lazy = lazy_model.fit(X, X_test, y, y_test)
+    # models_lazy, predictions_lazy = lazy_model.fit(X_train, X_test, y_train, y_test)
     # print(models_lazy)
 
     # Train and evaluate each model
