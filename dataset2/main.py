@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.discriminant_analysis import StandardScaler
+from sklearn.pipeline import Pipeline
 
 from output_filters import moving_average, smooth_spline, loess_smoothing, kalman_filter
 from utils import load_data
@@ -132,8 +134,10 @@ if __name__ == '__main__':
     for model_name, model in models.items():
         print(f"Training and evaluating {model_name}")
 
-        model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
+        pipeline = Pipeline([('scaler', StandardScaler()), ('model', model)])
+
+        pipeline.fit(X_train, y_train)
+        y_pred = pipeline.predict(X_test)
 
         # applyng smoth filter
         # y_pred = moving_average(y_pred, window_size=75)
