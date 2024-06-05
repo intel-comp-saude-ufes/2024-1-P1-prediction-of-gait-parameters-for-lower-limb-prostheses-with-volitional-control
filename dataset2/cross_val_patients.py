@@ -194,7 +194,8 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
 if __name__ == '__main__':
     # Define the data path and patients
     data_path = 'data'
-    data_patients = ['P1', 'P2', 'P3', 'P4', 'P5', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16']
+    # data_patients = ['P1', 'P2', 'P3', 'P4', 'P5', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16']
+    data_patients = ['P1', 'P2', 'P3']
 
     n = 1 # Number of patients used for validation
 
