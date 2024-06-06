@@ -148,8 +148,8 @@ def train_and_validate_files(data_path, train_files, val_file):
 
 if __name__ == '__main__':
     # Define the data path and files
-    data_path = 'data/P9'
-    data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
+    data_path = 'data/P10'
+    data_files = ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
 
     n = 1 # Number of files used for validation
 
