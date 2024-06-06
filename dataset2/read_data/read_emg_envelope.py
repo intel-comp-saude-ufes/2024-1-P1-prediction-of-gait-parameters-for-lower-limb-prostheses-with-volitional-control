@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leia os dados do arquivo CSV
-data = pd.read_csv('data/test/P1/V1/R/EMG envelope/T10.txt', delimiter='\t')
+data = pd.read_csv('data/P16/V35/R/EMG filtered/T5.txt', delimiter='\t')
 
 colunas = data.columns
 qtd_colunas = len(colunas)
