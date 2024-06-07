@@ -26,14 +26,14 @@ from lazypredict.Supervised import LazyRegressor
 
 if __name__ == '__main__':
     # Prepare the train data
-    train_folder = 'data/P5'
+    train_folder = 'data/P16'
     train_files = ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
     metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
     print(metadata)
     print("\n")
 
     # Prepare the test data
-    test_folder = 'data/P5'
+    test_folder = 'data/P16'
     test_files = ['T1.txt']
     metadata_test, data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     data_torques_norm = data_torques_norm[data_torques_columns]
 
     # Prepare the input and target to train the models
-    X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
+    X_train = pd.concat([data_emg_envelope, data_grf], axis=1) # Concatenate the input model data
     y_train = data_angles # Get the target data
 
     # Select the columns to use to test
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
     # Prepare the input and target to test the models
-    X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
+    X_test = pd.concat([data_emg_envelope_test, data_grf_test], axis=1) # Concatenate the input model data
     y_test = data_angles_test # Get the target data
 
     # Defining the models
@@ -142,7 +142,7 @@ if __name__ == '__main__':
         # applyng smoth filter
         # y_pred = moving_average(y_pred, window_size=75)
         # y_pred = smooth_spline(y_pred)
-        # y_pred = loess_smoothing(y_pred, frac=0.09)
+        y_pred = loess_smoothing(y_pred, frac=0.09)
         # y_pred = kalman_filter(y_pred)
 
         predictions[model_name] = y_pred

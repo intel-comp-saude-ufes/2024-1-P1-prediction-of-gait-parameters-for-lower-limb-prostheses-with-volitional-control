@@ -62,7 +62,7 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
         St = 'St1'
         data_angles_columns = [St+'_Knee_X']
         data_emg_columns = [St+'_VL', St+'_BF']
-        data_grf_columns = [St+'_GRF_X']
+        data_grf_columns = [St+'_GRF_X', St+'_GRF_Y',St+'_GRF_Y']
         data_torques_columns = [St+'_Knee_X']
 
         # Select the columns to use
@@ -74,7 +74,7 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
         data_torques_norm = data_torques_norm[data_torques_columns]
 
         # Prepare the input and target to train the models
-        curr_X_train = pd.concat([data_emg_envelope], axis=1)
+        curr_X_train = pd.concat([data_emg_envelope, data_grf], axis=1)
         curr_y_train = data_angles
         
         # Concatenate the data of the patients
@@ -101,7 +101,7 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
         St = 'St1'
         data_angles_columns = [St+'_Knee_X']
         data_emg_columns = [St+'_VL', St+'_BF']
-        data_grf_columns = [St+'_GRF_X']
+        data_grf_columns = [St+'_GRF_X', St+'_GRF_Y',St+'_GRF_Y']
         data_torques_columns = [St+'_Knee_X']
 
         # Select the columns to use
@@ -113,7 +113,7 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
         data_torques_norm = data_torques_norm[data_torques_columns]
 
         # Prepare the input and target to train the models
-        curr_X_val = pd.concat([data_emg_envelope], axis=1)
+        curr_X_val = pd.concat([data_emg_envelope, data_grf], axis=1)
         curr_y_val = data_angles
         
         # Concatenate the data of the patients
@@ -195,7 +195,7 @@ if __name__ == '__main__':
     # Define the data path and patients
     data_path = 'data'
     # data_patients = ['P1', 'P2', 'P3', 'P4', 'P5', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16']
-    data_patients = ['P1', 'P2', 'P3']
+    data_patients = ['P1', 'P2', 'P3', 'P4', 'P5']
 
     n = 1 # Number of patients used for validation
 
