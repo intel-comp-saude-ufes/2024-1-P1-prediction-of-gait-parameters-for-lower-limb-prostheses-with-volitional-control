@@ -30,7 +30,7 @@ This repository contains code for analyzing Electromyography (EMG) signals and o
 
 ## Data Description
 <p align="center">
-  <img src="media/data-dir.png" />
+  <img src="media/under-development.png" />
 </p>
 
 The data used in this project consists of X, Y and Z. The dataset includes the following files:
