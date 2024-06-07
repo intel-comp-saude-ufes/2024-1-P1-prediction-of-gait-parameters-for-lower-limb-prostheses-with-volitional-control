@@ -1,5 +1,7 @@
 import os
+import numpy as np
 import pandas as pd
+from scipy.signal import butter, filtfilt, hilbert
 
 
 def load_data(folder_path, files_to_load):
@@ -87,3 +89,34 @@ def load_data(folder_path, files_to_load):
                             data_torques_norm = pd.concat([data_torques_norm, pd.read_csv(os.path.join(root, dir, file), delimiter='\t')], axis=0)
             
     return metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm
+
+
+def process_emg_signal(signal, lowcut=20.0, highcut=450.0, fs=1000.0, order=4):
+    '''
+    Function to process an EMG signal
+
+    INPUT:
+        signal (np.array): EMG signal
+        lowcut (float): Lowcut frequency
+        highcut (float): Highcut frequency
+        fs (float): Sampling frequency
+        order (int): Filter order
+
+    OUTPUT:
+        envelope (np.array): EMG envelope
+    '''
+
+    # Bandpass filter
+    nyquist = 0.5 * fs
+    low = lowcut / nyquist
+    high = highcut / nyquist
+    b, a = butter(order, [low, high], btype='band')
+    filtered_signal = filtfilt(b, a, signal)
+    
+    # Rectification
+    rectified_signal = np.abs(filtered_signal)
+    
+    # Envelope using Hilbert transform
+    envelope = np.abs(hilbert(rectified_signal))
+    
+    return envelope
