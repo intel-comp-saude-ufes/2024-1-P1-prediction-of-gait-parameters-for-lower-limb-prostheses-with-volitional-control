@@ -64,7 +64,7 @@ def train_and_validate_files(data_path, train_files, val_file):
 
     # Prepare the input and target to train the models
     X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
-    y_train = data_angles # Get the target data
+    y_train = data_torques # Get the target data
 
     # Load the validation data
     metadata_val, data_angles_val, data_emg_envelope_val, data_emg_filtered_val, data_grf_val, data_torques_val, data_torques_norm_val = load_data(data_path, val_file)
@@ -79,7 +79,7 @@ def train_and_validate_files(data_path, train_files, val_file):
 
     # Prepare the input and target to validate the models
     X_val = pd.concat([data_emg_envelope_val], axis=1)
-    y_val = data_angles_val
+    y_val = data_torques_val
 
     # Defining the models
     models = {
@@ -148,9 +148,9 @@ def train_and_validate_files(data_path, train_files, val_file):
 
 if __name__ == '__main__':
     # Define the data path and files
-    data_path = 'data/P16'
-    # data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt']
-    # data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt']
+    data_path = 'data/P3'
+    # data_files = ['T6.txt', 'T7.txt', 'T10.txt']
+    # data_files = ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
     data_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt']
 
     n = 2 # Number of files used for validation

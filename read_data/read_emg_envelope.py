@@ -2,9 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leia os dados do arquivo CSV
-data = pd.read_csv('data/P4/V1/R/EMG envelope/T1.txt', delimiter='\t')
+data = pd.read_csv('data/P15/V1/R/EMG envelope/T2.txt', delimiter='\t')
 
 colunas = data.columns
+colunas = ['St1_VL', 'St1_BF']
 qtd_colunas = len(colunas)
 
 # Crie um vetor de tempo com base no número de amostras
