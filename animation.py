@@ -2,34 +2,48 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+leg_length = 1  # Length of the leg segments
+foot_length = 0.2  # Length of the foot segment
 
 # Function to update the animation every frame
-def update(frame, emg_data, y_true, y_pred, lines):
+def update(frame, emg_data, grf_data, y_true, y_pred, lines):
     update_leg(lines['true_leg'], y_true[frame])  # Update true leg lines
     update_leg(lines['pred_leg'], y_pred[frame])  # Update predicted leg lines
 
     for muscle, line in lines['emg'].items():
         line.set_data(np.arange(frame + 1), emg_data[muscle][:frame + 1])  # Update EMG data for each muscle
 
-    lines['true_angle'].set_data(np.arange(frame + 1), y_true[:frame + 1])
-    lines['pred_angle'].set_data(np.arange(frame + 1), y_pred[:frame + 1])
+    for axis, line in lines['grf'].items():
+        line.set_data(np.arange(frame + 1), grf_data[axis][:frame + 1])
+
+    # lines['true_angle'].set_data(np.arange(frame + 1), y_true[:frame + 1])
+    # lines['pred_angle'].set_data(np.arange(frame + 1), y_pred[:frame + 1])
     
-    return [lines['true_leg'], lines['pred_leg']] + list(lines['emg'].values()) + [lines['true_angle'], lines['pred_angle']]
+    return [lines['true_leg'], lines['pred_leg']] + list(lines['emg'].values()) + list(lines['grf'].values())
 
 # Function to update leg segments
 def update_leg(line, knee_angle):
     hip = np.array([0, 0])  # Hip is always at the origin
     knee = hip + np.array([0, -1])  # Knee always 1 unit below the hip
-    ankle = knee + np.array([np.sin(np.deg2rad(-knee_angle)), -np.cos(np.deg2rad(-knee_angle))])
+
+    if (knee_angle < 0):
+        knee_angle = 0
+
+    ankle_y = - 1 - (leg_length * np.cos(np.deg2rad(knee_angle)))
+    ankle_x = - (leg_length * np.sin(np.deg2rad(knee_angle)))
+
+    ankle = np.array([ankle_x, ankle_y])
     
-    # The foot is represented as a horizontal line of 0.05 units
-    foot = ankle + np.array([0.05, 0])
+    foot_x = np.sin(np.deg2rad(90-knee_angle)) * foot_length
+    foot_y = -(np.cos(np.deg2rad(90-knee_angle)) * foot_length)
+
+    foot = ankle + np.array([foot_x, foot_y])
 
     # Update row data
     line.set_data([hip[0], knee[0], ankle[0], foot[0]], [hip[1], knee[1], ankle[1], foot[1]])
 
 # Main function to create the animation
-def create_animation(best_model, emg_data, y_true, y_pred):
+def create_animation(best_model, emg_data, grf_data, y_true, y_pred):
     # Check if arrays have the same length
     if len(y_true) != len(y_pred):
         raise ValueError("The y_true and y_pred arrays must have the same length.")
@@ -43,29 +57,36 @@ def create_animation(best_model, emg_data, y_true, y_pred):
     ax1.set_xlim(-1, 2)
     ax1.set_ylim(-3, 1)
     true_leg, = ax1.plot([], [], 'b-', lw=2, label='Real')
-    pred_leg, = ax1.plot([], [], 'r--', lw=2, label='Predito')
+    pred_leg, = ax1.plot([], [], 'r--', lw=2, label='Predicted')
+    ax1.set_aspect('equal')
     ax1.legend()
 
     # Configure the EMG signal graph
     ax2.set_xlim(0, frames)
     ax2.set_ylim(-1, np.max([np.max(emg_data[muscle]) for muscle in emg_data]) * 1.1)  # Add top margin for EMG
+    ax2.set_xlabel('Samples in time (250Hz)')
+    ax2.set_ylabel('EMG [% of Maximum Voluntary Contraction]')
     emg_lines = {muscle: ax2.plot([], [], label=muscle)[0] for muscle in emg_data}
     ax2.legend()
 
-    # Configure the knee angle prediction graph
+    # Configure the grf signal graph
     ax3.set_xlim(0, frames)
-    ax3.set_ylim(np.min(y_true), np.max(y_true) * 1.1)  # Add top margin for knee angle
-    true_angle, = ax3.plot([], [], 'b-', label='y_test')
-    pred_angle, = ax3.plot([], [], 'r--', label='y_pred')
+    ax3.set_ylim(np.min([np.min(grf_data[axis]) for axis in grf_data]) * 1.1, np.max([np.max(grf_data[axis]) for axis in grf_data]) * 1.1)  # Add top margin for GRF
+    ax3.set_xlabel('Samples in time (250Hz)')
+    ax3.set_ylabel('Ground Reaction Forces [N]')
+    grf_lines = {axis: ax3.plot([], [], label=axis)[0] for axis in grf_data}
     ax3.legend()
 
+
     # Dictionary to pass the lines to the update function
-    lines = {'true_leg': true_leg, 'pred_leg': pred_leg, 'emg': emg_lines, 'true_angle': true_angle, 'pred_angle': pred_angle}
+    lines = {'true_leg': true_leg, 'pred_leg': pred_leg, 'emg': emg_lines, 'grf': grf_lines}
+
 
     # Create the animation
-    anim = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, y_true, y_pred, lines), interval=5)
+    anim = FuncAnimation(fig, update, frames=frames, fargs=(emg_data, grf_data, y_true, y_pred, lines), interval=0.5)
 
-    plt.suptitle(f'Prediction of angle of knee joint with {best_model}')
+    # plt.suptitle(f'Prediction of angle of knee joint with {best_model}')
+    plt.suptitle(f'Knee Angle Prediction', fontsize=20)
     plt.show()
 
 

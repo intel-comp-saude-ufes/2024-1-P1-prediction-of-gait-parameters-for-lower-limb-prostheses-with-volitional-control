@@ -26,15 +26,15 @@ from lazypredict.Supervised import LazyRegressor
 
 if __name__ == '__main__':
     # Prepare the train data
-    train_folder = 'data/P4'
-    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt']
+    train_folder = 'data/P9'
+    train_files = ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt']
     metadata, data_angles, data_emg_envelope, data_emg_filtered, data_grf, data_torques, data_torques_norm = load_data(train_folder, train_files)
     print(metadata)
     print("\n")
 
     # Prepare the test data
-    test_folder = 'data/P4'
-    test_files = ['T6.txt']
+    test_folder = 'data/P9'
+    test_files = ['T10.txt']
     metadata_test, data_angles_test, data_emg_envelope_test, data_emg_filtered_test, data_grf_test, data_torques_test, data_torques_norm_test = load_data(test_folder, test_files)
 
     St = 'St1'
@@ -47,15 +47,10 @@ if __name__ == '__main__':
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z	    ...
     # St1_Knee_X	St1_Knee_Y	    St1_Knee_Z	    St2_Knee_X	    St2_Knee_Y	    St2_Knee_Z      ...
     # St1_Ankle_X	St1_Ankle_Y	    St1_Ankle_Z	    St2_Ankle_X	    St2_Ankle_Y	    St2_Ankle_Z
-    data_torques_columns = [
-                            
-                            St+'_Knee_X',   St+'_Knee_Y',   St+'_Knee_Z',
-                            St+'_Ankle_X',  St+'_Ankle_Y',  St+'_Ankle_Z']
-    # data_torques_columns = [St+'_Knee_X']
+    data_torques_columns = [St+'_Knee_X']
     
     # St1_GRF_X	    St1_GRF_Y	    St1_GRF_Z	    St2_GRF_X	    t2_GRF_Y	    St2_GRF_Z
     data_grf_columns = [St+'_GRF_X', St+'_GRF_Y', St+'_GRF_Z']
-    # data_grf_columns = [St+'_GRF_X']
 
     # St1_Pelvis_X	St1_Pelvis_Y	St1_Pelvis_Z	St2_Pelvis_X	St2_Pelvis_Y	St2_Pelvis_Z    ...
     # St1_Hip_X	    St1_Hip_Y	    St1_Hip_Z	    St2_Hip_X	    St2_Hip_Y	    St2_Hip_Z       ...   
@@ -73,8 +68,8 @@ if __name__ == '__main__':
     data_torques_norm = data_torques_norm[data_torques_columns]
 
     # Prepare the input and target to train the models
-    X_train = pd.concat([data_emg_envelope], axis=1) # Concatenate the input model data
-    y_train = data_angles # Get the target data
+    X_train = pd.concat([data_emg_envelope, data_grf], axis=1) # Concatenate the input model data
+    y_train = data_torques # Get the target data
 
     # Select the columns to use to test
     data_angles_test = data_angles_test[data_angles_columns]
@@ -85,12 +80,12 @@ if __name__ == '__main__':
     data_torques_norm_test = data_torques_norm_test[data_torques_columns]
 
     # Prepare the input and target to test the models
-    X_test = pd.concat([data_emg_envelope_test], axis=1) # Concatenate the input model data
-    y_test = data_angles_test # Get the target data
+    X_test = pd.concat([data_emg_envelope_test, data_grf_test], axis=1) # Concatenate the input model data
+    y_test = data_torques_test # Get the target data
 
     # Defining the models
     models = {
-        'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
+        # 'KNN': KNeighborsRegressor(n_neighbors=5, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None),
 
         # 'Decision Tree': DecisionTreeRegressor(criterion='squared_error', splitter='best', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, ccp_alpha=0.0, monotonic_cst=None),
 
@@ -110,7 +105,7 @@ if __name__ == '__main__':
         
         # 'Extra Trees Regressor' : ExtraTreesRegressor(n_estimators=100, criterion='squared_error', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=1.0, max_leaf_nodes=None, min_impurity_decrease=0.0, bootstrap=False, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, ccp_alpha=0.0, max_samples=None, monotonic_cst=None),
 
-        # 'MLP Regressor' : MLPRegressor(hidden_layer_sizes=(100,), activation='relu', solver='adam', alpha=0.0001, batch_size='auto', learning_rate='constant', learning_rate_init=0.001, power_t=0.5, max_iter=200, shuffle=True, random_state=None, tol=0.0001, verbose=False, warm_start=False, momentum=0.9, nesterovs_momentum=True, early_stopping=False, validation_fraction=0.1, beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=10, max_fun=15000),
+        'MLP Regressor' : MLPRegressor(hidden_layer_sizes=(100,), activation='relu', solver='adam', alpha=0.0001, batch_size='auto', learning_rate='constant', learning_rate_init=0.001, power_t=0.5, max_iter=200, shuffle=True, random_state=None, tol=0.0001, verbose=False, warm_start=False, momentum=0.9, nesterovs_momentum=True, early_stopping=False, validation_fraction=0.1, beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=10, max_fun=15000),
 
         # 'XGBRegressor' : XGBRegressor()
     }
@@ -170,8 +165,9 @@ if __name__ == '__main__':
 
     # Prepare the data to create the animation
     emg_anim = {col: data_emg_envelope_test[col].to_numpy() for col in data_emg_columns} # Prepare all EMG signals
+    grf_anim = {col: data_grf_test[col].to_numpy() for col in data_grf_columns} # Prepare all GRF signals
     y_test_anim = y_test.to_numpy().ravel()
     y_test_anim = loess_smoothing(y_test_anim, frac=0.09)
 
     # Run the animation with the best model    
-    create_animation(best_model, emg_anim, y_test_anim, predictions[best_model].flatten())
+    # create_animation(best_model, emg_anim, grf_anim, y_test_anim, predictions[best_model].flatten())
