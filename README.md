@@ -44,6 +44,7 @@ The data used in this project consists of the folders _Angles_, _EMG envelope_, 
 - `EMG Envelope`: Enveloped EMG signal from the vastus lateralis, biceps femoris, tibialis anterior and lateral gastrocnemius muscles
 - `GRF`: Ground reaction forces in all axes
 - `Torques`: Torque of the pelvis, hip, knee and ankle, in all axes
+
 Also is a file for each participant:
 - `Metadata.txt`: Describe some physical characteristics of the participant
 
