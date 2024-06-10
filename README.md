@@ -56,7 +56,7 @@ python main.py
 ```
 
 ### Additional Scripts
-The `cross_val_files` and `cross_val_participants` scripts processes the data dynamically. You can choose how many files between _T1.txt_ ~ _T10.txt_ ((or participantes between _P1_ ~ _P16_) you want to use as test and it will cross-validate, generating an average of the metrics at the end. This preserves the temporal relationship between data, which is important for the model to learn the gait cycle. To run the scripts, use the following command:
+The `cross_val_files` and `cross_val_participants` scripts processes the data dynamically. You can choose how many files between _T1.txt_ ~ _T10.txt_ (or participantes between _P1_ ~ _P16_) you want to use as test and it will cross-validate, generating an average of the metrics at the end. This preserves the temporal relationship between data, which is important for the model to learn the gait cycle. To run the scripts, use the following command:
 ```sh
 python cross_val_files.py
 ```
@@ -65,9 +65,9 @@ python cross_val_participants.py
 ```
 
 ## Results
-In this section, the performance of each of the presented models was evaluated when subjected to different types of input and output data, as well as the changes observed during the variations of the testing processes. These results can be seen in Tables II to V below. The performance metric used to compare the models was $R^2$, and in the event of a tie, the model with the lowest mean absolute error was adopted.
+In this section, the performance of each of the presented models was evaluated when subjected to different types of input and output data, as well as the changes observed during the variations of the testing processes. These results can be seen in Tables below. The performance metric used to compare the models was $R^2$, and in the event of a tie, the model with the lowest mean absolute error was adopted.
 
-The results of the project are summarized in the following figures:
+The results of the project are summarized in the following figures, where the graph on the right is the comparison between the value predicted by the model with the best result (highest $R^2$) obtained in the table on the left, with the actual value of the output:
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
   <img src="media/table-1.png" alt="Image 1" width="350" style="border:1px solid red;"/>
   <img src="media/fig-1.png" alt="Image 2" width="350" style="border:1px solid red;"/>
