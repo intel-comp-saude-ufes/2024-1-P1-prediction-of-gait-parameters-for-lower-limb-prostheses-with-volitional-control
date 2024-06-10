@@ -1,0 +1,466 @@
+
+Training with ['T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T2.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T3.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T4.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T5.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T6.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T1.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T1.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T3.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T4.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T5.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T6.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T2.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T2.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T3.txt', 'T4.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T3.txt', 'T5.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T3.txt', 'T6.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T3.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T3.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T3.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T3.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T4.txt', 'T5.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T4.txt', 'T6.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T4.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T4.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T4.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T4.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T7.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T5.txt', 'T6.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T5.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T5.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T5.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T5.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T8.txt', 'T9.txt', 'T10.txt'], validating with ('T6.txt', 'T7.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T9.txt', 'T10.txt'], validating with ('T6.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T10.txt'], validating with ('T6.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T6.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T9.txt', 'T10.txt'], validating with ('T7.txt', 'T8.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T10.txt'], validating with ('T7.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T7.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T10.txt'], validating with ('T8.txt', 'T9.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T8.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T9.txt', 'T10.txt')
+Training and evaluating KNN
+Training and evaluating Random Forest
+Training and evaluating Gradient Boosting
+Training and evaluating AdaBoost
+Training and evaluating Extra Trees Regressor
+Training and evaluating MLP Regressor
+Training and evaluating XGBRegressor
+Training and evaluating Voting Regressor
+KNN - Mean R^2 Score: 0.57
+KNN - Mean Mean Absolute Error: 6.97
+Random Forest - Mean R^2 Score: 0.56
+Random Forest - Mean Mean Absolute Error: 6.93
+Gradient Boosting - Mean R^2 Score: 0.57
+Gradient Boosting - Mean Mean Absolute Error: 7.03
+AdaBoost - Mean R^2 Score: 0.51
+AdaBoost - Mean Mean Absolute Error: 7.72
+Extra Trees Regressor - Mean R^2 Score: 0.57
+Extra Trees Regressor - Mean Mean Absolute Error: 6.92
+MLP Regressor - Mean R^2 Score: 0.54
+MLP Regressor - Mean Mean Absolute Error: 7.48
+XGBRegressor - Mean R^2 Score: 0.56
+XGBRegressor - Mean Mean Absolute Error: 6.93
+Voting Regressor - Mean R^2 Score: 0.56
+Voting Regressor - Mean Mean Absolute Error: 7.10

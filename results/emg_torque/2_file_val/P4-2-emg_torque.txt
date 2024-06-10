@@ -1,0 +1,2104 @@
+
+Training with ['T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T2.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.46
+KNN - Mean Squared Error: 42.24
+KNN - Root Mean Squared Error: 6.50
+KNN - Mean Absolute Percentage Error: 213.47%
+KNN - R^2 Score: 0.20
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.71
+Random Forest - Mean Squared Error: 46.08
+Random Forest - Root Mean Squared Error: 6.79
+Random Forest - Mean Absolute Percentage Error: 232.98%
+Random Forest - R^2 Score: 0.13
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.02
+Gradient Boosting - Mean Squared Error: 47.88
+Gradient Boosting - Root Mean Squared Error: 6.92
+Gradient Boosting - Mean Absolute Percentage Error: 236.06%
+Gradient Boosting - R^2 Score: 0.10
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.38
+AdaBoost - Mean Squared Error: 54.10
+AdaBoost - Root Mean Squared Error: 7.36
+AdaBoost - Mean Absolute Percentage Error: 240.21%
+AdaBoost - R^2 Score: -0.02
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.58
+Extra Trees Regressor - Mean Squared Error: 43.72
+Extra Trees Regressor - Root Mean Squared Error: 6.61
+Extra Trees Regressor - Mean Absolute Percentage Error: 223.19%
+Extra Trees Regressor - R^2 Score: 0.17
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 5.91
+MLP Regressor - Mean Squared Error: 48.15
+MLP Regressor - Root Mean Squared Error: 6.94
+MLP Regressor - Mean Absolute Percentage Error: 246.32%
+MLP Regressor - R^2 Score: 0.09
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.63
+XGBRegressor - Mean Squared Error: 44.48
+XGBRegressor - Root Mean Squared Error: 6.67
+XGBRegressor - Mean Absolute Percentage Error: 226.29%
+XGBRegressor - R^2 Score: 0.16
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.73
+Voting Regressor - Mean Squared Error: 45.78
+Voting Regressor - Root Mean Squared Error: 6.77
+Voting Regressor - Mean Absolute Percentage Error: 235.69%
+Voting Regressor - R^2 Score: 0.14
+
+
+Training with ['T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T3.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 9.50
+KNN - Mean Squared Error: 162.76
+KNN - Root Mean Squared Error: 12.76
+KNN - Mean Absolute Percentage Error: 189.63%
+KNN - R^2 Score: -0.05
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 9.54
+Random Forest - Mean Squared Error: 160.68
+Random Forest - Root Mean Squared Error: 12.68
+Random Forest - Mean Absolute Percentage Error: 183.27%
+Random Forest - R^2 Score: -0.04
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 9.74
+Gradient Boosting - Mean Squared Error: 155.45
+Gradient Boosting - Root Mean Squared Error: 12.47
+Gradient Boosting - Mean Absolute Percentage Error: 184.72%
+Gradient Boosting - R^2 Score: -0.00
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 9.37
+AdaBoost - Mean Squared Error: 131.17
+AdaBoost - Root Mean Squared Error: 11.45
+AdaBoost - Mean Absolute Percentage Error: 182.29%
+AdaBoost - R^2 Score: 0.15
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 9.53
+Extra Trees Regressor - Mean Squared Error: 160.80
+Extra Trees Regressor - Root Mean Squared Error: 12.68
+Extra Trees Regressor - Mean Absolute Percentage Error: 186.54%
+Extra Trees Regressor - R^2 Score: -0.04
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 9.40
+MLP Regressor - Mean Squared Error: 147.67
+MLP Regressor - Root Mean Squared Error: 12.15
+MLP Regressor - Mean Absolute Percentage Error: 186.59%
+MLP Regressor - R^2 Score: 0.05
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 9.52
+XGBRegressor - Mean Squared Error: 158.97
+XGBRegressor - Root Mean Squared Error: 12.61
+XGBRegressor - Mean Absolute Percentage Error: 187.74%
+XGBRegressor - R^2 Score: -0.02
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 9.51
+Voting Regressor - Mean Squared Error: 157.72
+Voting Regressor - Root Mean Squared Error: 12.56
+Voting Regressor - Mean Absolute Percentage Error: 190.64%
+Voting Regressor - R^2 Score: -0.02
+
+
+Training with ['T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T4.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.90
+KNN - Mean Squared Error: 45.70
+KNN - Root Mean Squared Error: 6.76
+KNN - Mean Absolute Percentage Error: 242.75%
+KNN - R^2 Score: 0.28
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.90
+Random Forest - Mean Squared Error: 47.84
+Random Forest - Root Mean Squared Error: 6.92
+Random Forest - Mean Absolute Percentage Error: 243.98%
+Random Forest - R^2 Score: 0.25
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.37
+Gradient Boosting - Mean Squared Error: 54.39
+Gradient Boosting - Root Mean Squared Error: 7.37
+Gradient Boosting - Mean Absolute Percentage Error: 259.64%
+Gradient Boosting - R^2 Score: 0.14
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.60
+AdaBoost - Mean Squared Error: 55.25
+AdaBoost - Root Mean Squared Error: 7.43
+AdaBoost - Mean Absolute Percentage Error: 264.14%
+AdaBoost - R^2 Score: 0.13
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.76
+Extra Trees Regressor - Mean Squared Error: 45.40
+Extra Trees Regressor - Root Mean Squared Error: 6.74
+Extra Trees Regressor - Mean Absolute Percentage Error: 234.69%
+Extra Trees Regressor - R^2 Score: 0.29
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.42
+MLP Regressor - Mean Squared Error: 55.28
+MLP Regressor - Root Mean Squared Error: 7.43
+MLP Regressor - Mean Absolute Percentage Error: 270.80%
+MLP Regressor - R^2 Score: 0.13
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.67
+XGBRegressor - Mean Squared Error: 42.82
+XGBRegressor - Root Mean Squared Error: 6.54
+XGBRegressor - Mean Absolute Percentage Error: 243.98%
+XGBRegressor - R^2 Score: 0.33
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.97
+Voting Regressor - Mean Squared Error: 47.54
+Voting Regressor - Root Mean Squared Error: 6.89
+Voting Regressor - Mean Absolute Percentage Error: 251.99%
+Voting Regressor - R^2 Score: 0.25
+
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T5.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.71
+KNN - Mean Squared Error: 42.04
+KNN - Root Mean Squared Error: 6.48
+KNN - Mean Absolute Percentage Error: 188.82%
+KNN - R^2 Score: 0.42
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.81
+Random Forest - Mean Squared Error: 44.58
+Random Forest - Root Mean Squared Error: 6.68
+Random Forest - Mean Absolute Percentage Error: 189.65%
+Random Forest - R^2 Score: 0.38
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 5.98
+Gradient Boosting - Mean Squared Error: 48.06
+Gradient Boosting - Root Mean Squared Error: 6.93
+Gradient Boosting - Mean Absolute Percentage Error: 195.06%
+Gradient Boosting - R^2 Score: 0.33
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.31
+AdaBoost - Mean Squared Error: 53.22
+AdaBoost - Root Mean Squared Error: 7.29
+AdaBoost - Mean Absolute Percentage Error: 192.10%
+AdaBoost - R^2 Score: 0.26
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.89
+Extra Trees Regressor - Mean Squared Error: 45.59
+Extra Trees Regressor - Root Mean Squared Error: 6.75
+Extra Trees Regressor - Mean Absolute Percentage Error: 193.52%
+Extra Trees Regressor - R^2 Score: 0.37
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.01
+MLP Regressor - Mean Squared Error: 51.08
+MLP Regressor - Root Mean Squared Error: 7.15
+MLP Regressor - Mean Absolute Percentage Error: 205.03%
+MLP Regressor - R^2 Score: 0.29
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.89
+XGBRegressor - Mean Squared Error: 45.53
+XGBRegressor - Root Mean Squared Error: 6.75
+XGBRegressor - Mean Absolute Percentage Error: 185.71%
+XGBRegressor - R^2 Score: 0.37
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.84
+Voting Regressor - Mean Squared Error: 45.11
+Voting Regressor - Root Mean Squared Error: 6.72
+Voting Regressor - Mean Absolute Percentage Error: 196.72%
+Voting Regressor - R^2 Score: 0.37
+
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T6.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.27
+KNN - Mean Squared Error: 65.85
+KNN - Root Mean Squared Error: 8.11
+KNN - Mean Absolute Percentage Error: 197.92%
+KNN - R^2 Score: 0.25
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.37
+Random Forest - Mean Squared Error: 67.61
+Random Forest - Root Mean Squared Error: 8.22
+Random Forest - Mean Absolute Percentage Error: 195.88%
+Random Forest - R^2 Score: 0.23
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.61
+Gradient Boosting - Mean Squared Error: 70.74
+Gradient Boosting - Root Mean Squared Error: 8.41
+Gradient Boosting - Mean Absolute Percentage Error: 200.85%
+Gradient Boosting - R^2 Score: 0.19
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.88
+AdaBoost - Mean Squared Error: 75.41
+AdaBoost - Root Mean Squared Error: 8.68
+AdaBoost - Mean Absolute Percentage Error: 203.25%
+AdaBoost - R^2 Score: 0.14
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.35
+Extra Trees Regressor - Mean Squared Error: 67.96
+Extra Trees Regressor - Root Mean Squared Error: 8.24
+Extra Trees Regressor - Mean Absolute Percentage Error: 198.98%
+Extra Trees Regressor - R^2 Score: 0.22
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.47
+MLP Regressor - Mean Squared Error: 69.46
+MLP Regressor - Root Mean Squared Error: 8.33
+MLP Regressor - Mean Absolute Percentage Error: 203.06%
+MLP Regressor - R^2 Score: 0.21
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.18
+XGBRegressor - Mean Squared Error: 64.49
+XGBRegressor - Root Mean Squared Error: 8.03
+XGBRegressor - Mean Absolute Percentage Error: 188.91%
+XGBRegressor - R^2 Score: 0.26
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.31
+Voting Regressor - Mean Squared Error: 66.57
+Voting Regressor - Root Mean Squared Error: 8.16
+Voting Regressor - Mean Absolute Percentage Error: 199.47%
+Voting Regressor - R^2 Score: 0.24
+
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T1.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.21
+KNN - Mean Squared Error: 51.69
+KNN - Root Mean Squared Error: 7.19
+KNN - Mean Absolute Percentage Error: 225.18%
+KNN - R^2 Score: 0.33
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.41
+Random Forest - Mean Squared Error: 56.55
+Random Forest - Root Mean Squared Error: 7.52
+Random Forest - Mean Absolute Percentage Error: 236.83%
+Random Forest - R^2 Score: 0.27
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.53
+Gradient Boosting - Mean Squared Error: 55.09
+Gradient Boosting - Root Mean Squared Error: 7.42
+Gradient Boosting - Mean Absolute Percentage Error: 233.10%
+Gradient Boosting - R^2 Score: 0.29
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.11
+AdaBoost - Mean Squared Error: 65.55
+AdaBoost - Root Mean Squared Error: 8.10
+AdaBoost - Mean Absolute Percentage Error: 262.86%
+AdaBoost - R^2 Score: 0.15
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.57
+Extra Trees Regressor - Mean Squared Error: 58.45
+Extra Trees Regressor - Root Mean Squared Error: 7.65
+Extra Trees Regressor - Mean Absolute Percentage Error: 233.71%
+Extra Trees Regressor - R^2 Score: 0.24
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.67
+MLP Regressor - Mean Squared Error: 58.95
+MLP Regressor - Root Mean Squared Error: 7.68
+MLP Regressor - Mean Absolute Percentage Error: 230.02%
+MLP Regressor - R^2 Score: 0.24
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.49
+XGBRegressor - Mean Squared Error: 56.90
+XGBRegressor - Root Mean Squared Error: 7.54
+XGBRegressor - Mean Absolute Percentage Error: 233.41%
+XGBRegressor - R^2 Score: 0.26
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.57
+Voting Regressor - Mean Squared Error: 56.62
+Voting Regressor - Root Mean Squared Error: 7.52
+Voting Regressor - Mean Absolute Percentage Error: 235.28%
+Voting Regressor - R^2 Score: 0.27
+
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T1.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.02
+KNN - Mean Squared Error: 64.79
+KNN - Root Mean Squared Error: 8.05
+KNN - Mean Absolute Percentage Error: 262.79%
+KNN - R^2 Score: 0.45
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.09
+Random Forest - Mean Squared Error: 66.27
+Random Forest - Root Mean Squared Error: 8.14
+Random Forest - Mean Absolute Percentage Error: 268.49%
+Random Forest - R^2 Score: 0.44
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.34
+Gradient Boosting - Mean Squared Error: 69.98
+Gradient Boosting - Root Mean Squared Error: 8.37
+Gradient Boosting - Mean Absolute Percentage Error: 286.46%
+Gradient Boosting - R^2 Score: 0.41
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.87
+AdaBoost - Mean Squared Error: 81.87
+AdaBoost - Root Mean Squared Error: 9.05
+AdaBoost - Mean Absolute Percentage Error: 312.19%
+AdaBoost - R^2 Score: 0.30
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.05
+Extra Trees Regressor - Mean Squared Error: 66.01
+Extra Trees Regressor - Root Mean Squared Error: 8.12
+Extra Trees Regressor - Mean Absolute Percentage Error: 263.31%
+Extra Trees Regressor - R^2 Score: 0.44
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.52
+MLP Regressor - Mean Squared Error: 74.13
+MLP Regressor - Root Mean Squared Error: 8.61
+MLP Regressor - Mean Absolute Percentage Error: 300.37%
+MLP Regressor - R^2 Score: 0.37
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.95
+XGBRegressor - Mean Squared Error: 63.64
+XGBRegressor - Root Mean Squared Error: 7.98
+XGBRegressor - Mean Absolute Percentage Error: 264.56%
+XGBRegressor - R^2 Score: 0.46
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.11
+Voting Regressor - Mean Squared Error: 66.10
+Voting Regressor - Root Mean Squared Error: 8.13
+Voting Regressor - Mean Absolute Percentage Error: 272.38%
+Voting Regressor - R^2 Score: 0.44
+
+
+Training with ['T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T1.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.84
+KNN - Mean Squared Error: 57.97
+KNN - Root Mean Squared Error: 7.61
+KNN - Mean Absolute Percentage Error: 198.59%
+KNN - R^2 Score: 0.21
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.79
+Random Forest - Mean Squared Error: 58.21
+Random Forest - Root Mean Squared Error: 7.63
+Random Forest - Mean Absolute Percentage Error: 197.48%
+Random Forest - R^2 Score: 0.21
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.98
+Gradient Boosting - Mean Squared Error: 60.91
+Gradient Boosting - Root Mean Squared Error: 7.80
+Gradient Boosting - Mean Absolute Percentage Error: 226.38%
+Gradient Boosting - R^2 Score: 0.17
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.32
+AdaBoost - Mean Squared Error: 66.22
+AdaBoost - Root Mean Squared Error: 8.14
+AdaBoost - Mean Absolute Percentage Error: 229.09%
+AdaBoost - R^2 Score: 0.10
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.72
+Extra Trees Regressor - Mean Squared Error: 56.62
+Extra Trees Regressor - Root Mean Squared Error: 7.52
+Extra Trees Regressor - Mean Absolute Percentage Error: 197.01%
+Extra Trees Regressor - R^2 Score: 0.23
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.96
+MLP Regressor - Mean Squared Error: 62.51
+MLP Regressor - Root Mean Squared Error: 7.91
+MLP Regressor - Mean Absolute Percentage Error: 218.11%
+MLP Regressor - R^2 Score: 0.15
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.76
+XGBRegressor - Mean Squared Error: 56.69
+XGBRegressor - Root Mean Squared Error: 7.53
+XGBRegressor - Mean Absolute Percentage Error: 197.13%
+XGBRegressor - R^2 Score: 0.23
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.87
+Voting Regressor - Mean Squared Error: 59.38
+Voting Regressor - Root Mean Squared Error: 7.71
+Voting Regressor - Mean Absolute Percentage Error: 204.95%
+Voting Regressor - R^2 Score: 0.20
+
+
+Training with ['T1.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T3.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 9.08
+KNN - Mean Squared Error: 157.52
+KNN - Root Mean Squared Error: 12.55
+KNN - Mean Absolute Percentage Error: 209.67%
+KNN - R^2 Score: -0.13
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 9.03
+Random Forest - Mean Squared Error: 152.19
+Random Forest - Root Mean Squared Error: 12.34
+Random Forest - Mean Absolute Percentage Error: 196.98%
+Random Forest - R^2 Score: -0.10
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 9.15
+Gradient Boosting - Mean Squared Error: 149.54
+Gradient Boosting - Root Mean Squared Error: 12.23
+Gradient Boosting - Mean Absolute Percentage Error: 215.95%
+Gradient Boosting - R^2 Score: -0.08
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.92
+AdaBoost - Mean Squared Error: 123.23
+AdaBoost - Root Mean Squared Error: 11.10
+AdaBoost - Mean Absolute Percentage Error: 219.05%
+AdaBoost - R^2 Score: 0.11
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 9.11
+Extra Trees Regressor - Mean Squared Error: 155.73
+Extra Trees Regressor - Root Mean Squared Error: 12.48
+Extra Trees Regressor - Mean Absolute Percentage Error: 199.07%
+Extra Trees Regressor - R^2 Score: -0.12
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 9.05
+MLP Regressor - Mean Squared Error: 139.94
+MLP Regressor - Root Mean Squared Error: 11.83
+MLP Regressor - Mean Absolute Percentage Error: 229.11%
+MLP Regressor - R^2 Score: -0.01
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 9.19
+XGBRegressor - Mean Squared Error: 156.66
+XGBRegressor - Root Mean Squared Error: 12.52
+XGBRegressor - Mean Absolute Percentage Error: 205.10%
+XGBRegressor - R^2 Score: -0.13
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 9.10
+Voting Regressor - Mean Squared Error: 149.07
+Voting Regressor - Root Mean Squared Error: 12.21
+Voting Regressor - Mean Absolute Percentage Error: 212.86%
+Voting Regressor - R^2 Score: -0.07
+
+
+Training with ['T1.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T4.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.39
+KNN - Mean Squared Error: 40.93
+KNN - Root Mean Squared Error: 6.40
+KNN - Mean Absolute Percentage Error: 277.87%
+KNN - R^2 Score: 0.27
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.47
+Random Forest - Mean Squared Error: 42.94
+Random Forest - Root Mean Squared Error: 6.55
+Random Forest - Mean Absolute Percentage Error: 265.32%
+Random Forest - R^2 Score: 0.24
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.16
+Gradient Boosting - Mean Squared Error: 52.74
+Gradient Boosting - Root Mean Squared Error: 7.26
+Gradient Boosting - Mean Absolute Percentage Error: 309.93%
+Gradient Boosting - R^2 Score: 0.06
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.05
+AdaBoost - Mean Squared Error: 48.67
+AdaBoost - Root Mean Squared Error: 6.98
+AdaBoost - Mean Absolute Percentage Error: 301.95%
+AdaBoost - R^2 Score: 0.14
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.37
+Extra Trees Regressor - Mean Squared Error: 41.25
+Extra Trees Regressor - Root Mean Squared Error: 6.42
+Extra Trees Regressor - Mean Absolute Percentage Error: 266.80%
+Extra Trees Regressor - R^2 Score: 0.27
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.09
+MLP Regressor - Mean Squared Error: 52.02
+MLP Regressor - Root Mean Squared Error: 7.21
+MLP Regressor - Mean Absolute Percentage Error: 332.86%
+MLP Regressor - R^2 Score: 0.08
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.41
+XGBRegressor - Mean Squared Error: 41.02
+XGBRegressor - Root Mean Squared Error: 6.40
+XGBRegressor - Mean Absolute Percentage Error: 276.09%
+XGBRegressor - R^2 Score: 0.27
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.76
+Voting Regressor - Mean Squared Error: 47.28
+Voting Regressor - Root Mean Squared Error: 6.88
+Voting Regressor - Mean Absolute Percentage Error: 288.19%
+Voting Regressor - R^2 Score: 0.16
+
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T5.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.11
+KNN - Mean Squared Error: 37.24
+KNN - Root Mean Squared Error: 6.10
+KNN - Mean Absolute Percentage Error: 214.02%
+KNN - R^2 Score: 0.44
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.17
+Random Forest - Mean Squared Error: 38.38
+Random Forest - Root Mean Squared Error: 6.19
+Random Forest - Mean Absolute Percentage Error: 215.40%
+Random Forest - R^2 Score: 0.42
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 5.52
+Gradient Boosting - Mean Squared Error: 44.72
+Gradient Boosting - Root Mean Squared Error: 6.69
+Gradient Boosting - Mean Absolute Percentage Error: 227.87%
+Gradient Boosting - R^2 Score: 0.32
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 5.74
+AdaBoost - Mean Squared Error: 47.65
+AdaBoost - Root Mean Squared Error: 6.90
+AdaBoost - Mean Absolute Percentage Error: 246.65%
+AdaBoost - R^2 Score: 0.28
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.24
+Extra Trees Regressor - Mean Squared Error: 39.72
+Extra Trees Regressor - Root Mean Squared Error: 6.30
+Extra Trees Regressor - Mean Absolute Percentage Error: 217.59%
+Extra Trees Regressor - R^2 Score: 0.40
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 5.66
+MLP Regressor - Mean Squared Error: 47.95
+MLP Regressor - Root Mean Squared Error: 6.92
+MLP Regressor - Mean Absolute Percentage Error: 240.78%
+MLP Regressor - R^2 Score: 0.27
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.14
+XGBRegressor - Mean Squared Error: 37.73
+XGBRegressor - Root Mean Squared Error: 6.14
+XGBRegressor - Mean Absolute Percentage Error: 217.04%
+XGBRegressor - R^2 Score: 0.43
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.21
+Voting Regressor - Mean Squared Error: 39.48
+Voting Regressor - Root Mean Squared Error: 6.28
+Voting Regressor - Mean Absolute Percentage Error: 220.36%
+Voting Regressor - R^2 Score: 0.40
+
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T6.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.80
+KNN - Mean Squared Error: 63.21
+KNN - Root Mean Squared Error: 7.95
+KNN - Mean Absolute Percentage Error: 227.77%
+KNN - R^2 Score: 0.15
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.76
+Random Forest - Mean Squared Error: 62.02
+Random Forest - Root Mean Squared Error: 7.88
+Random Forest - Mean Absolute Percentage Error: 215.26%
+Random Forest - R^2 Score: 0.17
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.16
+Gradient Boosting - Mean Squared Error: 66.02
+Gradient Boosting - Root Mean Squared Error: 8.13
+Gradient Boosting - Mean Absolute Percentage Error: 230.57%
+Gradient Boosting - R^2 Score: 0.11
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.28
+AdaBoost - Mean Squared Error: 68.67
+AdaBoost - Root Mean Squared Error: 8.29
+AdaBoost - Mean Absolute Percentage Error: 241.79%
+AdaBoost - R^2 Score: 0.08
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.87
+Extra Trees Regressor - Mean Squared Error: 63.17
+Extra Trees Regressor - Root Mean Squared Error: 7.95
+Extra Trees Regressor - Mean Absolute Percentage Error: 221.13%
+Extra Trees Regressor - R^2 Score: 0.15
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.22
+MLP Regressor - Mean Squared Error: 67.84
+MLP Regressor - Root Mean Squared Error: 8.24
+MLP Regressor - Mean Absolute Percentage Error: 239.66%
+MLP Regressor - R^2 Score: 0.09
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.59
+XGBRegressor - Mean Squared Error: 58.98
+XGBRegressor - Root Mean Squared Error: 7.68
+XGBRegressor - Mean Absolute Percentage Error: 210.60%
+XGBRegressor - R^2 Score: 0.21
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.83
+Voting Regressor - Mean Squared Error: 61.43
+Voting Regressor - Root Mean Squared Error: 7.84
+Voting Regressor - Mean Absolute Percentage Error: 218.44%
+Voting Regressor - R^2 Score: 0.18
+
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T2.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.85
+KNN - Mean Squared Error: 50.00
+KNN - Root Mean Squared Error: 7.07
+KNN - Mean Absolute Percentage Error: 254.17%
+KNN - R^2 Score: 0.23
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 5.98
+Random Forest - Mean Squared Error: 54.24
+Random Forest - Root Mean Squared Error: 7.36
+Random Forest - Mean Absolute Percentage Error: 271.34%
+Random Forest - R^2 Score: 0.17
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.24
+Gradient Boosting - Mean Squared Error: 53.15
+Gradient Boosting - Root Mean Squared Error: 7.29
+Gradient Boosting - Mean Absolute Percentage Error: 268.67%
+Gradient Boosting - R^2 Score: 0.18
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.48
+AdaBoost - Mean Squared Error: 56.96
+AdaBoost - Root Mean Squared Error: 7.55
+AdaBoost - Mean Absolute Percentage Error: 277.11%
+AdaBoost - R^2 Score: 0.12
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.23
+Extra Trees Regressor - Mean Squared Error: 57.04
+Extra Trees Regressor - Root Mean Squared Error: 7.55
+Extra Trees Regressor - Mean Absolute Percentage Error: 271.75%
+Extra Trees Regressor - R^2 Score: 0.12
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.36
+MLP Regressor - Mean Squared Error: 55.78
+MLP Regressor - Root Mean Squared Error: 7.47
+MLP Regressor - Mean Absolute Percentage Error: 284.07%
+MLP Regressor - R^2 Score: 0.14
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.29
+XGBRegressor - Mean Squared Error: 59.07
+XGBRegressor - Root Mean Squared Error: 7.69
+XGBRegressor - Mean Absolute Percentage Error: 283.19%
+XGBRegressor - R^2 Score: 0.09
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.14
+Voting Regressor - Mean Squared Error: 53.43
+Voting Regressor - Root Mean Squared Error: 7.31
+Voting Regressor - Mean Absolute Percentage Error: 266.71%
+Voting Regressor - R^2 Score: 0.18
+
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T2.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.48
+KNN - Mean Squared Error: 60.75
+KNN - Root Mean Squared Error: 7.79
+KNN - Mean Absolute Percentage Error: 294.16%
+KNN - R^2 Score: 0.46
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.45
+Random Forest - Mean Squared Error: 60.68
+Random Forest - Root Mean Squared Error: 7.79
+Random Forest - Mean Absolute Percentage Error: 296.10%
+Random Forest - R^2 Score: 0.46
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.99
+Gradient Boosting - Mean Squared Error: 66.20
+Gradient Boosting - Root Mean Squared Error: 8.14
+Gradient Boosting - Mean Absolute Percentage Error: 325.07%
+Gradient Boosting - R^2 Score: 0.41
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.63
+AdaBoost - Mean Squared Error: 78.23
+AdaBoost - Root Mean Squared Error: 8.85
+AdaBoost - Mean Absolute Percentage Error: 362.63%
+AdaBoost - R^2 Score: 0.30
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.51
+Extra Trees Regressor - Mean Squared Error: 61.65
+Extra Trees Regressor - Root Mean Squared Error: 7.85
+Extra Trees Regressor - Mean Absolute Percentage Error: 298.84%
+Extra Trees Regressor - R^2 Score: 0.45
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.18
+MLP Regressor - Mean Squared Error: 69.92
+MLP Regressor - Root Mean Squared Error: 8.36
+MLP Regressor - Mean Absolute Percentage Error: 362.74%
+MLP Regressor - R^2 Score: 0.37
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.41
+XGBRegressor - Mean Squared Error: 58.98
+XGBRegressor - Root Mean Squared Error: 7.68
+XGBRegressor - Mean Absolute Percentage Error: 298.07%
+XGBRegressor - R^2 Score: 0.47
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.58
+Voting Regressor - Mean Squared Error: 61.58
+Voting Regressor - Root Mean Squared Error: 7.85
+Voting Regressor - Mean Absolute Percentage Error: 311.25%
+Voting Regressor - R^2 Score: 0.45
+
+
+Training with ['T1.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T2.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.20
+KNN - Mean Squared Error: 52.08
+KNN - Root Mean Squared Error: 7.22
+KNN - Mean Absolute Percentage Error: 218.52%
+KNN - R^2 Score: 0.15
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.30
+Random Forest - Mean Squared Error: 54.27
+Random Forest - Root Mean Squared Error: 7.37
+Random Forest - Mean Absolute Percentage Error: 225.79%
+Random Forest - R^2 Score: 0.11
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.48
+Gradient Boosting - Mean Squared Error: 54.50
+Gradient Boosting - Root Mean Squared Error: 7.38
+Gradient Boosting - Mean Absolute Percentage Error: 243.23%
+Gradient Boosting - R^2 Score: 0.11
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.86
+AdaBoost - Mean Squared Error: 61.60
+AdaBoost - Root Mean Squared Error: 7.85
+AdaBoost - Mean Absolute Percentage Error: 256.62%
+AdaBoost - R^2 Score: -0.01
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.21
+Extra Trees Regressor - Mean Squared Error: 52.23
+Extra Trees Regressor - Root Mean Squared Error: 7.23
+Extra Trees Regressor - Mean Absolute Percentage Error: 224.45%
+Extra Trees Regressor - R^2 Score: 0.15
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.53
+MLP Regressor - Mean Squared Error: 56.09
+MLP Regressor - Root Mean Squared Error: 7.49
+MLP Regressor - Mean Absolute Percentage Error: 253.23%
+MLP Regressor - R^2 Score: 0.08
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.14
+XGBRegressor - Mean Squared Error: 51.23
+XGBRegressor - Root Mean Squared Error: 7.16
+XGBRegressor - Mean Absolute Percentage Error: 223.10%
+XGBRegressor - R^2 Score: 0.16
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.40
+Voting Regressor - Mean Squared Error: 55.93
+Voting Regressor - Root Mean Squared Error: 7.48
+Voting Regressor - Mean Absolute Percentage Error: 239.63%
+Voting Regressor - R^2 Score: 0.09
+
+
+Training with ['T1.txt', 'T2.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T3.txt', 'T4.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 9.66
+KNN - Mean Squared Error: 164.47
+KNN - Root Mean Squared Error: 12.82
+KNN - Mean Absolute Percentage Error: 271.87%
+KNN - R^2 Score: 0.03
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 9.56
+Random Forest - Mean Squared Error: 156.62
+Random Forest - Root Mean Squared Error: 12.51
+Random Forest - Mean Absolute Percentage Error: 258.21%
+Random Forest - R^2 Score: 0.07
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 9.93
+Gradient Boosting - Mean Squared Error: 160.85
+Gradient Boosting - Root Mean Squared Error: 12.68
+Gradient Boosting - Mean Absolute Percentage Error: 277.65%
+Gradient Boosting - R^2 Score: 0.05
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 9.49
+AdaBoost - Mean Squared Error: 132.12
+AdaBoost - Root Mean Squared Error: 11.49
+AdaBoost - Mean Absolute Percentage Error: 273.35%
+AdaBoost - R^2 Score: 0.22
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 9.61
+Extra Trees Regressor - Mean Squared Error: 159.86
+Extra Trees Regressor - Root Mean Squared Error: 12.64
+Extra Trees Regressor - Mean Absolute Percentage Error: 255.59%
+Extra Trees Regressor - R^2 Score: 0.06
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 9.96
+MLP Regressor - Mean Squared Error: 161.96
+MLP Regressor - Root Mean Squared Error: 12.73
+MLP Regressor - Mean Absolute Percentage Error: 280.53%
+MLP Regressor - R^2 Score: 0.04
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 9.40
+XGBRegressor - Mean Squared Error: 156.00
+XGBRegressor - Root Mean Squared Error: 12.49
+XGBRegressor - Mean Absolute Percentage Error: 253.41%
+XGBRegressor - R^2 Score: 0.08
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 9.72
+Voting Regressor - Mean Squared Error: 159.88
+Voting Regressor - Root Mean Squared Error: 12.64
+Voting Regressor - Mean Absolute Percentage Error: 267.40%
+Voting Regressor - R^2 Score: 0.06
+
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T3.txt', 'T5.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 9.34
+KNN - Mean Squared Error: 160.77
+KNN - Root Mean Squared Error: 12.68
+KNN - Mean Absolute Percentage Error: 194.94%
+KNN - R^2 Score: 0.14
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 9.29
+Random Forest - Mean Squared Error: 153.39
+Random Forest - Root Mean Squared Error: 12.39
+Random Forest - Mean Absolute Percentage Error: 193.75%
+Random Forest - R^2 Score: 0.18
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 9.31
+Gradient Boosting - Mean Squared Error: 156.82
+Gradient Boosting - Root Mean Squared Error: 12.52
+Gradient Boosting - Mean Absolute Percentage Error: 190.16%
+Gradient Boosting - R^2 Score: 0.16
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.97
+AdaBoost - Mean Squared Error: 128.56
+AdaBoost - Root Mean Squared Error: 11.34
+AdaBoost - Mean Absolute Percentage Error: 187.64%
+AdaBoost - R^2 Score: 0.31
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 9.46
+Extra Trees Regressor - Mean Squared Error: 159.34
+Extra Trees Regressor - Root Mean Squared Error: 12.62
+Extra Trees Regressor - Mean Absolute Percentage Error: 198.96%
+Extra Trees Regressor - R^2 Score: 0.14
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 9.11
+MLP Regressor - Mean Squared Error: 152.61
+MLP Regressor - Root Mean Squared Error: 12.35
+MLP Regressor - Mean Absolute Percentage Error: 197.79%
+MLP Regressor - R^2 Score: 0.18
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 9.37
+XGBRegressor - Mean Squared Error: 158.00
+XGBRegressor - Root Mean Squared Error: 12.57
+XGBRegressor - Mean Absolute Percentage Error: 192.99%
+XGBRegressor - R^2 Score: 0.15
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 9.26
+Voting Regressor - Mean Squared Error: 153.93
+Voting Regressor - Root Mean Squared Error: 12.41
+Voting Regressor - Mean Absolute Percentage Error: 193.26%
+Voting Regressor - R^2 Score: 0.17
+
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T3.txt', 'T6.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 11.05
+KNN - Mean Squared Error: 188.27
+KNN - Root Mean Squared Error: 13.72
+KNN - Mean Absolute Percentage Error: 199.79%
+KNN - R^2 Score: -0.21
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 11.07
+Random Forest - Mean Squared Error: 191.60
+Random Forest - Root Mean Squared Error: 13.84
+Random Forest - Mean Absolute Percentage Error: 178.35%
+Random Forest - R^2 Score: -0.23
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 10.99
+Gradient Boosting - Mean Squared Error: 187.96
+Gradient Boosting - Root Mean Squared Error: 13.71
+Gradient Boosting - Mean Absolute Percentage Error: 189.29%
+Gradient Boosting - R^2 Score: -0.21
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 10.66
+AdaBoost - Mean Squared Error: 151.07
+AdaBoost - Root Mean Squared Error: 12.29
+AdaBoost - Mean Absolute Percentage Error: 191.51%
+AdaBoost - R^2 Score: 0.03
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 10.73
+Extra Trees Regressor - Mean Squared Error: 168.57
+Extra Trees Regressor - Root Mean Squared Error: 12.98
+Extra Trees Regressor - Mean Absolute Percentage Error: 186.36%
+Extra Trees Regressor - R^2 Score: -0.08
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 10.49
+MLP Regressor - Mean Squared Error: 149.92
+MLP Regressor - Root Mean Squared Error: 12.24
+MLP Regressor - Mean Absolute Percentage Error: 188.93%
+MLP Regressor - R^2 Score: 0.04
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 11.17
+XGBRegressor - Mean Squared Error: 197.10
+XGBRegressor - Root Mean Squared Error: 14.04
+XGBRegressor - Mean Absolute Percentage Error: 185.01%
+XGBRegressor - R^2 Score: -0.27
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 10.97
+Voting Regressor - Mean Squared Error: 183.50
+Voting Regressor - Root Mean Squared Error: 13.55
+Voting Regressor - Mean Absolute Percentage Error: 184.51%
+Voting Regressor - R^2 Score: -0.18
+
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T3.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 10.04
+KNN - Mean Squared Error: 167.37
+KNN - Root Mean Squared Error: 12.94
+KNN - Mean Absolute Percentage Error: 179.65%
+KNN - R^2 Score: -0.11
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 9.54
+Random Forest - Mean Squared Error: 153.28
+Random Forest - Root Mean Squared Error: 12.38
+Random Forest - Mean Absolute Percentage Error: 183.73%
+Random Forest - R^2 Score: -0.01
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 9.76
+Gradient Boosting - Mean Squared Error: 159.92
+Gradient Boosting - Root Mean Squared Error: 12.65
+Gradient Boosting - Mean Absolute Percentage Error: 173.96%
+Gradient Boosting - R^2 Score: -0.06
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 9.88
+AdaBoost - Mean Squared Error: 143.42
+AdaBoost - Root Mean Squared Error: 11.98
+AdaBoost - Mean Absolute Percentage Error: 190.89%
+AdaBoost - R^2 Score: 0.05
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 9.82
+Extra Trees Regressor - Mean Squared Error: 160.12
+Extra Trees Regressor - Root Mean Squared Error: 12.65
+Extra Trees Regressor - Mean Absolute Percentage Error: 184.69%
+Extra Trees Regressor - R^2 Score: -0.06
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 10.54
+MLP Regressor - Mean Squared Error: 202.00
+MLP Regressor - Root Mean Squared Error: 14.21
+MLP Regressor - Mean Absolute Percentage Error: 171.32%
+MLP Regressor - R^2 Score: -0.34
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 9.65
+XGBRegressor - Mean Squared Error: 157.46
+XGBRegressor - Root Mean Squared Error: 12.55
+XGBRegressor - Mean Absolute Percentage Error: 175.86%
+XGBRegressor - R^2 Score: -0.04
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 9.85
+Voting Regressor - Mean Squared Error: 166.49
+Voting Regressor - Root Mean Squared Error: 12.90
+Voting Regressor - Mean Absolute Percentage Error: 174.26%
+Voting Regressor - R^2 Score: -0.10
+
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T3.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 10.88
+KNN - Mean Squared Error: 187.11
+KNN - Root Mean Squared Error: 13.68
+KNN - Mean Absolute Percentage Error: 272.90%
+KNN - R^2 Score: 0.19
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 10.89
+Random Forest - Mean Squared Error: 185.05
+Random Forest - Root Mean Squared Error: 13.60
+Random Forest - Mean Absolute Percentage Error: 269.25%
+Random Forest - R^2 Score: 0.20
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 10.90
+Gradient Boosting - Mean Squared Error: 180.98
+Gradient Boosting - Root Mean Squared Error: 13.45
+Gradient Boosting - Mean Absolute Percentage Error: 283.22%
+Gradient Boosting - R^2 Score: 0.22
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 10.85
+AdaBoost - Mean Squared Error: 157.41
+AdaBoost - Root Mean Squared Error: 12.55
+AdaBoost - Mean Absolute Percentage Error: 302.65%
+AdaBoost - R^2 Score: 0.32
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 10.86
+Extra Trees Regressor - Mean Squared Error: 185.50
+Extra Trees Regressor - Root Mean Squared Error: 13.62
+Extra Trees Regressor - Mean Absolute Percentage Error: 267.08%
+Extra Trees Regressor - R^2 Score: 0.20
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 10.48
+MLP Regressor - Mean Squared Error: 160.09
+MLP Regressor - Root Mean Squared Error: 12.65
+MLP Regressor - Mean Absolute Percentage Error: 287.80%
+MLP Regressor - R^2 Score: 0.31
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 10.99
+XGBRegressor - Mean Squared Error: 187.47
+XGBRegressor - Root Mean Squared Error: 13.69
+XGBRegressor - Mean Absolute Percentage Error: 270.10%
+XGBRegressor - R^2 Score: 0.19
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 10.77
+Voting Regressor - Mean Squared Error: 176.12
+Voting Regressor - Root Mean Squared Error: 13.27
+Voting Regressor - Mean Absolute Percentage Error: 279.10%
+Voting Regressor - R^2 Score: 0.24
+
+
+Training with ['T1.txt', 'T2.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T3.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 10.51
+KNN - Mean Squared Error: 176.99
+KNN - Root Mean Squared Error: 13.30
+KNN - Mean Absolute Percentage Error: 213.87%
+KNN - R^2 Score: -0.22
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 10.43
+Random Forest - Mean Squared Error: 173.81
+Random Forest - Root Mean Squared Error: 13.18
+Random Forest - Mean Absolute Percentage Error: 211.65%
+Random Forest - R^2 Score: -0.20
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 10.27
+Gradient Boosting - Mean Squared Error: 166.18
+Gradient Boosting - Root Mean Squared Error: 12.89
+Gradient Boosting - Mean Absolute Percentage Error: 202.87%
+Gradient Boosting - R^2 Score: -0.15
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 9.95
+AdaBoost - Mean Squared Error: 138.83
+AdaBoost - Root Mean Squared Error: 11.78
+AdaBoost - Mean Absolute Percentage Error: 204.91%
+AdaBoost - R^2 Score: 0.04
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 10.37
+Extra Trees Regressor - Mean Squared Error: 173.41
+Extra Trees Regressor - Root Mean Squared Error: 13.17
+Extra Trees Regressor - Mean Absolute Percentage Error: 208.87%
+Extra Trees Regressor - R^2 Score: -0.20
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 10.17
+MLP Regressor - Mean Squared Error: 150.93
+MLP Regressor - Root Mean Squared Error: 12.29
+MLP Regressor - Mean Absolute Percentage Error: 206.08%
+MLP Regressor - R^2 Score: -0.04
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 10.55
+XGBRegressor - Mean Squared Error: 179.53
+XGBRegressor - Root Mean Squared Error: 13.40
+XGBRegressor - Mean Absolute Percentage Error: 209.60%
+XGBRegressor - R^2 Score: -0.24
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 10.44
+Voting Regressor - Mean Squared Error: 172.87
+Voting Regressor - Root Mean Squared Error: 13.15
+Voting Regressor - Mean Absolute Percentage Error: 210.20%
+Voting Regressor - R^2 Score: -0.20
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T6.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T4.txt', 'T5.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 5.65
+KNN - Mean Squared Error: 43.62
+KNN - Root Mean Squared Error: 6.60
+KNN - Mean Absolute Percentage Error: 269.50%
+KNN - R^2 Score: 0.36
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.10
+Random Forest - Mean Squared Error: 51.57
+Random Forest - Root Mean Squared Error: 7.18
+Random Forest - Mean Absolute Percentage Error: 281.25%
+Random Forest - R^2 Score: 0.24
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.21
+Gradient Boosting - Mean Squared Error: 53.33
+Gradient Boosting - Root Mean Squared Error: 7.30
+Gradient Boosting - Mean Absolute Percentage Error: 284.77%
+Gradient Boosting - R^2 Score: 0.21
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.11
+AdaBoost - Mean Squared Error: 50.06
+AdaBoost - Root Mean Squared Error: 7.08
+AdaBoost - Mean Absolute Percentage Error: 268.11%
+AdaBoost - R^2 Score: 0.26
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 5.84
+Extra Trees Regressor - Mean Squared Error: 47.02
+Extra Trees Regressor - Root Mean Squared Error: 6.86
+Extra Trees Regressor - Mean Absolute Percentage Error: 266.31%
+Extra Trees Regressor - R^2 Score: 0.31
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.51
+MLP Regressor - Mean Squared Error: 60.37
+MLP Regressor - Root Mean Squared Error: 7.77
+MLP Regressor - Mean Absolute Percentage Error: 306.15%
+MLP Regressor - R^2 Score: 0.11
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 5.66
+XGBRegressor - Mean Squared Error: 43.24
+XGBRegressor - Root Mean Squared Error: 6.58
+XGBRegressor - Mean Absolute Percentage Error: 270.57%
+XGBRegressor - R^2 Score: 0.36
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 5.96
+Voting Regressor - Mean Squared Error: 48.75
+Voting Regressor - Root Mean Squared Error: 6.98
+Voting Regressor - Mean Absolute Percentage Error: 280.24%
+Voting Regressor - R^2 Score: 0.28
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T4.txt', 'T6.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.23
+KNN - Mean Squared Error: 65.68
+KNN - Root Mean Squared Error: 8.10
+KNN - Mean Absolute Percentage Error: 264.94%
+KNN - R^2 Score: 0.31
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.12
+Random Forest - Mean Squared Error: 63.74
+Random Forest - Root Mean Squared Error: 7.98
+Random Forest - Mean Absolute Percentage Error: 244.11%
+Random Forest - R^2 Score: 0.33
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.71
+Gradient Boosting - Mean Squared Error: 72.52
+Gradient Boosting - Root Mean Squared Error: 8.52
+Gradient Boosting - Mean Absolute Percentage Error: 282.45%
+Gradient Boosting - R^2 Score: 0.24
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.73
+AdaBoost - Mean Squared Error: 74.23
+AdaBoost - Root Mean Squared Error: 8.62
+AdaBoost - Mean Absolute Percentage Error: 270.88%
+AdaBoost - R^2 Score: 0.22
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.19
+Extra Trees Regressor - Mean Squared Error: 64.98
+Extra Trees Regressor - Root Mean Squared Error: 8.06
+Extra Trees Regressor - Mean Absolute Percentage Error: 248.23%
+Extra Trees Regressor - R^2 Score: 0.32
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.72
+MLP Regressor - Mean Squared Error: 73.67
+MLP Regressor - Root Mean Squared Error: 8.58
+MLP Regressor - Mean Absolute Percentage Error: 292.04%
+MLP Regressor - R^2 Score: 0.23
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.78
+XGBRegressor - Mean Squared Error: 58.92
+XGBRegressor - Root Mean Squared Error: 7.68
+XGBRegressor - Mean Absolute Percentage Error: 245.04%
+XGBRegressor - R^2 Score: 0.38
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.18
+Voting Regressor - Mean Squared Error: 64.16
+Voting Regressor - Root Mean Squared Error: 8.01
+Voting Regressor - Mean Absolute Percentage Error: 255.63%
+Voting Regressor - R^2 Score: 0.33
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T4.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.75
+KNN - Mean Squared Error: 60.87
+KNN - Root Mean Squared Error: 7.80
+KNN - Mean Absolute Percentage Error: 322.97%
+KNN - R^2 Score: 0.27
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.07
+Random Forest - Mean Squared Error: 69.01
+Random Forest - Root Mean Squared Error: 8.31
+Random Forest - Mean Absolute Percentage Error: 330.82%
+Random Forest - R^2 Score: 0.18
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.72
+Gradient Boosting - Mean Squared Error: 58.22
+Gradient Boosting - Root Mean Squared Error: 7.63
+Gradient Boosting - Mean Absolute Percentage Error: 319.95%
+Gradient Boosting - R^2 Score: 0.30
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.01
+AdaBoost - Mean Squared Error: 64.24
+AdaBoost - Root Mean Squared Error: 8.01
+AdaBoost - Mean Absolute Percentage Error: 328.44%
+AdaBoost - R^2 Score: 0.23
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.91
+Extra Trees Regressor - Mean Squared Error: 64.67
+Extra Trees Regressor - Root Mean Squared Error: 8.04
+Extra Trees Regressor - Mean Absolute Percentage Error: 315.83%
+Extra Trees Regressor - R^2 Score: 0.23
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.89
+MLP Regressor - Mean Squared Error: 61.71
+MLP Regressor - Root Mean Squared Error: 7.86
+MLP Regressor - Mean Absolute Percentage Error: 315.83%
+MLP Regressor - R^2 Score: 0.26
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.10
+XGBRegressor - Mean Squared Error: 68.96
+XGBRegressor - Root Mean Squared Error: 8.30
+XGBRegressor - Mean Absolute Percentage Error: 332.39%
+XGBRegressor - R^2 Score: 0.18
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.95
+Voting Regressor - Mean Squared Error: 64.77
+Voting Regressor - Root Mean Squared Error: 8.05
+Voting Regressor - Mean Absolute Percentage Error: 328.21%
+Voting Regressor - R^2 Score: 0.23
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T4.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.85
+KNN - Mean Squared Error: 64.24
+KNN - Root Mean Squared Error: 8.01
+KNN - Mean Absolute Percentage Error: 327.72%
+KNN - R^2 Score: 0.43
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.86
+Random Forest - Mean Squared Error: 66.10
+Random Forest - Root Mean Squared Error: 8.13
+Random Forest - Mean Absolute Percentage Error: 322.82%
+Random Forest - R^2 Score: 0.42
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.55
+Gradient Boosting - Mean Squared Error: 74.97
+Gradient Boosting - Root Mean Squared Error: 8.66
+Gradient Boosting - Mean Absolute Percentage Error: 368.76%
+Gradient Boosting - R^2 Score: 0.34
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.19
+AdaBoost - Mean Squared Error: 87.13
+AdaBoost - Root Mean Squared Error: 9.33
+AdaBoost - Mean Absolute Percentage Error: 400.48%
+AdaBoost - R^2 Score: 0.23
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.83
+Extra Trees Regressor - Mean Squared Error: 65.12
+Extra Trees Regressor - Root Mean Squared Error: 8.07
+Extra Trees Regressor - Mean Absolute Percentage Error: 319.63%
+Extra Trees Regressor - R^2 Score: 0.43
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.99
+MLP Regressor - Mean Squared Error: 82.67
+MLP Regressor - Root Mean Squared Error: 9.09
+MLP Regressor - Mean Absolute Percentage Error: 410.71%
+MLP Regressor - R^2 Score: 0.27
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.72
+XGBRegressor - Mean Squared Error: 63.53
+XGBRegressor - Root Mean Squared Error: 7.97
+XGBRegressor - Mean Absolute Percentage Error: 328.54%
+XGBRegressor - R^2 Score: 0.44
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.08
+Voting Regressor - Mean Squared Error: 67.91
+Voting Regressor - Root Mean Squared Error: 8.24
+Voting Regressor - Mean Absolute Percentage Error: 345.87%
+Voting Regressor - R^2 Score: 0.40
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T5.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T4.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.55
+KNN - Mean Squared Error: 55.74
+KNN - Root Mean Squared Error: 7.47
+KNN - Mean Absolute Percentage Error: 272.69%
+KNN - R^2 Score: 0.31
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.61
+Random Forest - Mean Squared Error: 58.27
+Random Forest - Root Mean Squared Error: 7.63
+Random Forest - Mean Absolute Percentage Error: 272.40%
+Random Forest - R^2 Score: 0.28
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.81
+Gradient Boosting - Mean Squared Error: 58.93
+Gradient Boosting - Root Mean Squared Error: 7.68
+Gradient Boosting - Mean Absolute Percentage Error: 285.35%
+Gradient Boosting - R^2 Score: 0.27
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.15
+AdaBoost - Mean Squared Error: 64.16
+AdaBoost - Root Mean Squared Error: 8.01
+AdaBoost - Mean Absolute Percentage Error: 290.65%
+AdaBoost - R^2 Score: 0.21
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.50
+Extra Trees Regressor - Mean Squared Error: 55.40
+Extra Trees Regressor - Root Mean Squared Error: 7.44
+Extra Trees Regressor - Mean Absolute Percentage Error: 265.82%
+Extra Trees Regressor - R^2 Score: 0.32
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.15
+MLP Regressor - Mean Squared Error: 65.60
+MLP Regressor - Root Mean Squared Error: 8.10
+MLP Regressor - Mean Absolute Percentage Error: 312.36%
+MLP Regressor - R^2 Score: 0.19
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.40
+XGBRegressor - Mean Squared Error: 54.56
+XGBRegressor - Root Mean Squared Error: 7.39
+XGBRegressor - Mean Absolute Percentage Error: 269.20%
+XGBRegressor - R^2 Score: 0.33
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.87
+Voting Regressor - Mean Squared Error: 62.04
+Voting Regressor - Root Mean Squared Error: 7.88
+Voting Regressor - Mean Absolute Percentage Error: 280.90%
+Voting Regressor - R^2 Score: 0.24
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T7.txt', 'T8.txt', 'T9.txt'], validating with ('T5.txt', 'T6.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.95
+KNN - Mean Squared Error: 64.67
+KNN - Root Mean Squared Error: 8.04
+KNN - Mean Absolute Percentage Error: 195.69%
+KNN - R^2 Score: 0.40
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.90
+Random Forest - Mean Squared Error: 63.13
+Random Forest - Root Mean Squared Error: 7.95
+Random Forest - Mean Absolute Percentage Error: 196.51%
+Random Forest - R^2 Score: 0.42
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.18
+Gradient Boosting - Mean Squared Error: 69.47
+Gradient Boosting - Root Mean Squared Error: 8.33
+Gradient Boosting - Mean Absolute Percentage Error: 207.67%
+Gradient Boosting - R^2 Score: 0.36
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.21
+AdaBoost - Mean Squared Error: 69.77
+AdaBoost - Root Mean Squared Error: 8.35
+AdaBoost - Mean Absolute Percentage Error: 197.31%
+AdaBoost - R^2 Score: 0.36
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.08
+Extra Trees Regressor - Mean Squared Error: 66.45
+Extra Trees Regressor - Root Mean Squared Error: 8.15
+Extra Trees Regressor - Mean Absolute Percentage Error: 203.37%
+Extra Trees Regressor - R^2 Score: 0.39
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.23
+MLP Regressor - Mean Squared Error: 70.80
+MLP Regressor - Root Mean Squared Error: 8.41
+MLP Regressor - Mean Absolute Percentage Error: 212.58%
+MLP Regressor - R^2 Score: 0.35
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.67
+XGBRegressor - Mean Squared Error: 59.41
+XGBRegressor - Root Mean Squared Error: 7.71
+XGBRegressor - Mean Absolute Percentage Error: 187.95%
+XGBRegressor - R^2 Score: 0.45
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.86
+Voting Regressor - Mean Squared Error: 62.56
+Voting Regressor - Root Mean Squared Error: 7.91
+Voting Regressor - Mean Absolute Percentage Error: 197.65%
+Voting Regressor - R^2 Score: 0.42
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T8.txt', 'T9.txt'], validating with ('T5.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.17
+KNN - Mean Squared Error: 53.46
+KNN - Root Mean Squared Error: 7.31
+KNN - Mean Absolute Percentage Error: 237.72%
+KNN - R^2 Score: 0.44
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.40
+Random Forest - Mean Squared Error: 59.98
+Random Forest - Root Mean Squared Error: 7.74
+Random Forest - Mean Absolute Percentage Error: 265.20%
+Random Forest - R^2 Score: 0.37
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.30
+Gradient Boosting - Mean Squared Error: 56.65
+Gradient Boosting - Root Mean Squared Error: 7.53
+Gradient Boosting - Mean Absolute Percentage Error: 240.20%
+Gradient Boosting - R^2 Score: 0.41
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.42
+AdaBoost - Mean Squared Error: 58.35
+AdaBoost - Root Mean Squared Error: 7.64
+AdaBoost - Mean Absolute Percentage Error: 240.95%
+AdaBoost - R^2 Score: 0.39
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.57
+Extra Trees Regressor - Mean Squared Error: 61.30
+Extra Trees Regressor - Root Mean Squared Error: 7.83
+Extra Trees Regressor - Mean Absolute Percentage Error: 254.65%
+Extra Trees Regressor - R^2 Score: 0.36
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.37
+MLP Regressor - Mean Squared Error: 58.53
+MLP Regressor - Root Mean Squared Error: 7.65
+MLP Regressor - Mean Absolute Percentage Error: 241.78%
+MLP Regressor - R^2 Score: 0.39
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.52
+XGBRegressor - Mean Squared Error: 61.07
+XGBRegressor - Root Mean Squared Error: 7.81
+XGBRegressor - Mean Absolute Percentage Error: 256.95%
+XGBRegressor - R^2 Score: 0.36
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.32
+Voting Regressor - Mean Squared Error: 56.06
+Voting Regressor - Root Mean Squared Error: 7.49
+Voting Regressor - Mean Absolute Percentage Error: 242.15%
+Voting Regressor - R^2 Score: 0.41
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T9.txt'], validating with ('T5.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.32
+KNN - Mean Squared Error: 77.24
+KNN - Root Mean Squared Error: 8.79
+KNN - Mean Absolute Percentage Error: 284.95%
+KNN - R^2 Score: 0.35
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.41
+Random Forest - Mean Squared Error: 80.27
+Random Forest - Root Mean Squared Error: 8.96
+Random Forest - Mean Absolute Percentage Error: 296.33%
+Random Forest - R^2 Score: 0.32
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.86
+Gradient Boosting - Mean Squared Error: 87.93
+Gradient Boosting - Root Mean Squared Error: 9.38
+Gradient Boosting - Mean Absolute Percentage Error: 322.77%
+Gradient Boosting - R^2 Score: 0.26
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.07
+AdaBoost - Mean Squared Error: 93.59
+AdaBoost - Root Mean Squared Error: 9.67
+AdaBoost - Mean Absolute Percentage Error: 324.87%
+AdaBoost - R^2 Score: 0.21
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.50
+Extra Trees Regressor - Mean Squared Error: 81.62
+Extra Trees Regressor - Root Mean Squared Error: 9.03
+Extra Trees Regressor - Mean Absolute Percentage Error: 302.06%
+Extra Trees Regressor - R^2 Score: 0.31
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.86
+MLP Regressor - Mean Squared Error: 87.86
+MLP Regressor - Root Mean Squared Error: 9.37
+MLP Regressor - Mean Absolute Percentage Error: 326.05%
+MLP Regressor - R^2 Score: 0.26
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.35
+XGBRegressor - Mean Squared Error: 79.09
+XGBRegressor - Root Mean Squared Error: 8.89
+XGBRegressor - Mean Absolute Percentage Error: 287.89%
+XGBRegressor - R^2 Score: 0.33
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.45
+Voting Regressor - Mean Squared Error: 80.31
+Voting Regressor - Root Mean Squared Error: 8.96
+Voting Regressor - Mean Absolute Percentage Error: 304.88%
+Voting Regressor - R^2 Score: 0.32
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T6.txt', 'T7.txt', 'T8.txt'], validating with ('T5.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 6.34
+KNN - Mean Squared Error: 54.23
+KNN - Root Mean Squared Error: 7.36
+KNN - Mean Absolute Percentage Error: 211.84%
+KNN - R^2 Score: 0.42
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 6.48
+Random Forest - Mean Squared Error: 57.22
+Random Forest - Root Mean Squared Error: 7.56
+Random Forest - Mean Absolute Percentage Error: 219.05%
+Random Forest - R^2 Score: 0.39
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 6.63
+Gradient Boosting - Mean Squared Error: 61.90
+Gradient Boosting - Root Mean Squared Error: 7.87
+Gradient Boosting - Mean Absolute Percentage Error: 225.74%
+Gradient Boosting - R^2 Score: 0.34
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 6.91
+AdaBoost - Mean Squared Error: 65.02
+AdaBoost - Root Mean Squared Error: 8.06
+AdaBoost - Mean Absolute Percentage Error: 214.00%
+AdaBoost - R^2 Score: 0.31
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 6.43
+Extra Trees Regressor - Mean Squared Error: 55.87
+Extra Trees Regressor - Root Mean Squared Error: 7.47
+Extra Trees Regressor - Mean Absolute Percentage Error: 218.93%
+Extra Trees Regressor - R^2 Score: 0.40
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 6.71
+MLP Regressor - Mean Squared Error: 62.79
+MLP Regressor - Root Mean Squared Error: 7.92
+MLP Regressor - Mean Absolute Percentage Error: 228.55%
+MLP Regressor - R^2 Score: 0.33
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 6.57
+XGBRegressor - Mean Squared Error: 59.83
+XGBRegressor - Root Mean Squared Error: 7.73
+XGBRegressor - Mean Absolute Percentage Error: 223.90%
+XGBRegressor - R^2 Score: 0.36
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 6.58
+Voting Regressor - Mean Squared Error: 60.06
+Voting Regressor - Root Mean Squared Error: 7.75
+Voting Regressor - Mean Absolute Percentage Error: 223.33%
+Voting Regressor - R^2 Score: 0.36
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T8.txt', 'T9.txt'], validating with ('T6.txt', 'T7.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 8.10
+KNN - Mean Squared Error: 80.71
+KNN - Root Mean Squared Error: 8.98
+KNN - Mean Absolute Percentage Error: 257.44%
+KNN - R^2 Score: 0.13
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 8.08
+Random Forest - Mean Squared Error: 81.45
+Random Forest - Root Mean Squared Error: 9.02
+Random Forest - Mean Absolute Percentage Error: 257.73%
+Random Forest - R^2 Score: 0.12
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 8.03
+Gradient Boosting - Mean Squared Error: 79.73
+Gradient Boosting - Root Mean Squared Error: 8.93
+Gradient Boosting - Mean Absolute Percentage Error: 203.50%
+Gradient Boosting - R^2 Score: 0.14
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.13
+AdaBoost - Mean Squared Error: 80.77
+AdaBoost - Root Mean Squared Error: 8.99
+AdaBoost - Mean Absolute Percentage Error: 206.69%
+AdaBoost - R^2 Score: 0.12
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 8.48
+Extra Trees Regressor - Mean Squared Error: 88.73
+Extra Trees Regressor - Root Mean Squared Error: 9.42
+Extra Trees Regressor - Mean Absolute Percentage Error: 281.44%
+Extra Trees Regressor - R^2 Score: 0.04
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 8.47
+MLP Regressor - Mean Squared Error: 87.48
+MLP Regressor - Root Mean Squared Error: 9.35
+MLP Regressor - Mean Absolute Percentage Error: 227.27%
+MLP Regressor - R^2 Score: 0.05
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.95
+XGBRegressor - Mean Squared Error: 78.70
+XGBRegressor - Root Mean Squared Error: 8.87
+XGBRegressor - Mean Absolute Percentage Error: 229.85%
+XGBRegressor - R^2 Score: 0.15
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.99
+Voting Regressor - Mean Squared Error: 78.75
+Voting Regressor - Root Mean Squared Error: 8.87
+Voting Regressor - Mean Absolute Percentage Error: 207.89%
+Voting Regressor - R^2 Score: 0.15
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T9.txt'], validating with ('T6.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 8.46
+KNN - Mean Squared Error: 87.98
+KNN - Root Mean Squared Error: 9.38
+KNN - Mean Absolute Percentage Error: 273.62%
+KNN - R^2 Score: 0.43
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 8.31
+Random Forest - Mean Squared Error: 85.90
+Random Forest - Root Mean Squared Error: 9.27
+Random Forest - Mean Absolute Percentage Error: 269.46%
+Random Forest - R^2 Score: 0.44
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 8.61
+Gradient Boosting - Mean Squared Error: 90.50
+Gradient Boosting - Root Mean Squared Error: 9.51
+Gradient Boosting - Mean Absolute Percentage Error: 295.39%
+Gradient Boosting - R^2 Score: 0.41
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 9.13
+AdaBoost - Mean Squared Error: 101.75
+AdaBoost - Root Mean Squared Error: 10.09
+AdaBoost - Mean Absolute Percentage Error: 310.90%
+AdaBoost - R^2 Score: 0.34
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 8.42
+Extra Trees Regressor - Mean Squared Error: 87.55
+Extra Trees Regressor - Root Mean Squared Error: 9.36
+Extra Trees Regressor - Mean Absolute Percentage Error: 271.71%
+Extra Trees Regressor - R^2 Score: 0.43
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 8.82
+MLP Regressor - Mean Squared Error: 92.77
+MLP Regressor - Root Mean Squared Error: 9.63
+MLP Regressor - Mean Absolute Percentage Error: 288.25%
+MLP Regressor - R^2 Score: 0.40
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 8.21
+XGBRegressor - Mean Squared Error: 84.98
+XGBRegressor - Root Mean Squared Error: 9.22
+XGBRegressor - Mean Absolute Percentage Error: 264.98%
+XGBRegressor - R^2 Score: 0.45
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 8.33
+Voting Regressor - Mean Squared Error: 85.51
+Voting Regressor - Root Mean Squared Error: 9.25
+Voting Regressor - Mean Absolute Percentage Error: 276.76%
+Voting Regressor - R^2 Score: 0.45
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T7.txt', 'T8.txt'], validating with ('T6.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 8.35
+KNN - Mean Squared Error: 85.52
+KNN - Root Mean Squared Error: 9.25
+KNN - Mean Absolute Percentage Error: 212.76%
+KNN - R^2 Score: 0.02
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 8.28
+Random Forest - Mean Squared Error: 84.58
+Random Forest - Root Mean Squared Error: 9.20
+Random Forest - Mean Absolute Percentage Error: 206.51%
+Random Forest - R^2 Score: 0.03
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 8.45
+Gradient Boosting - Mean Squared Error: 88.01
+Gradient Boosting - Root Mean Squared Error: 9.38
+Gradient Boosting - Mean Absolute Percentage Error: 222.05%
+Gradient Boosting - R^2 Score: -0.01
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.61
+AdaBoost - Mean Squared Error: 89.78
+AdaBoost - Root Mean Squared Error: 9.48
+AdaBoost - Mean Absolute Percentage Error: 221.93%
+AdaBoost - R^2 Score: -0.03
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 8.34
+Extra Trees Regressor - Mean Squared Error: 84.72
+Extra Trees Regressor - Root Mean Squared Error: 9.20
+Extra Trees Regressor - Mean Absolute Percentage Error: 210.83%
+Extra Trees Regressor - R^2 Score: 0.03
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 8.43
+MLP Regressor - Mean Squared Error: 86.90
+MLP Regressor - Root Mean Squared Error: 9.32
+MLP Regressor - Mean Absolute Percentage Error: 207.38%
+MLP Regressor - R^2 Score: 0.00
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 8.08
+XGBRegressor - Mean Squared Error: 81.54
+XGBRegressor - Root Mean Squared Error: 9.03
+XGBRegressor - Mean Absolute Percentage Error: 200.83%
+XGBRegressor - R^2 Score: 0.07
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 8.31
+Voting Regressor - Mean Squared Error: 85.65
+Voting Regressor - Root Mean Squared Error: 9.25
+Voting Regressor - Mean Absolute Percentage Error: 202.41%
+Voting Regressor - R^2 Score: 0.02
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T9.txt'], validating with ('T7.txt', 'T8.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.94
+KNN - Mean Squared Error: 82.85
+KNN - Root Mean Squared Error: 9.10
+KNN - Mean Absolute Percentage Error: 309.30%
+KNN - R^2 Score: 0.41
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.94
+Random Forest - Mean Squared Error: 85.00
+Random Forest - Root Mean Squared Error: 9.22
+Random Forest - Mean Absolute Percentage Error: 330.16%
+Random Forest - R^2 Score: 0.40
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.86
+Gradient Boosting - Mean Squared Error: 81.28
+Gradient Boosting - Root Mean Squared Error: 9.02
+Gradient Boosting - Mean Absolute Percentage Error: 330.13%
+Gradient Boosting - R^2 Score: 0.42
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.27
+AdaBoost - Mean Squared Error: 87.66
+AdaBoost - Root Mean Squared Error: 9.36
+AdaBoost - Mean Absolute Percentage Error: 335.89%
+AdaBoost - R^2 Score: 0.38
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 8.15
+Extra Trees Regressor - Mean Squared Error: 87.54
+Extra Trees Regressor - Root Mean Squared Error: 9.36
+Extra Trees Regressor - Mean Absolute Percentage Error: 323.06%
+Extra Trees Regressor - R^2 Score: 0.38
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.98
+MLP Regressor - Mean Squared Error: 80.33
+MLP Regressor - Root Mean Squared Error: 8.96
+MLP Regressor - Mean Absolute Percentage Error: 330.96%
+MLP Regressor - R^2 Score: 0.43
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.95
+XGBRegressor - Mean Squared Error: 85.25
+XGBRegressor - Root Mean Squared Error: 9.23
+XGBRegressor - Mean Absolute Percentage Error: 324.78%
+XGBRegressor - R^2 Score: 0.40
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.89
+Voting Regressor - Mean Squared Error: 81.52
+Voting Regressor - Root Mean Squared Error: 9.03
+Voting Regressor - Mean Absolute Percentage Error: 317.90%
+Voting Regressor - R^2 Score: 0.42
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T8.txt'], validating with ('T7.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.33
+KNN - Mean Squared Error: 67.16
+KNN - Root Mean Squared Error: 8.19
+KNN - Mean Absolute Percentage Error: 235.81%
+KNN - R^2 Score: 0.16
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.10
+Random Forest - Mean Squared Error: 65.42
+Random Forest - Root Mean Squared Error: 8.09
+Random Forest - Mean Absolute Percentage Error: 225.26%
+Random Forest - R^2 Score: 0.18
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 7.13
+Gradient Boosting - Mean Squared Error: 64.69
+Gradient Boosting - Root Mean Squared Error: 8.04
+Gradient Boosting - Mean Absolute Percentage Error: 231.13%
+Gradient Boosting - R^2 Score: 0.19
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 7.64
+AdaBoost - Mean Squared Error: 72.96
+AdaBoost - Root Mean Squared Error: 8.54
+AdaBoost - Mean Absolute Percentage Error: 222.33%
+AdaBoost - R^2 Score: 0.08
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.34
+Extra Trees Regressor - Mean Squared Error: 68.91
+Extra Trees Regressor - Root Mean Squared Error: 8.30
+Extra Trees Regressor - Mean Absolute Percentage Error: 244.77%
+Extra Trees Regressor - R^2 Score: 0.14
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 7.39
+MLP Regressor - Mean Squared Error: 68.58
+MLP Regressor - Root Mean Squared Error: 8.28
+MLP Regressor - Mean Absolute Percentage Error: 209.85%
+MLP Regressor - R^2 Score: 0.14
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.14
+XGBRegressor - Mean Squared Error: 66.65
+XGBRegressor - Root Mean Squared Error: 8.16
+XGBRegressor - Mean Absolute Percentage Error: 218.38%
+XGBRegressor - R^2 Score: 0.16
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.32
+Voting Regressor - Mean Squared Error: 68.32
+Voting Regressor - Root Mean Squared Error: 8.27
+Voting Regressor - Mean Absolute Percentage Error: 232.65%
+Voting Regressor - R^2 Score: 0.14
+
+
+Training with ['T1.txt', 'T2.txt', 'T3.txt', 'T4.txt', 'T5.txt', 'T6.txt', 'T7.txt'], validating with ('T8.txt', 'T9.txt')
+Training and evaluating KNN
+KNN - Mean Absolute Error: 7.79
+KNN - Mean Squared Error: 80.08
+KNN - Root Mean Squared Error: 8.95
+KNN - Mean Absolute Percentage Error: 274.69%
+KNN - R^2 Score: 0.43
+
+Training and evaluating Random Forest
+Random Forest - Mean Absolute Error: 7.83
+Random Forest - Mean Squared Error: 82.15
+Random Forest - Root Mean Squared Error: 9.06
+Random Forest - Mean Absolute Percentage Error: 283.34%
+Random Forest - R^2 Score: 0.41
+
+Training and evaluating Gradient Boosting
+Gradient Boosting - Mean Absolute Error: 8.13
+Gradient Boosting - Mean Squared Error: 85.25
+Gradient Boosting - Root Mean Squared Error: 9.23
+Gradient Boosting - Mean Absolute Percentage Error: 321.92%
+Gradient Boosting - R^2 Score: 0.39
+
+Training and evaluating AdaBoost
+AdaBoost - Mean Absolute Error: 8.59
+AdaBoost - Mean Squared Error: 93.92
+AdaBoost - Root Mean Squared Error: 9.69
+AdaBoost - Mean Absolute Percentage Error: 340.40%
+AdaBoost - R^2 Score: 0.33
+
+Training and evaluating Extra Trees Regressor
+Extra Trees Regressor - Mean Absolute Error: 7.76
+Extra Trees Regressor - Mean Squared Error: 80.17
+Extra Trees Regressor - Root Mean Squared Error: 8.95
+Extra Trees Regressor - Mean Absolute Percentage Error: 282.01%
+Extra Trees Regressor - R^2 Score: 0.42
+
+Training and evaluating MLP Regressor
+MLP Regressor - Mean Absolute Error: 8.51
+MLP Regressor - Mean Squared Error: 90.85
+MLP Regressor - Root Mean Squared Error: 9.53
+MLP Regressor - Mean Absolute Percentage Error: 315.20%
+MLP Regressor - R^2 Score: 0.35
+
+Training and evaluating XGBRegressor
+XGBRegressor - Mean Absolute Error: 7.72
+XGBRegressor - Mean Squared Error: 79.26
+XGBRegressor - Root Mean Squared Error: 8.90
+XGBRegressor - Mean Absolute Percentage Error: 283.92%
+XGBRegressor - R^2 Score: 0.43
+
+Training and evaluating Voting Regressor
+Voting Regressor - Mean Absolute Error: 7.95
+Voting Regressor - Mean Squared Error: 83.12
+Voting Regressor - Root Mean Squared Error: 9.12
+Voting Regressor - Mean Absolute Percentage Error: 302.70%
+Voting Regressor - R^2 Score: 0.40
+
+KNN - Mean R^2 Score: 0.23
+KNN - Mean Mean Absolute Error: 7.45
+Random Forest - Mean R^2 Score: 0.22
+Random Forest - Mean Mean Absolute Error: 7.47
+Gradient Boosting - Mean R^2 Score: 0.20
+Gradient Boosting - Mean Mean Absolute Error: 7.68
+AdaBoost - Mean R^2 Score: 0.19
+AdaBoost - Mean Mean Absolute Error: 7.85
+Extra Trees Regressor - Mean R^2 Score: 0.22
+Extra Trees Regressor - Mean Mean Absolute Error: 7.50
+MLP Regressor - Mean R^2 Score: 0.18
+MLP Regressor - Mean Mean Absolute Error: 7.76
+XGBRegressor - Mean R^2 Score: 0.23
+XGBRegressor - Mean Mean Absolute Error: 7.42
+Voting Regressor - Mean R^2 Score: 0.22
+Voting Regressor - Mean Mean Absolute Error: 7.53

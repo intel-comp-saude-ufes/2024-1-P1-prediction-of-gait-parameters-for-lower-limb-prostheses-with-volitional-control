@@ -1,7 +1,7 @@
 # Prediction of Gait Parameters For Lower Limb Prostheses with Volitional Control
 
 <p align="center">
-  <img src="media/nothing-to-see-here.gif" />
+  <img src="media/animation.gif" />
 </p>
 
 ## Overview
