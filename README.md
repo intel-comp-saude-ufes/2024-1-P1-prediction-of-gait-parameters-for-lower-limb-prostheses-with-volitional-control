@@ -30,11 +30,11 @@ This repository contains code for analyzing Electromyography (EMG) signals and o
     ```
 
 ## Data Description
-<p align="center">
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
   <img src="media/data-1.png" alt="Image 1" width="300" style="border:1px solid white;"/>
   <img src="media/data-2.png" alt="Image 2" width="300" style="border:1px solid white;"/>
 </p>
-<p align="center">
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
   <img src="media/data-3.png" alt="Image 3" width="300" style="border:1px solid white;"/>
   <img src="media/data-4.png" alt="Image 4" width="300" style="border:1px solid white;"/>
 </p>
@@ -65,13 +65,21 @@ python cross_val_participants.py
 In this section, the performance of each of the presented models was evaluated when subjected to different types of input and output data, as well as the changes observed during the variations of the testing processes. These results can be seen in Tables II to V below. The performance metric used to compare the models was $R^2$, and in the event of a tie, the model with the lowest mean absolute error was adopted.
 
 The results of the project are summarized in the following figures:
-<p align="center">
-  <img src="media/table-1.png" alt="Image 1" width="350" style="border:1px solid white;"/>
-  <img src="media/table-2.png" alt="Image 2" width="350" style="border:1px solid white;"/>
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <img src="media/table-1.png" alt="Image 1" width="350" style="border:1px solid red;"/>
+  <img src="media/fig-1.png" alt="Image 2" width="350" style="border:1px solid red;"/>
 </p>
-<p align="center">
-  <img src="media/table-3.png" alt="Image 3" width="350" style="border:1px solid white;"/>
-  <img src="media/table-4.png" alt="Image 4" width="350" style="border:1px solid white;"/>
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <img src="media/table-2.png" alt="Image 3" width="350" style="border:1px solid red;"/>
+  <img src="media/fig-2.png" alt="Image 4" width="350" style="border:1px solid red;"/>
+</p>
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <img src="media/table-3.png" alt="Image 1" width="350" style="border:1px solid red;"/>
+  <img src="media/fig-3.png" alt="Image 2" width="350" style="border:1px solid red;"/>
+</p>
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <img src="media/table-4.png" alt="Image 3" width="350" style="border:1px solid red;"/>
+  <img src="media/fig-4.png" alt="Image 4" width="350" style="border:1px solid red;"/>
 </p>
 
 > A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
