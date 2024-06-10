@@ -50,7 +50,7 @@ Also is a file for each participant:
 
 These physical characteristics of each participant are summarized in the following table:
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <img src="media/metadata_summarized.png" alt="Image 5" width="350" style="border:1px solid red;"/>
+  <img src="media/metadata_summarized.png" alt="Image 5" width="450" style="border:1px solid red;"/>
 </p>
 
 ## Usage
