@@ -48,6 +48,11 @@ The data used in this project consists of the folders _Angles_, _EMG envelope_, 
 Also is a file for each participant:
 - `Metadata.txt`: Describe some physical characteristics of the participant
 
+These physical characteristics of each participant are summarized in the following table:
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <img src="media/metadata_summarized.png" alt="Image 5" width="350" style="border:1px solid red;"/>
+</p>
+
 ## Usage
 ### Main Program
 You can adjust the main program to train whatever model you want using any inputs and outputs. To run the main program, use the following command:
