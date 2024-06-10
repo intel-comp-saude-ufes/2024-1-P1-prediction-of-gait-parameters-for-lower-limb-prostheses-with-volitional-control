@@ -1,11 +1,12 @@
 # Prediction of Gait Parameters For Lower Limb Prostheses with Volitional Control
 
+## Overview
+This repository contains code for analyzing Electromyography (EMG) signals and other motion sensors to predict gait parameters to apply to the control of lower limb prostheses. The project includes several processing and machine learning techniques to filter and extract meaningful features from the signals, and then use these features to predict gait parameters.
+
 <p align="center">
   <img src="media/animation.gif" />
 </p>
 
-## Overview
-This repository contains code for analyzing Electromyography (EMG) signals and other motion sensors to predict gait parameters to apply to the control of lower limb prostheses. The project includes several processing and machine learning techniques to filter and extract meaningful features from the signals, and then use these features to predict gait parameters.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -30,37 +31,47 @@ This repository contains code for analyzing Electromyography (EMG) signals and o
 
 ## Data Description
 <p align="center">
-  <img src="media/under-development.png" />
+  <img src="media/data-1.png" alt="Image 1" width="300" style="border:1px solid white;"/>
+  <img src="media/data-2.png" alt="Image 2" width="300" style="border:1px solid white;"/>
+</p>
+<p align="center">
+  <img src="media/data-3.png" alt="Image 3" width="300" style="border:1px solid white;"/>
+  <img src="media/data-4.png" alt="Image 4" width="300" style="border:1px solid white;"/>
 </p>
 
-The data used in this project consists of X, Y and Z. The dataset includes the following files:
-- `data/example.csv`: example signal collected during X seconds, by Yhz.
-- `data/...`: ...
+The data used in this project consists of the folders _Anlges_, _EMG envelope_, _GRF_ and _Torques_, each containing 10 recordings of a 10 meter walk (_T1.txt_ ~ _T10.txt_, in which each of these files can be seen as a gait cycle). A brief explanation of each data is given below:
+- `Angles`: Angle of the pelvis, hip, knee and ankle, in all axes
+- `EMG Envelope`: Enveloped EMG signal from the vastus lateralis, biceps femoris, tibialis anterior and lateral gastrocnemius muscles
+- `GRF`: Ground reaction forces in all axes
+- `Torques`: Torque of the pelvis, hip, knee and ankle, in all axes
 
 ## Usage
 ### Main Program
-The main program trains a X,Y and Z models to predict X, Y and Z gait parameters based on EMG, X, Y and Z sensors data. To run the main program, use the following command:
+You can adjust the main program to train whatever model you want using any inputs and outputs. To run the main program, use the following command:
 ```sh 
 python main.py
 ```
 
 ### Additional Scripts
-The `scripts/` directory contains additional scripts to preprocess the data, train the models, and evaluate the results. To run a script, use the following command:
+The `cross_val_files` and `cross_val_participants` scripts processes the data dynamically. You can choose how many files between _T1.txt_ ~ _T10.txt_ ((or participantes between _P1_ ~ _P16_) you want to use as test and it will cross-validate, generating an average of the metrics at the end. This preserves the temporal relationship between data, which is important for the model to learn the gait cycle. To run the scripts, use the following command:
 ```sh
-python scripts/script_name.py
+python cross_val_files.py
+```
+```sh
+python cross_val_participants.py
 ```
 
 ## Results
-The main program trains a X, Y and Z models to predict X, Y and Z gait parameters based on EMG, X, Y and Z sensors data. The evaluation of the models is performed using a X-fold cross-validation and using the following metrics:
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- Mean Absolute Percentage Error (MAPE)
-- R2 Score
+In this section, the performance of each of the presented models was evaluated when subjected to different types of input and output data, as well as the changes observed during the variations of the testing processes. These results can be seen in Tables II to V below. The performance metric used to compare the models was $R^2$, and in the event of a tie, the model with the lowest mean absolute error was adopted.
 
-The results of the project are summarized in the following figure:
+The results of the project are summarized in the following figures:
 <p align="center">
-  <img src="media/under-development.png" />
+  <img src="media/table-1.png" alt="Image 1" width="350" style="border:1px solid white;"/>
+  <img src="media/table-2.png" alt="Image 2" width="350" style="border:1px solid white;"/>
+</p>
+<p align="center">
+  <img src="media/table-3.png" alt="Image 3" width="350" style="border:1px solid white;"/>
+  <img src="media/table-4.png" alt="Image 4" width="350" style="border:1px solid white;"/>
 </p>
 
 > A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
