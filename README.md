@@ -74,20 +74,20 @@ In this section, the performance of each of the presented models was evaluated w
 
 The results of the project are summarized in the following figures, where the graph on the right is the comparison between the value predicted by the model with the best result (highest $R^2$) obtained in the table on the left, with the actual value of the output:
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <img src="media/table-1.png" alt="Image 1" width="350" style="border:1px solid red;"/>
-  <img src="media/fig-1.png" alt="Image 2" width="350" style="border:1px solid red;"/>
+  <img src="media/table-1.png" alt="Image 1" width="400" style="border:1px solid red;"/>
+  <img src="media/fig-1.png" alt="Image 2" width="400" style="border:1px solid red;"/>
 </p>
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <img src="media/table-2.png" alt="Image 3" width="350" style="border:1px solid red;"/>
-  <img src="media/fig-2.png" alt="Image 4" width="350" style="border:1px solid red;"/>
+  <img src="media/table-2.png" alt="Image 3" width="400" style="border:1px solid red;"/>
+  <img src="media/fig-2.png" alt="Image 4" width="400" style="border:1px solid red;"/>
 </p>
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <img src="media/table-3.png" alt="Image 1" width="350" style="border:1px solid red;"/>
-  <img src="media/fig-3.png" alt="Image 2" width="350" style="border:1px solid red;"/>
+  <img src="media/table-3.png" alt="Image 1" width="400" style="border:1px solid red;"/>
+  <img src="media/fig-3.png" alt="Image 2" width="400" style="border:1px solid red;"/>
 </p>
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <img src="media/table-4.png" alt="Image 3" width="350" style="border:1px solid red;"/>
-  <img src="media/fig-4.png" alt="Image 4" width="350" style="border:1px solid red;"/>
+  <img src="media/table-4.png" alt="Image 3" width="400" style="border:1px solid red;"/>
+  <img src="media/fig-4.png" alt="Image 4" width="400" style="border:1px solid red;"/>
 </p>
 
 > A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
