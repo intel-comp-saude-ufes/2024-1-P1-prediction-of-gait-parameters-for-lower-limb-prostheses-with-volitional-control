@@ -39,11 +39,13 @@ This repository contains code for analyzing Electromyography (EMG) signals and o
   <img src="media/data-4.png" alt="Image 4" width="300" style="border:1px solid white;"/>
 </p>
 
-The data used in this project consists of the folders _Anlges_, _EMG envelope_, _GRF_ and _Torques_, each containing 10 recordings of a 10 meter walk (_T1.txt_ ~ _T10.txt_, in which each of these files can be seen as a gait cycle). A brief explanation of each data is given below:
+The data used in this project consists of the folders _Angles_, _EMG envelope_, _GRF_ and _Torques_, each containing 10 recordings of a 10 meter walk (_T1.txt_ ~ _T10.txt_, in which each of these files can be seen as a gait cycle). A brief explanation of each data is given below:
 - `Angles`: Angle of the pelvis, hip, knee and ankle, in all axes
 - `EMG Envelope`: Enveloped EMG signal from the vastus lateralis, biceps femoris, tibialis anterior and lateral gastrocnemius muscles
 - `GRF`: Ground reaction forces in all axes
 - `Torques`: Torque of the pelvis, hip, knee and ankle, in all axes
+Also is a file for each participant:
+- `Metadata.txt`: Describe some physical characteristics of the participant
 
 ## Usage
 ### Main Program
