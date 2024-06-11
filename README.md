@@ -91,6 +91,7 @@ The results of the project are summarized in the following figures, where the gr
 </p>
 
 > A video sumarizing the hole project can be found [here](https://youtu.be/2M8TBRW4D_8).
+
 > The full article about this project can be found [here](media/under-development.png).
 
 ## Contributing
