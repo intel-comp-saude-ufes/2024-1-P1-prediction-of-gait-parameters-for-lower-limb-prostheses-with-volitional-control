@@ -90,7 +90,8 @@ The results of the project are summarized in the following figures, where the gr
   <img src="media/fig-4.png" alt="Image 4" width="400" style="border:1px solid red;"/>
 </p>
 
-> A video sumarizing the hole project can be found [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+> A video sumarizing the hole project can be found [here](https://youtu.be/2M8TBRW4D_8).
+> The full article about this project can be found [here](media/under-development.png).
 
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
