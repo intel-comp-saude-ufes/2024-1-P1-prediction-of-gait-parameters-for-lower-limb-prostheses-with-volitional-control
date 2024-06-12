@@ -44,7 +44,7 @@ def train_and_validate_patients(data_path, train_patients, val_patients):
         val_patients (str): Patients to use for validation
 
     OUTPUT:
-        best_model (Model): Best model to use
+        None
     '''
 
     # Load the train data

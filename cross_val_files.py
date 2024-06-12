@@ -42,7 +42,7 @@ def train_and_validate_files(data_path, train_files, val_file):
         val_file (str): Files to use for validation
 
     OUTPUT:
-        best_model (Model): Best model to use
+        None
     '''
 
     # Load the data
